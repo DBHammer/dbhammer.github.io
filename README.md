@@ -41,7 +41,7 @@
 
 ## 导师
 
-> ### 张蓉 `教授` `博士生导师` 
+> ### [张蓉]((http://dase.ecnu.edu.cn/dase-module-gateway/dase/teacher/single_teacher.html?teacherId=23)) `教授` `博士生导师` 
 >
 > **联系电话**：021-62235006
 >
@@ -52,8 +52,6 @@
 > **通讯地址**：上海市普陀区中山北路3663号华东师范大学地理馆317
 >
 > **研究兴趣**： 主要包括分布式数据管理，数据库基准评测，数据流管理。
->
-> [个人主页](http://dase.ecnu.edu.cn/dase-module-gateway/dase/teacher/single_teacher.html?teacherId=23)
 
 ## 在读学生
 
