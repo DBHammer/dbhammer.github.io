@@ -191,6 +191,13 @@ a {
     margin-top: 0;
   }
 
+  img {
+    width: auto;
+    height: 300px;
+    margin: 0 auto;
+    display: block;
+  }
+  
   @include large {
     max-width: 64rem;
     padding: 2rem 6rem;
@@ -206,6 +213,12 @@ a {
   @include small {
     padding: 2rem 1rem;
     font-size: 1rem;
+    img {
+      width: auto;
+      height: 200px;
+      margin: 0 auto;
+      display: block;
+    }
   }
   
   kbd {
@@ -222,11 +235,7 @@ a {
     vertical-align: middle;
   }
 
-  img {
-    max-width: 100%;
-    margin: 0 auto;
-    display: block;
-  }
+  
 
   h1,
   h2,
