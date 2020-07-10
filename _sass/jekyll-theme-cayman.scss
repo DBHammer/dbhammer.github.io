@@ -122,8 +122,8 @@ a {
   @include medium {
     padding: 6rem 4rem 1rem;
     img{
-      width: 300px;
-      height: 89px;
+      width: 400px;
+      height: 119px;
       max-width: 100%;
    }
   }
@@ -131,8 +131,8 @@ a {
   @include small {
     padding: 6rem 1rem 1rem;
     img{
-      width: 200px;
-      height: 60px;
+      width: 300px;
+      height: 89px;
       max-width: 100%;
    }
   }
@@ -224,6 +224,8 @@ a {
 
   img {
     max-width: 100%;
+    margin: 0 auto;
+    display: block;
   }
 
   h1,
@@ -321,7 +323,7 @@ a {
     max-width: 100%;
     margin-bottom: 20px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: stretch;
     overflow: hidden;
     transition: .35s;;
