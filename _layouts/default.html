@@ -35,16 +35,6 @@
 
     <main id="content" class="main-content" role="main">
       {{ content }}
-
-      <footer class="site-footer">
-        {% for post in site.posts  limit:site.paginate offset:offset %}
-        {% if post.id == "/2020/07/08/毕业学生" %}
-        <!--修改md文件的标题后，此处也要修改-->
-        &nbsp&nbsp
-        <span class="site-footer-credits">点此查看<a href="{{post.url}}">{{post.title}}</a>.</span>
-        {% endif %}
-        {% endfor %}
-      </footer>
     </main>
   </body>
 </html>
