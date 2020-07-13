@@ -37,13 +37,7 @@
       {{ content }}
 
       <footer class="site-footer">
-        {% for post in site.posts  limit:site.paginate offset:offset %}
-        {% if post.id == "/2020/07/06/首页" %}
-        <!--修改md文件的标题后，此处也要修改-->
-        &nbsp&nbsp
-        <span class="site-footer-credits">点此查看<a href="{{post.url}}">{{post.title}}</a>.</span>
-        {% endif %}
-        {% endfor %}
+        <span class="site-footer-credits"><a href="https://dbhammer.github.io/">回到主页</a></span>
       </footer>
     </main>
   </body>
