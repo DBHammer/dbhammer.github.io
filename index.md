@@ -1,13 +1,12 @@
 ---
-title: Home
+title: DBHammer
 ---
 
-# Your Lab Slogan
+# DBHammer
 
-[Lab Website Template](https://github.com/greenelab/lab-website-template) is an easy-to-use, flexible website template for [labs](https://www.greenelab.com/), with automatic citations, GitHub tag imports, pre-built components, and more.
-Spend less time reinventing the wheel, and more time running your lab.
+实验室主要研究数据库系统实现核心技术，如高冲突事务处理框架、自适应数据分区等；数据库系统质量保证的关键技术，如面向应用的大规模负载仿真、Benchmark等。
 
-{%
+<!-- {%
   include link.html
   type="github"
   icon=""
@@ -22,12 +21,17 @@ Spend less time reinventing the wheel, and more time running your lab.
   text="See the documentation"
   link="https://github.com/greenelab/lab-website-template/wiki"
   style="button"
-%}
+%} -->
 {:.center}
 
-{% include section.html full=true %}
+{% include section.html %}
 
-{% include banner.html image="images/banner.jpg" %}
+{%
+  include figure.html
+  image="images/description.jpg"
+  link="team"
+  width="400px"
+%}
 
 {% include section.html %}
 

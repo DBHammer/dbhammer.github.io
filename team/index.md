@@ -7,30 +7,21 @@ nav:
 
 # <i class="fas fa-users"></i>Team
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+实验室主要研究数据库系统实现核心技术，如高冲突事务处理框架、自适应数据分区等；数据库系统质量保证的关键技术，如面向应用的大规模负载仿真、Benchmark等。
 
 {% include section.html %}
 
 {%
-  include list.html
+  include member-list.html
   data="members"
   component="portrait"
-  filters="role: pi"
+  filters="role: professor"
 %}
 {%
-  include list.html
+  include member-list.html
   data="members"
   component="portrait"
-  filters="role: phd"
-%}
-{%
-  include list.html
-  data="members"
-  component="portrait"
-  filters="role: programmer"
+  filters="role: student"
 %}
 {:.center}
 

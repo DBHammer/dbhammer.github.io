@@ -1,9 +1,9 @@
 ### basic settings
 
 # site properties and page defaults
-title: Lab Website Template
-description: An easy-to-use, flexible website template for labs, with automatic citations, GitHub tag imports, pre-built components, and more.
-logo: images/logo.svg
+title: DBHammer
+description: DBHammer, DaSE, ECNU
+logo: images/dbhammer-logo.png
 header: images/background.jpg
 footer: images/background.jpg
 baseurl: /dbhammer
@@ -12,7 +12,7 @@ baseurl: /dbhammer
 links:
   email: jane.smith@your-lab.com
   google-scholar: Jane Smith
-  github: your-lab
+  github: dbhammer
   twitter: YourLabHandle
   instagram: YourLabHandle
   youtube: YourLabChannel
