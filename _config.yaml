@@ -6,7 +6,7 @@ description: DBHammer, DaSE, ECNU
 logo: images/dbhammer-logo.png
 header: images/background.jpg
 footer: images/background.jpg
-baseurl: /dbhammer
+baseurl: 
 
 # site social media and other links
 links:
