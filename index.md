@@ -35,11 +35,10 @@ title: DBHammer
 
 {% include section.html %}
 
-# Highlights
+<!-- # Highlights -->
 
 {% capture text %}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+DBHammer实验室在高水平期刊/会议上发表多篇论文。
 
 {%
   include link.html
@@ -53,15 +52,14 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
 
 {%
   include feature.html
-  image="images/photo.jpg"
+  image="images/research.jfif"
   link="research"
   title="Our Research"
   text=text
 %}
 
 {% capture text %}
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+DBHammer实验室开发了适合于AP测试、TP测试以及综合性测试的多款工具。
 
 {%
   include link.html
@@ -75,15 +73,15 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 
 {%
   include feature.html
-  image="images/photo.jpg"
+  image="images/tools.png"
   link="resources"
-  title="Our Resources"
+  title="Our Tools"
   flip=true
   text=text
 %}
 
 {% capture text %}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+DBHammer团队有AP、TP等多种研究方向。
 
 {%
   include link.html
@@ -97,11 +95,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {%
   include feature.html
-  image="images/photo.jpg"
+  image="images/team.jfif"
   link="team"
   title="Our Team"
   text=text
 %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+欢迎各位对数据库技术感兴趣的同学加入我们！

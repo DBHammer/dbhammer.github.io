@@ -10,12 +10,9 @@ baseurl:
 
 # site social media and other links
 links:
-  email: jane.smith@your-lab.com
+  email: rzhang@dase.ecnu.edu.cn
   google-scholar: Jane Smith
   github: dbhammer
-  twitter: YourLabHandle
-  instagram: YourLabHandle
-  youtube: YourLabChannel
 
 ### advanced settings
 

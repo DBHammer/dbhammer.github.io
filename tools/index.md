@@ -1,24 +1,32 @@
 ---
 title: Tools
 nav:
-  order: 2
+  order: 1
   tooltip: Software, datasets, and more
 ---
 
 # <i class="fas fa-tools"></i>Tools
 
-实验室主要研究数据库系统实现核心技术，如高冲突事务处理框架、自适应数据分区等；数据库系统质量保证的关键技术，如面向应用的大规模负载仿真、Benchmark等。
+实验室研发了多款数据库测试工具，涉及AP测试、TP测试以及综合性测试等领域。
 
 {% include search-info.html %}
 
 {% include section.html %}
 
-## Featured
+## AP测试
 
-{% include list.html component="card" data="tools" filters="group: featured" %}
+{% include toollist.html component="toolcard" data="tools" filters="group: ap" %}
 
 {% include section.html %}
 
-## More
+## TP测试
 
-{% include list.html component="card" data="tools" filters="group: more" style="small" %}
+{% include toollist.html component="toolcard" data="tools" filters="group: tp" %}
+
+{% include section.html %}
+
+## 综合性测试
+
+{% include toollist.html component="toolcard" data="tools" filters="group: general" %}
+
+{% include section.html %}

@@ -22,9 +22,9 @@ DBHammer实验室属于华东师范大学[数据科学与工程学院](http://da
   include link.html
   type="phone"
   icon=""
-  text="(555) 867-5309"
+  text="021-62235006"
   tooltip=""
-  link="+1-555-867-5309"
+  link="021-62235006"
   style="button"
 %}
 {%
