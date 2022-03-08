@@ -7,7 +7,8 @@ nav:
 
 # <i class="fas fa-tools"></i>Tools
 
-实验室研发了多款数据库测试工具，涉及AP测试、TP测试以及综合性测试等领域。
+实验室研发了多款数据库测试工具，涉及AP测试、TP测试以及综合测试等领域。
+{:.center}
 
 {% include search-info.html %}
 
@@ -25,8 +26,6 @@ nav:
 
 {% include section.html %}
 
-## 综合性测试
+## 综合测试
 
 {% include toollist.html component="toolcard" data="tools" filters="group: general" %}
-
-{% include section.html %}

@@ -8,6 +8,7 @@ nav:
 # <i class="fas fa-envelope"></i>Contact
 
 DBHammer实验室属于华东师范大学[数据科学与工程学院](http://dase.ecnu.edu.cn/)，位于上海市普陀区中山北路3663号。
+{:.center}
 
 {%
   include link.html

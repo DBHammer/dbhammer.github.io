@@ -23,31 +23,20 @@ nav:
   component="portrait"
   filters="role: student"
 %}
-{:.center}
-
-{% include section.html background="images/banner.jpg" dark=true%}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 {% include section.html %}
 
 ## Join
 
-#### Post Dogtoral Researcher
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-- 3+ (dog) years experience managing bone portfolios
-- Strong desire to learn tricks and go on walkies
-- Aptitude to sit and stay
-
-{% include link.html type="external" link="https://google.com/" text="Apply Now" icon="" style="button" %}
+欢迎各位对数据库技术感兴趣的同学加入我们！
 {:.center}
 
-{% include section.html %}
+{% include link.html type="email" link="rzhang@dase.ecnu.edu.cn" text="Apply Now" icon="" style="button" %}
+{:.center}
 
-## Funding
+<!-- {% include section.html %} -->
+
+<!-- ## Funding
 
 Our work is made possible by funding from several organizations.
 {:.center}
@@ -79,4 +68,4 @@ Our work is made possible by funding from several organizations.
   image6="images/photo.jpg"
   link6="https://nasa.gov/"
   tooltip6="Cool Initiative"
-%}
+%} -->
