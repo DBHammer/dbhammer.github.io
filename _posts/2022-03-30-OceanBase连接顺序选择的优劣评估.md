@@ -91,7 +91,8 @@ OceanBase可以利用*EXPLAIN*关键字得到查询的执行计划。
 *   生成简化的查询执行树为：
     
 
-![image](https://oss-emcsprod-public.modb.pro/image/editor/20220309-2b43698f-99d1-470f-a1ce-639be284076b.png)
+![image](/auto-image/picrepo/29da373e-bc69-46c2-8847-8f58a7622ab5.png)
+{:.center}
 
 三、实验设计
 ------
@@ -100,8 +101,7 @@ OceanBase可以利用*EXPLAIN*关键字得到查询的执行计划。
 
 *   实验流程图如下：
 
-![image](https://oss-emcsprod-public.modb.pro/image/editor/20220309-fc6fa38d-ac58-4772-8a4c-51894573a66a.png)
-
+![image](/auto-image/picrepo/d59dfb71-d6ba-420a-aefc-c90cb43a85af.png)
 *   对于每一个查询，我们枚举它所有可能的连接顺序，并利用hint关键字*LEADING*，强制OceanBase以特定连接顺序执行查询。
     
 *   我们得到查询的所有连接顺序及其对应执行时间，从而得到OceanBase所选连接顺序在搜索空间中的排名情况。
@@ -118,8 +118,8 @@ OceanBase可以利用*EXPLAIN*关键字得到查询的执行计划。
         
     *   按照执行时间由小到大将连接顺序排序：
         
-	![image](https://oss-emcsprod-public.modb.pro/image/editor/20220309-5c24a443-5f70-404d-ae23-ed09ddd77c82.png)
-
+	![image](/auto-image/picrepo/248c5296-4519-45dd-9589-4a09673e45be.png)
+    {:.center}
 
 	- 其中OceanBase所选的连接顺序为(A⋈C)⋈B，则其排名为2。
 
@@ -133,23 +133,25 @@ OceanBase可以利用*EXPLAIN*关键字得到查询的执行计划。
     *   在检索系统中，**MRR**值表示正确检索结果值在检索结果中的排名，用来评估检索系统的性能。
         
     *   公式：  
-	![image](https://oss-emcsprod-public.modb.pro/image/editor/20220309-40e30ea7-4e5b-45d5-8bff-d7667afda4c7.png)
-
+    ![image](/auto-image/picrepo/942b2538-92b9-437e-aa63-9f54453e4116.png)
+    {:.center}
      其中，|Q| 是query的个数，*rank<sub>i</sub>* 是对于第*i*个query，OB选择的连接顺序的执行时间在所有连接顺序执行时间中的排列位置（从小到大）。
       	*   举例：
 
-	![image](https://oss-emcsprod-public.modb.pro/image/editor/20220309-d2b9c827-2f9f-4a49-af41-60ec0c34a752.png)  
-    得到 MRR值为：
-	![image](https://oss-emcsprod-public.modb.pro/image/editor/20220309-421f7bab-f79b-4ef9-add8-ca339c31ac02.png)
-
+	![image](/auto-image/picrepo/d6c204d0-542b-4743-8e87-243061e6d0ea.png)  
+    {:.center}
+    得到 MRR值为：  
+    
+	![image](/auto-image/picrepo/5e1e18b1-3263-4916-b1f3-dbe43d07975d.png)
+    {:.center}
 *   **Deviation** 偏差
     
     *   计算优化器所选连接顺序的执行时间与最优执行时间之间的偏差。
         
     *   公式：
         
-	![image](https://oss-emcsprod-public.modb.pro/image/editor/20220309-7dd7dd89-4abd-45da-b184-78146b6db508.png)
-    
+	![image](/auto-image/picrepo/79dceb0f-62b7-4beb-8b4c-092b599fa848.png)    
+    {:.center}
        其中，*T* 表示优化器所选连接顺序的执行时间，*T<sub>b</sub>* 表示枚举的连接顺序搜索空间中最优（最短）的执行时间。
 
 
@@ -160,8 +162,7 @@ OceanBase可以利用*EXPLAIN*关键字得到查询的执行计划。
 
 *   本次实验将OceanBase部署在4台机器上，机器配置如下：
 
-	![image](https://oss-emcsprod-public.modb.pro/image/editor/20220309-8bab0439-0687-4321-b993-e1a85fe2bc45.png)
-
+	![image](/auto-image/picrepo/f39af140-7d93-46c7-b086-4a3abab1715e.png)
 ### 4.2 集群配置
 
 *   OceanBase数据库部署的配置文件如下：
@@ -250,25 +251,22 @@ OceanBase可以利用*EXPLAIN*关键字得到查询的执行计划。
 
 ### 5.1 实验结果
 
-*   下表展示了3~8张表连接时的MRR值。
-    ![image](https://oss-emcsprod-public.modb.pro/image/editor/20220310-777b047d-9f9a-4634-892a-7f824f6b5b4d.png)
-    
+*   下表展示了3~8张表连接时的MRR值。  
+    ![image](/auto-image/picrepo/5d777389-3c34-4d64-b286-7c445ca426d2.png)    
     
     
     同时，我们也在**TiDB**上进行了3 join 与4 join的实验，得到的MRR值分别为0.35与0.22，明显劣于OceanBase。
     
 *   图1 展示了3~8张表连接时的deviation结果，横坐标表示参与连接表的数量，纵坐标表示优化器选择的连接顺序的执行时间与最优执行时间的偏差。
     
-	![image](https://oss-emcsprod-public.modb.pro/image/editor/20220309-c54a7991-022b-4ced-8c43-112ddc8e1098.png)
-    
+	![image](/auto-image/picrepo/46732774-a3a4-46c1-8a84-2a43c128cb1a.png)    
 *   从图1中可以看到，当参与连接表的数量小于等于5时，偏差大部分低于20%。经过计算，我们得到去除异常值后，平均执行时间差低于42毫秒（执行时间差 = OceanBase选择的连接顺序执行时间 - 最优连接顺序执行时间）。
     
 *   我们可以观察到，参与连接的表数目从3增长到6时，MRR值逐渐减少，deviation整体呈现增长趋势，如中位线从0.82%增长到15.35%（增长了17.7倍），均值从6.33%增长到17.89%（增长了1.8倍）。这个结果说明了随着参与连接的表数量增大，OceanBase选择的连接顺序在搜索空间中的排名越来越低，与最优连接顺序的执行时间偏差越来越大，优化器从连接顺序搜索空间中选择出最优连接顺序的性能下降了。
     
 *   当表数量增加到7时，MRR值逐渐增大，deviation整体呈现下降趋势，这是因为我们仅仅从庞大的搜索空间中随机选择100个连接顺序进行评估，如7张表时仅选择了2% (100/5040)的连接顺序，8张表时仅选择了0.25% (100/40320)的连接顺序。我们很有可能并没有随机到最优的连接顺序。为此，我们增加了图2 的实验。
 
-	![image](https://oss-emcsprod-public.modb.pro/image/editor/20220309-69779f69-3fde-4c97-8a4d-230f595ff713.png)
-    
+	![image](/auto-image/picrepo/3a0b91a6-e9eb-41bc-bb9e-9b933656940d.png)    
 *   图2 展示了7张表参与连接时，分别随机选择100个连接顺序（random100）与随机选择200个连接顺序（random200）的deviation结果对比。我们可以看到，当随机的搜索空间增大时，deviation整体呈现增长趋势，中位线从11.29%增长到14.28%（增长了0.3倍），均值从12.53%增长到17.00%（增长了0.4倍）。同时，random200的MRR值为0.25，比random100的MRR值0.34下降了26.47%。这个结果说明了图1 的下降趋势与搜索空间的大小有关，即我们设定的搜索空间大小很大程度上影响了最终结果的准确性。
     
 *   为了得到更精确的结果，更好的评估连接顺序选择，我们将在今后的实验中改进搜索空间的剪枝策略来代替随机选择。
@@ -296,8 +294,7 @@ OceanBase可以利用*EXPLAIN*关键字得到查询的执行计划。
     
     分别执行7次，计算平均执行时间（去除最大最小值）。
     
-	![image](https://oss-emcsprod-public.modb.pro/image/editor/20220309-f9f62977-b5c9-4f3b-bb8b-eef49c0af9f9.png)
-    
+	![image](/auto-image/picrepo/c657df70-d091-40f3-957e-f3f571a046bc.png)    
     两者偏差为**30.43%**，可见该查询的偏差依旧较大。
     
 *   EXPLAIN该查询得到执行计划如下：
@@ -328,11 +325,7 @@ OceanBase可以利用*EXPLAIN*关键字得到查询的执行计划。
     
     *   节点中"[]"内的数字是操作的真实基数（中间结果大小），其中join操作的基数是两表连接后的中间结果大小，scan操作的基数是表经过条件过滤后的中间结果大小。
 
-<div align=center>
-<img src="https://oss-emcsprod-public.modb.pro/image/editor/20220309-5cf8a032-fe95-41c8-90cd-1300c6c267f1.png" alt="Alt pic" style="zoom: 80%;" />
-<img src="https://oss-emcsprod-public.modb.pro/image/editor/20220309-ce2814e9-a24f-4050-b4b1-29b54f3dbced.png" alt="Alt pic" style="zoom: 80%;" />
-</div>
-
+        ![imgalt](/auto-image/picrepo/9ff56d47-7f7c-4771-aa51-ab8254327ab5.png)        ![imgalt](/auto-image/picrepo/8712d716-ebaf-4260-ac6e-66d3fc06854d.png)
 *   我们可以看出，最优连接顺序的join操作的基数更小，或许是优化器对基数的错误估计误导了连接顺序的选择。
     
 
@@ -355,8 +348,7 @@ OceanBase可以利用*EXPLAIN*关键字得到查询的执行计划。
     
     分别执行7次，计算平均执行时间（去除最大最小值）。
 
-	![image](https://oss-emcsprod-public.modb.pro/image/editor/20220309-f5c9c729-b992-49cf-867b-989cbb076222.png)
-    
+	![image](/auto-image/picrepo/90e32a86-06a7-486b-8432-d40ad6d338ae.png)    
     两者偏差为**64.85%**，可见该query的偏差的确较大。
     
 *   EXPLAIN该查询得到执行计划如下：
