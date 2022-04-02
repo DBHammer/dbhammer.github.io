@@ -10,7 +10,7 @@ title: DBHammer
 
 {%
   include figure.html
-  image="images/description.jpg"
+  image="images/description.png"
   link="team"
   width="400px"
 %}
