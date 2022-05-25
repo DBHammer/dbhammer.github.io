@@ -153,8 +153,6 @@ obproxy:
     enable_cluster_checkout: false
     cluster_name: ob209
 ```
-{:.left}
-
 ### 3. BenchmarkSQL修改内容和配置文件
 
 #### 3.1 BenchmarkSQL下载链接
@@ -162,8 +160,6 @@ obproxy:
 ```sql
   https://sourceforge.net/projects/benchmarksql/files/latest/download
 ```
-{:.left}
-
 #### 3.2 BenchmarkSQL修改内容
 
   - 修改benchmark-5.0/src/client/jTPCC.java 文件，增加分布式事务比例的参数化
@@ -413,8 +409,6 @@ obproxy:
 cd benchmark-5.0/run
 ./runDatabaseBuild.sh props.ob
 ```
-{:.left}
-
 ### 2. 导入数据
 
 - 这里采用的是外部load infile方式导入数据库，因为我们导入的数据量比较大，这种方式更加快速。首先，需要将生成的数据文件如customer.csv等移动到rootserver所在的机器上，我们这边放在10.24.14.245(rootserver)上的/data/ob/tpcc_100/目录。此外，schema的创建方式
@@ -431,8 +425,6 @@ obclient -h10.24.14.245 -P2883 -uroot@test -c  -D tpcc_100 -e "load data /*+ par
 obclient -h10.24.14.245 -P2883 -uroot@test -c  -D tpcc_100 -e "load data /*+ parallel(80) */ infile '/data/ob/tpcc_100/order-line.csv' into table bmsql_order_line fields terminated by ',';" 
 obclient -h10.24.14.245 -P2883 -uroot@test -c  -D tpcc_100 -e "load data /*+ parallel(80) */ infile '/data/ob/tpcc_100/customer.csv' into table bmsql_customer fields terminated by ',';" 
 ```
-{:.left}
-
 ### 3. 分布式事务比例实验的运行负载
 
 实验中分别将newOrderDistributedRate设为0.01，0.1，0.2，0.4，0.6，0.8，1 分别代表不同的NewOrder事务的分布式事务比例
@@ -440,8 +432,6 @@ obclient -h10.24.14.245 -P2883 -uroot@test -c  -D tpcc_100 -e "load data /*+ par
 ```sql
 ./runBenchmark.sh probs.ob
 ```
-{:.left}
-
 
 
 ## 六、实验结果展示与分析

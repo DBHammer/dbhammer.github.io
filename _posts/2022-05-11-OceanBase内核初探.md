@@ -26,7 +26,6 @@ OBD提供了方便的创建租户的命令。 在OB比赛的简单场景中，�
 ```sql
 obd cluster tenant create obadvanced --tenant-name mysql
 ```
-{:.left}
 
 这个命令创建了一个名为mysql 的租户，并为它分配了剩下的所有系统资源，没有设置密码。
 
@@ -35,7 +34,6 @@ obd cluster tenant create obadvanced --tenant-name mysql
 ```sql
 mysql -uroot@mysql -h127.0.0.1 -P 2881 -c
 ```
-{:.left}
 
 输入指令后即可看到数据库连接界面：
 
@@ -107,7 +105,6 @@ mysql -uroot@mysql -h127.0.0.1 -P 2881 -c
     ]
 }
 ```
-{:.left}
 
 > 💡 如果遇到下面的问题 `Authentication is needed to run `/usr/bin/gdb' as the super user` 可以输入指令**echo 0| sudo tee /proc/sys/kernel/yama/ptrace_scope**调整权限解决
 
@@ -126,7 +123,6 @@ set global ob_trx_idle_timeout=120000000;
 set global ob_trx_timeout=36000000000;
 set global ob_query_timeout=3600000000
 ```
-{:.left}
 
 比如，我们想先观察一下当前的场景是否开启了batch操作，即可在ob_nested_loop_join_op.cpp：read_left_operate函数里打上断点（也可以右键编辑条件断点）。
 
@@ -137,7 +133,6 @@ set global ob_query_timeout=3600000000
 ```sql
 select /*+ordered use_nl(A,B)*/ * from t1 A, t2 B where A.c1 >= -100 and A.c1 < 200 and A.c2 = B.c2;
 ```
-{:.left}
 
 等待片刻即可看到如下所示的debug界面：具体有四大信息栏值得关注：
 
@@ -244,7 +239,6 @@ select /*+ordered use_nl(A,B)*/ * from t1 A, t2 B where A.c1 >= -100 and A.c1 < 
                  af7eeaf finish+0x0 (/data/ob-advanced/bin/observer.another-commit-915609a0-25_20:01:00-debug)
         ccccccccccccccf4 [unknown] ([unknown])
 ```
-{:.left}
 
 4. 执行`FlameGraph/stackcollapse-perf.pl perf.unfold &> perf.folded` ，接着将perf.unfold中的符号进行折叠，组织成火焰图所需的统一格式
 5. 执行`FlameGraph/flamegraph.pl perf.folded > perf.svg`，最后生成svg格式的火焰图
@@ -265,7 +259,6 @@ perf script -i perf.data &> perf.unfold
 FlameGraph/stackcollapse-perf.pl perf.unfold &> perf.folded
 FlameGraph/flamegraph.pl perf.folded > perf.svg
 ```
-{:.left}
 
 当然，尽管火焰图的可视化对于性能优化debug的确大有裨益，但原生的perf操作对数据的统计信息和操控粒度会更加丰富和深入，二者互相配合，才能相得益彰。
 
@@ -306,7 +299,6 @@ explain extended select /*+ordered use_nl(A,B)*/ * from t1 A, t2 B where A.c1 >=
 2 - is_index_back=true
 ----
 ```
-{:.left}
 
 ### 背景
 
@@ -334,7 +326,6 @@ ObTableScanOp.inner_get_next_row->ObTableScanIterator.get_next_row->ObTableScanR
 ObTableScanStoreRowIterator.get_next_row->ObMultipleMerge.get_next_row->ObMultipleScanMerge.inner_get_next_row->...
 ObStoreRowIterator.get_next_row_ext->...
 ```
-{:.left}
 
 **rescan：**rescan发生在左表的上一行针对右表已经完成了JOIN的情况，这个时候OB并不会直接关闭右表的扫描，而是通过rescan重置右表的扫描状态，之后在左表扫描下一行时可以直接开始右表的扫描，而不用重新打开。具体来说，该模块涉及到的函数调用关系为：
 
@@ -345,7 +336,6 @@ ObTableScanOp.rescan->ObTableScanOp.rt_rescan->ObTableScanOp.rescan_after_adding
 ObTableScanIterIterator.rescan->ObTableScanStoreRowIterator.rescan->
 ...
 ```
-{:.left}
 
 **右表scan回表：**在这个场景中就是先通过B.c2列查询索引t2_i1，获取到rowkey后再查询t2的过程，该模块涉及到的函数调用关系为：
 
@@ -356,7 +346,6 @@ ObTableScanOp.inner_get_next_row->ObTableScanIterator.get_next_row->ObTableScanR
 ObTableScanStoreRowIterator.get_next_row->ObIndexMerge.get_next_row->
 ...
 ```
-{:.left}
 
 ### 存储层查询流程
 
@@ -378,7 +367,6 @@ store row iter
 micro scanner/getter
 -- 微块迭代器
 ```
-{:.left}
 
 所以理论上对于同一个查询中，同一个memtable/sstable只需要1个iterator就可以了。尽管对NLJ rescan场景需要对右表进行多次遍历，但在理想情况下还是可以只用这1个iterator完成多次遍历，不过OB目前的版本并没有实现这一点。
 
@@ -399,7 +387,6 @@ get_next_row->..
 ObIndexMerge.get_next_row->ObMultipleMerge.get_next_row->ObMultipleScanMerge.inner_get_next_row->...
 ->ObMultipleMerge.get_next_row->ObMultipleGetMerge.inner_get_next_row->...
 ```
-{:.left}
 
 ### 优化方向
 

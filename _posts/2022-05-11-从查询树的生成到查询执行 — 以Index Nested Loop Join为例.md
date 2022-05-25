@@ -24,8 +24,6 @@ member: 胡梓锐
      logging
  }
 ```
-{:.left}
-
 这样的代码实际上相当于顺序执行func_1、func_2、func_3，并在函数执行失败/成功的时候输出日志信息，不继续执行剩下的函数。为了后续叙述的简洁，对于类似的代码，我们将省略函数执行失败的异常处理。
 
 ## 查询树的生成：以Index Nested Loop Join为例
@@ -93,8 +91,6 @@ join算子的生成主要依赖于`ObStaticEngineCG::generate_join_spec(ObLogJoi
    return ret;
  }
 ```
-{:.left}
-
 `generate_join_spec()` 对于NLJ最为特别的处理就是判断能否使用batch NLJ，这也是我们所关注的第一个优化点。通过debug我们知道，由于比赛中的查询语句的join条件含有两个字段，这个函数不会选择使用batch NLJ。因此，我们通过扩展OB对batch NLJ的支持和修改判定条件，使得`generate_join_spec()`能将比赛中的查询转化为batch NLJ的物理执行计划。
 
 ## 查询执行：以Index Nested Loop Join为例
@@ -124,8 +120,6 @@ iter_end2(no)->right_end->output_product
 output_product(yes)->end
 output_product(no)->left_op
 ```
-{:.left}
-
 其代码抽象如下：
 
 ```cpp
@@ -158,8 +152,6 @@ int ObNestedLoopJoinOp::inner_get_next_row()
   return ret;
 }
 ```
-{:.left}
-
 其中一共包含6个函数，分别是左右节点的`operate(),func_going(),func_end()`函数。其中，`operate()`函数负责从对应子节点获取一行数据；`func_going()`函数负责判断是否需要切换为另一个节点的函数，并做预处理，如`left_func_going()`会根据左节点获取的数据，准备扫描右节点所需要的参数（值得一提的是，因为实际上这个函数会深入底层更新右节点的迭代器，所以开销是很大的），`right_func_going()`负责判断是否连接成功；`func_end()`判断是否得到了需要的结果，并修改`inner_get_next_row()`的返回值。
 
 在这6个函数中，`func_going()`和`func_end()`的函数逻辑都比较简单，我们不再在这里赘述。以下主要介绍左右节点的`operate()`函数，这也是我们优化batch_nlj所主要关心的函数。
@@ -182,8 +174,6 @@ int ObNestedLoopJoinOp::inner_get_next_row()
  oceanbase::sql::ObJoinOp::get_next_left_row()
  oceanbase::sql::ObBasicNestedLoopJoin::get_next_left_row()
 ```
-{:.left}
-
 通过检查代码，我们发现每层调用的逻辑都非常清晰，主要是调用下层接口以及异常处理，因此不再赘述。我们主要讨论使用batch NLJ时的执行逻辑。
 
 当使用batch NLJ时，join算子会先取出左节点中的一批数据，然后再逐个与右节点进行匹配。这种方式可以更好地利用数据的局部性，提高对磁盘数据的访问效率。为了实现批量获取数据，同时又不改变程序其他部分的逻辑，使用batch NLJ时需要在第一次调用时连续调用多次算子的`next_row()`方法并存储对应的数据，在后续调用时直接从存储的数据中导出对应数据。其代码抽象如下：
@@ -241,8 +231,6 @@ int ObNestedLoopJoinOp::inner_get_next_row()
    return ret;
  }
 ```
-{:.left}
-
 可以注意到，在执行过程中，`group_read_left_operate()`会存储每一行数据对应的右节点访问参数。更具体来说，是这一行数据对应第一个join条件字段的值。因此，如果存在多于一个join字段，剩余的字段值不会被存储，这导致使用batch NLJ时无法正确根据join条件过滤结果，这也是OB原本只限制在join条件唯一时使用batch NLJ的原因。为了使用batch NLJ，我们对存储结构进行扩展，使它能存储剩余条件字段的值，从而保证对于比赛的查询语句也能有效且正确使用batch NLJ。
 
 ### J**oin的右节点实现：index merge**
@@ -301,8 +289,6 @@ int ObNestedLoopJoinOp::inner_get_next_row()
    return ret;
  }
 ```
-{:.left}
-
 ## 总结：如何从代码结构上对OB的源码进行分析？
 
 或许很多人会像我们一样，在一开始看到源码的时候不知所措。毕竟，OB作为一个非常庞大的项目，很难快速找到入手的部分。根据我们的经验，在这种情况下，一般可以先使用perf来快速找到最耗时的执行部分，这部分代码往往与核心逻辑紧密相关，如我们上述展示的部分代码。在此基础上，结合gdb debug，可以获取到执行过程中的主要调用栈。往往我们会发现调用栈很深，但是其中大部分的代码都不会涉及到核心逻辑，不需要逐个深入地研究。因此，再通过OB的代码自注释和基本的数据库知识可以有效地定位到所想要修改的部分。

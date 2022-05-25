@@ -24,9 +24,10 @@ code.highlighter-rouge {
 div.highlighter-rouge {
   margin: 40px 0;
   @include trim-v-margins;
-  background: $gray-500;
+  background: $gray-900;
   overflow-x: auto;
   overflow-y: auto;
+  text-align: left;
 
   pre.highlight {
     display: inline-block;
