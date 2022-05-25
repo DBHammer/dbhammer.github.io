@@ -15,7 +15,7 @@ member: 胡梓锐
 
 ### 引言
 
-本文以在VSCode编辑器上OceanBase 3.1版本为例，进行Debug的教学，本地OB搭建的教程可以参考[使用源码构建 OceanBase 数据库](https://open.oceanbase.com/docs/community/oceanbase-database/V3.1.0/get-the-oceanbase-database-by-using-source-code) 和 [使用OBD部署OceanBase](https://open.oceanbase.com/docs/community/oceanbase-database/V3.1.0/deploy-the-oceanbase-database-by-using-obd)。需要注意的是OBD目前只有rpm包，在Ubuntu环境下的具体安装方法可见[Install RPM packages on Ubuntu | Linuxize](https://linuxize.com/post/install-rpm-packages-on-ubuntu/)。
+本文以在VSCode编辑器上OceanBase 3.1版本为例，进行Debug的教学，本地OB搭建的教程可以参考[使用源码构建 OceanBase 数据库](https://open.oceanbase.com/docs/community/oceanbase-database/V3.1.0/get-the-oceanbase-database-by-using-source-code) 和 [使用OBD部署OceanBase](https://open.oceanbase.com/docs/community/oceanbase-database/V3.1.0/deploy-the-oceanbase-database-by-using-obd)。需要注意的是OBD目前只有rpm包，在Ubuntu环境下的具体安装方法可见[Install RPM packages on Ubuntu \| Linuxize](https://linuxize.com/post/install-rpm-packages-on-ubuntu/)。
 
 ### 步骤一：创建租户
 
@@ -106,7 +106,7 @@ mysql -uroot@mysql -h127.0.0.1 -P 2881 -c
 }
 ```
 
-> 💡 如果遇到下面的问题 `Authentication is needed to run `/usr/bin/gdb' as the super user` 可以输入指令**echo 0| sudo tee /proc/sys/kernel/yama/ptrace_scope**调整权限解决
+> 💡 如果遇到下面的问题 `Authentication is needed to run `/usr/bin/gdb' as the super user` 可以输入指令**echo 0\| sudo tee /proc/sys/kernel/yama/ptrace_scope**调整权限解决
 
 最终点击左上角的调试按钮，等待一段时间后，即可看到完整的调试界面，如下图所示：
 
