@@ -15,12 +15,14 @@ nav:
   include member-list.html
   data="members"
   component="portrait"
+  style="small"
   filters="role: professor"
 %}
 {%
   include member-list.html
   data="members"
   component="portrait"
+  style="small"
   filters="role: student"
 %}
 
