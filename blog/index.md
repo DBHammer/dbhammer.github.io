@@ -1,5 +1,5 @@
 ---
-title: Blog
+title: 博客
 nav:
   order: 2
   tooltip: Musings and miscellany

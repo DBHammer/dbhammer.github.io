@@ -24,7 +24,7 @@ DBHammer实验室开发了适合于AP测试、TP测试以及综合性测试的�
 {%
   include link.html
   link="tools"
-  text="Browse our tools"
+  text="使用我们的工具"
   icon="fas fa-arrow-right"
 %}
 {:.center}
@@ -34,7 +34,7 @@ DBHammer实验室开发了适合于AP测试、TP测试以及综合性测试的�
   include feature.html
   image="images/tools.png"
   link="resources"
-  title="Our Tools"
+  title="项目"
   text=text
 %}
 
@@ -46,7 +46,7 @@ DBHammer实验室在高水平期刊/会议上发表多篇论文。
 {%
   include link.html
   link="research"
-  text="See what we've published"
+  text="浏览我们的论文"
   icon="fas fa-arrow-right"
 %}
 {:.center}
@@ -56,7 +56,7 @@ DBHammer实验室在高水平期刊/会议上发表多篇论文。
   include feature.html
   image="images/research.jfif"
   link="research"
-  title="Our Research"
+  title="论文"
   flip=true
   text=text
 %}
@@ -68,7 +68,7 @@ DBHammer团队有AP、TP等多个研究方向。
 {%
   include link.html
   link="team"
-  text="Meet our team"
+  text="了解我们的团队"
   icon="fas fa-arrow-right"
 %}
 {:.center}
@@ -77,6 +77,6 @@ DBHammer团队有AP、TP等多个研究方向。
   include feature.html
   image="images/team.jfif"
   link="team"
-  title="Our Team"
+  title="团队"
   text=text
 %}

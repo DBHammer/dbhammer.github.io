@@ -1,5 +1,5 @@
 ---
-title: Tools
+title: 项目
 nav:
   order: 1
   tooltip: Software, datasets, and more

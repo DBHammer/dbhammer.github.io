@@ -4,15 +4,15 @@
 title: DBHammer
 description: DBHammer, DaSE, ECNU
 logo: images/dbhammer-logo.png
-header: images/background.jpg
-footer: images/background.jpg
+# header: images/background.jpg
+# footer: images/background.jpg
 baseurl: 
 
 # site social media and other links
 links:
   email: rzhang@dase.ecnu.edu.cn
-  google-scholar: Jane Smith
   github: dbhammer
+  phone: 021-62235006
 
 ### advanced settings
 

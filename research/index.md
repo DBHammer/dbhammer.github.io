@@ -1,5 +1,5 @@
 ---
-title: Research
+title: 论文
 nav:
   order: 3
   tooltip: Published works
