@@ -37,7 +37,7 @@ mysql -uroot@mysql -h127.0.0.1 -P 2881 -c
 
 输入指令后即可看到数据库连接界面：
 
-![image-20220502160801229](/auto-image/picrepomanual/image-20220502160801229.png)
+![image-20220502160801229](/auto-image/picrepo/eb7643e3-1f60-451d-9dd7-ed255596ec32.png)
 
 ### 步骤二：配置launch.json
 
@@ -110,7 +110,7 @@ mysql -uroot@mysql -h127.0.0.1 -P 2881 -c
 
 最终点击左上角的调试按钮，等待一段时间后，即可看到完整的调试界面，如下图所示：
 
-![image-20220502160910433](/auto-image/picrepomanual/image-20220502160910433.png)
+![image-20220502160910433](/auto-image/picrepo/25aa13c8-b25b-4170-a65c-6f8425fba916.png)
 
 ### 步骤三：增加Breakpoint和所需观测变量
 
@@ -126,7 +126,7 @@ set global ob_query_timeout=3600000000
 
 比如，我们想先观察一下当前的场景是否开启了batch操作，即可在ob_nested_loop_join_op.cpp：read_left_operate函数里打上断点（也可以右键编辑条件断点）。
 
-![image-20220502160922103](/auto-image/picrepomanual/image-20220502160922103.png)
+![image-20220502160922103](/auto-image/picrepo/dbf00cc3-ae93-4fcc-b467-392e618194d0.png)
 
 接着我们在命令行中输入负载样例：
 
@@ -141,7 +141,7 @@ select /*+ordered use_nl(A,B)*/ * from t1 A, t2 B where A.c1 >= -100 and A.c1 < 
 3. 堆栈信息栏：在此可以观测到当前程序执行期间堆栈的上下文调用信息，便以快速把握代码的整体调用结构；
 4. 监视栏：由于变量栏里的很多变量都是指针，我们对其进行观测时只能看到变量的地址信息。那么我们在监视栏一方面可以执行基本的类型转换，取出指针指向的具体值信息，另一方面也可以一直保留某些需要持续观测的变量。
 
-![image-20220502160930579](/auto-image/picrepomanual/image-20220502160930579.png)
+![image-20220502160930579](/auto-image/picrepo/5f4a063e-70b7-4269-96cd-6f691a8d9a44.png)
 
 以上便是对OceanBase的debug调试方法的全部介绍。
 
@@ -153,11 +153,11 @@ select /*+ordered use_nl(A,B)*/ * from t1 A, t2 B where A.c1 >= -100 and A.c1 < 
 
 火焰图由性能优化大师Brendan Gregg发明，以图像的形式形象地展示了程序执行时的调用堆栈信息，从底向上展示函数的执行比例，便于技术人员从中把握可能的性能瓶颈。因其颜色以红黄橙等暖色为主，像是跳动的火焰，故称Flame Graph，下图为OceanBase v3.1的整体火焰图。
 
-![image-20220502160938777](/auto-image/picrepomanual/image-20220502160938777.png)
+![image-20220502160938777](/auto-image/picrepo/6c9c15eb-d179-41fc-8904-5eeef2eb8e78.png)
 
 悬浮其上便能看到某个函数具体的执行比例：
 
-![image-20220502160946520](/auto-image/picrepomanual/image-20220502160946520.png)
+![image-20220502160946520](/auto-image/picrepo/6fda2122-99c1-4d04-b57b-ecc4726a54a0.png)
 
 关于火焰图相关的介绍文档和视频有很多，我们在此就不再赘述了，仅在下面作一个简要的概括，更详细的介绍可参见文章底部提供的链接。
 
@@ -169,7 +169,7 @@ select /*+ordered use_nl(A,B)*/ * from t1 A, t2 B where A.c1 >= -100 and A.c1 < 
 - 横轴格子的宽度代表其在采样中出现频率，其宽度与实际在堆栈中执行的时间长成正比，因此如果一个格子的宽度越大，说明它是瓶颈原因的可能性就越大。
 - 火焰图格子的颜色是随机的暖色调，其颜色深浅并无具体实义，只是单纯为了方便区分各个调用信息。
 
-![image-20220502160958727](/auto-image/picrepomanual/image-20220502160958727.png)
+![image-20220502160958727](/auto-image/picrepo/bd4fa662-a0a6-4c22-86cb-27c2392d2995.png)
 
 以Brendan Gregg所给示意图来说：
 
@@ -264,15 +264,15 @@ FlameGraph/flamegraph.pl perf.folded > perf.svg
 
 比如我们在步骤一统计完perf.data信息后，可以直接输入perf report查看命令行内的树状信息，如下图所示：
 
-![image-20220502161010627](/auto-image/picrepomanual/image-20220502161010627.png)
+![image-20220502161010627](/auto-image/picrepo/7ba1f235-7d27-4214-b0e3-730c7c8b90b1.png)
 
 我们输入/group_read_left_operate快速搜索定位到我们所需要的函数：
 
-![image-20220502161019748](/auto-image/picrepomanual/image-20220502161019748.png)
+![image-20220502161019748](/auto-image/picrepo/0ed6e010-94ea-484e-871a-a33aa1bd95a3.png)
 
 接着按下a，即可展开具体的堆栈信息，且以汇编的形式陈列，这便可以帮助我们确定某些优化是否真正起到了作用，比如循环展开（Loop Unrolling），可能我们需要通过汇编才能真正确定其是否优化到了我们预期的效果。
 
-![image-20220502161026394](/auto-image/picrepomanual/image-20220502161026394.png)
+![image-20220502161026394](/auto-image/picrepo/438fb9f6-ada8-4371-9da8-1819bf13965f.png)
 
 工欲善其事，必先利其器，有了如上如此方便快捷的调试方法和性能分析利器火焰图，接下来我们便需要开始着手思考赛题了。
 
@@ -390,24 +390,24 @@ ObIndexMerge.get_next_row->ObMultipleMerge.get_next_row->ObMultipleScanMerge.inn
 
 ### 优化方向
 
-![image-20220502161042457](/auto-image/picrepomanual/image-20220502161042457.png)
+![image-20220502161042457](/auto-image/picrepo/6fa0542d-9417-4274-8dac-386420371303.png)
 
 不难从OB的NLJ实现中和火焰图的占比上看出rescan和右表scan回表对性能影响比较大，我们以rescan为例分析当前的实现和可以改进的方向。
 
 首先针对rescan，它的作用是使右表多次的扫描可以尽量复用对象，在如下代码中可以看到rescan释放和保留(重置)了哪些对象：
 
-![image-20220502161050205](/auto-image/picrepomanual/image-20220502161050205.png)
+![image-20220502161050205](/auto-image/picrepo/fa53eaa5-587e-4b79-8ad8-69f548effc54.png)
 
-![image-20220502161106412](/auto-image/picrepomanual/image-20220502161106412.png)
+![image-20220502161106412](/auto-image/picrepo/4acdae4b-aa5d-4fc7-92f9-13c4edffa858.png)
 
 - rescan调用了reuse_row_iters，意图重用这个iter对象，但是在其内部实现，还是调用了~ObStoreRowIterator，经过继承关系（ObSSTableRowIterator→ObISSTableRowIterator→ObSSTableRowIterator）最终通过ObSSTableRowIterator析构掉了这个iter对象，并清空了iters数组，实际并没有起到复用的效果。
 - 而现在的实现实际上是在open_iter中调用了construct_iters，接着再调用scan函数进行iter的初始化和重新分配，其调用栈信息如下火焰图所示：
 
-![image-20220502161117726](/auto-image/picrepomanual/image-20220502161117726.png)
+![image-20220502161117726](/auto-image/picrepo/8a897d27-6049-42c0-a176-690e3c344692.png)
 
 同时在scan函数中也会调用init进而通过inner_open函数进行实际的iter分配，最后设置row_iter的值。
 
-![image-20220502161125114](/auto-image/picrepomanual/image-20220502161125114.png)
+![image-20220502161125114](/auto-image/picrepo/bb357b7d-b7bc-4507-ae06-c204e5a120dc.png)
 
 所以对于多次扫描实际使用的都是sstable iter对象，这里直接的改进方向是，rescan中不要析构掉和清理iters数组，然后保持iters在整个查询(多次rescan)一直有效。
 
