@@ -5,7 +5,7 @@ nav:
   tooltip: Software, datasets, and more
 ---
 
-# <i class="fas fa-tools"></i>Tools
+# <i class="fas fa-tools"></i>项目
 
 DBHammer实验室研发了多款支持数据库系统评测的工具，包括：  
 

@@ -5,7 +5,7 @@ nav:
   tooltip: Musings and miscellany
 ---
 
-# <i class="fas fa-feather-alt"></i>Blog
+# <i class="fas fa-feather-alt"></i>博客
 
 {% include section.html %}
 
