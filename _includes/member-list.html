@@ -24,21 +24,13 @@
   {%- endif -%}
 {%- endfor -%}
 
-{%- assign years = data | group_by_exp: "d", "d.date | date: '%Y'" | sort: "name" -%}
+{%- assign sorted_data = data | sort: "name" -%}
 
-{%- for year in years -%}
-
-{%- assign items = year.items -%}
-
-{%- if years.size > 1 -%}
-  <h3 id="{{ year.name }}">{{ year.name }}</h3>
-  {%- assign items = items | sort: "date" | reverse -%}
-{%- endif -%}
-
-{%- for d in items -%}
+{%- for d in sorted_data -%}
 
   {%- assign link = d.link | default: d.url -%}
   {%- assign style = d.style | default: include.style -%}
+  {%- assign description = d.date | date: "%Y" | append: "级" -%}
 
   {%-
     include {{ component }}
@@ -46,7 +38,7 @@
     caption=d.caption
     content=d.content
     date=d.date
-    description=d.description
+    description=description
     extra-links=d.extra-links
     height=d.height
     icon=d.icon
@@ -66,7 +58,5 @@
     url=d.url
     width=d.width
   -%}
-
-{%- endfor -%}
 
 {%- endfor -%}

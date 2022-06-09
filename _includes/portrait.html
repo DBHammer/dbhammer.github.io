@@ -15,7 +15,7 @@
   {%- endif -%}
 {%- endfor -%}
 
-{%- assign url = member.url | default: "" -%}
+{%- assign url = include.url | default: "" -%}
 
 {::nomarkdown}
 <a {% if url %}href="{{ url | relative_url }}"{% endif %} class="portrait" style="--width: {{ width }}px">
@@ -44,7 +44,7 @@
     </span>
   {%- endif -%}
 
-  {%- assign description = member.description | default: "" -%}
+  {%- assign description = member.description | default: include.description | default: "" -%}
   {%- if description -%}
     <span class="portrait_description">
       {{ description }}

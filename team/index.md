@@ -1,15 +1,15 @@
 ---
 title: 成员
 nav:
-  order: 4
+  order: 5
   tooltip: About our team
 ---
 
 # <i class="fas fa-users"></i>成员
 
-实验室主要研究数据库系统实现核心技术，如高冲突事务处理框架、自适应数据分区等；数据库系统质量保证的关键技术，如面向应用的大规模负载仿真、Benchmark等。
-
 {% include section.html %}
+
+## 教师
 
 {%
   include member-list.html
@@ -18,12 +18,35 @@ nav:
   style="small"
   filters="role: professor"
 %}
+
+## 博士研究生
+
 {%
   include member-list.html
   data="members"
   component="portrait"
   style="small"
-  filters="role: student"
+  filters="role: phd"
+%}
+
+## 硕士研究生
+
+{%
+  include member-list.html
+  data="members"
+  component="portrait"
+  style="small"
+  filters="role: post"
+%}
+
+## 毕业生
+
+{%
+  include member-list.html
+  data="members"
+  component="portrait"
+  style="small"
+  filters="role: graduated"
 %}
 
 {% include section.html %}
@@ -33,7 +56,7 @@ nav:
 欢迎各位对数据库技术感兴趣的同学加入我们！
 {:.center}
 
-{% include link.html type="email" link="rzhang@dase.ecnu.edu.cn" text="Apply Now" icon="" style="button" %}
+{% include link.html type="email" link="rzhang@dase.ecnu.edu.cn" text="联系我们" icon="" style="button" %}
 {:.center}
 
 <!-- {% include section.html %} -->
