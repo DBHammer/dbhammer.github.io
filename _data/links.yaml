@@ -14,31 +14,31 @@ external:
 
 home-page:
   icon: fas fa-home
-  text: Home Page
+  text: 主页
   tooltip: Home page
   link: $LINK
 
 email:
   icon: fas fa-envelope
-  text: Email
+  text: 邮箱
   tooltip: Email
   link: mailto:$LINK
 
 phone:
   icon: fas fa-phone
-  text: Phone Number
+  text: 电话
   tooltip: Phone number
   link: tel:$LINK
 
 address:
   icon: fas fa-map-marked-alt
-  text: Address
+  text: 地址
   tooltip: Address
   link: $LINK
 
 search:
   icon: fas fa-search
-  text: Search
+  text: 搜索
   tooltip: Search
   link: $LINK
 

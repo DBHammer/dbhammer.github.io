@@ -1,11 +1,17 @@
 # GENERATED AUTOMATICALLY, DO NOT EDIT
 
-- id: url:https://ieeexplore.ieee.org/document/9720100
+- id: doi:10.1109/TKDE.2022.3153651
   title: A Scalable Query-Aware Enormous Database Generator for Database Evaluation
-  authors: []
+  authors:
+  - Qingshuai Wang
+  - Yuming Li
+  - Rong Zhang
+  - Ke Shu
+  - Zhenjie Zhang
+  - Aoying Zhou
   publisher: IEEE Transactions on Knowledge and Data Engineering
   date: '2017-01-01'
-  link: https://ieeexplore.ieee.org/document/9720100
+  link: https://doi.org/gppmbf
   image: /illustration/paper.touchstone.2.png
   extra-links:
   - type: source
@@ -30,3 +36,35 @@
   - type: source
     link: https://github.com/DBHammer/Touchstone
   date: '2018-01-01'
+- id: doi:10.1016/j.tbench.2022.100031
+  title: Are current benchmarks adequate to evaluate distributed transactional databases?
+  authors:
+  - Luyi Qu
+  - Qingshuai Wang
+  - Ting Chen
+  - Keqiang Li
+  - Rong Zhang
+  - Xuan Zhou
+  - Quanqing Xu
+  - Zhifeng Yang
+  - Chuanhui Yang
+  - Weining Qian
+  - Aoying Zhou
+  publisher: BenchCouncil Transactions on Benchmarks, Standards and Evaluations
+  date: '2022-03-01'
+  link: https://doi.org/gqb25r
+  image: /illustration/AreCurrentBenchmark.jpg
+  extra-links: null
+- id: doi:10.48550/arXiv.1912.07172
+  title: 'Lauca: Generating Application-Oriented Synthetic Workloads'
+  authors:
+  - Yuming Li
+  - Rong Zhang
+  - Yuchen Li
+  - Ke Shu
+  - Shuyan Zhang
+  - Aoying Zhou
+  publisher: arXiv
+  date: '2019-01-01'
+  link: https://doi.org/gqb26g
+  image: /illustration/lauca.png

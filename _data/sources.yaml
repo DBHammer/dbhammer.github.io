@@ -1,4 +1,4 @@
-- id: url:https://ieeexplore.ieee.org/document/9720100
+- id: doi:10.1109/TKDE.2022.3153651
   title: A Scalable Query-Aware Enormous Database Generator for Database Evaluation
   publisher: IEEE Transactions on Knowledge and Data Engineering
   image: /illustration/paper.touchstone.2.png
@@ -20,3 +20,10 @@
   extra-links:
     - type: source
       link: https://github.com/DBHammer/Touchstone
+
+- id: doi:10.1016/j.tbench.2022.100031
+  image: /illustration/AreCurrentBenchmark.jpg
+  extra-links:
+
+- id: doi:10.48550/arXiv.1912.07172
+  image: /illustration/lauca.png
