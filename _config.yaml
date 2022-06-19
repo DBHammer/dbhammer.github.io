@@ -46,6 +46,8 @@ defaults:
 collections:
   members:
     output: true
+  news:
+    output: false
 
 # sass settings
 sass:
