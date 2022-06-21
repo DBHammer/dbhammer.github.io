@@ -2,7 +2,7 @@
   title: A Scalable Query-Aware Enormous Database Generator for Database Evaluation
   publisher: IEEE Transactions on Knowledge and Data Engineering
   image: /illustration/paper.touchstone.2.png
-  date: 2017-1-1
+  date: '2022-01-01'
   extra-links:
     - type: source
       link: https://github.com/DBHammer/Touchstone
@@ -14,7 +14,6 @@
 - id: url:https://www.usenix.org/conference/atc18/presentation/li-yuming
   title: 'Touchstone: Generating Enormous Query-Aware Test Databases'
   publisher: 2018 USENIX Annual Technical Conference (USENIX ATC 18)
-  date: 2018-1-1
   image: /illustration/paper.touchstone.1.png
   repo: DBHammer/Touchstone
   extra-links:

@@ -2,17 +2,9 @@
 
 - id: doi:10.1109/TKDE.2022.3153651
   title: A Scalable Query-Aware Enormous Database Generator for Database Evaluation
-  authors:
-  - Qingshuai Wang
-  - Yuming Li
-  - Rong Zhang
-  - Ke Shu
-  - Zhenjie Zhang
-  - Aoying Zhou
   publisher: IEEE Transactions on Knowledge and Data Engineering
-  date: '2017-01-01'
-  link: https://doi.org/gppmbf
   image: /illustration/paper.touchstone.2.png
+  date: '2022-01-01'
   extra-links:
   - type: source
     link: https://github.com/DBHammer/Touchstone
@@ -29,13 +21,13 @@
   - Zhenjie Zhang
   - Aoying Zhou
   publisher: 2018 USENIX Annual Technical Conference (USENIX ATC 18)
+  date: '2018-01-01'
   link: https://www.usenix.org/conference/atc18/presentation/li-yuming
   image: /illustration/paper.touchstone.1.png
   repo: DBHammer/Touchstone
   extra-links:
   - type: source
     link: https://github.com/DBHammer/Touchstone
-  date: '2018-01-01'
 - id: doi:10.1016/j.tbench.2022.100031
   title: Are current benchmarks adequate to evaluate distributed transactional databases?
   authors:
