@@ -13,7 +13,7 @@
   {% assign url = post.url | default: "" %}
   {% assign title = post.title | default: "" %}
   <p>
-    <a href="{{ url | relative_url }}">{{ title }}</a>
+    <a class="text-lg" href="{{ url | relative_url }}">{{ title }}</a>
   </p>
 
   {%

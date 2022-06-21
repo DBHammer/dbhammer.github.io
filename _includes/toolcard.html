@@ -24,7 +24,7 @@
   </{{ tag }}> -->
 
   {%- if include.title -%}
-    <{{ tag }} href="{{ include.link | relative_url }}" {% if include.tooltip %}data-tooltip="{{ include.tooltip }}"{% endif %} class="card_title">
+    <{{ tag }} class="text-lg font-bold" href="{{ include.link | relative_url }}" {% if include.tooltip %}data-tooltip="{{ include.tooltip }}"{% endif %} class="card_title">
       {{- include.title -}}
     </{{ tag }}>
   {%- endif -%}
