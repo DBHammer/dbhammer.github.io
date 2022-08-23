@@ -2,9 +2,17 @@
 
 - id: doi:10.1109/TKDE.2022.3153651
   title: A Scalable Query-Aware Enormous Database Generator for Database Evaluation
+  authors:
+  - Qingshuai Wang
+  - Yuming Li
+  - Rong Zhang
+  - Ke Shu
+  - Zhenjie Zhang
+  - Aoying Zhou
   publisher: IEEE Transactions on Knowledge and Data Engineering
-  image: /illustration/paper.touchstone.2.png
   date: '2022-01-01'
+  link: https://doi.org/gppmbf
+  image: /illustration/paper.touchstone.2.png
   extra-links:
   - type: source
     link: https://github.com/DBHammer/Touchstone
@@ -60,3 +68,763 @@
   date: '2019-01-01'
   link: https://doi.org/gqb26g
   image: /illustration/lauca.png
+- id: doi:10.1007/s11704-020-0248-x
+  title: A comprehensive study on fault tolerance in stream processing systems
+  authors:
+  - Xiaotong Wang
+  - Chunxi Zhang
+  - Junhua Fang
+  - Rong Zhang
+  - Weining Qian
+  - Aoying Zhou
+  publisher: Frontiers of Computer Science
+  date: '2021-09-25'
+  link: https://doi.org/gqpncg
+- id: doi:10.1007/s11704-022-1056-2
+  title: Scalable and quantitative contention generation for performance evaluation
+    on OLTP databases
+  authors:
+  - Chunxi Zhang
+  - Yuming Li
+  - Rong Zhang
+  - Weining Qian
+  - Aoying Zhou
+  publisher: Frontiers of Computer Science
+  date: '2022-08-09'
+  link: https://doi.org/gqpnch
+- id: doi:10.1109/ICDE53745.2022.00036
+  title: Application-Oriented Workload Generation for Transactional Database Performance
+    Evaluation
+  authors:
+  - Luyi Qu
+  - Yuming Li
+  - Rong Zhang
+  - Ting Chen
+  - Ke Shu
+  - Weining Qian
+  - Aoying Zhou
+  publisher: 2022 IEEE 38th International Conference on Data Engineering (ICDE)
+  date: '2022-05-01'
+  link: https://doi.org/gqpnck
+- id: doi:10.1109/TKDE.2019.2947055
+  title: 'A-DSP: An Adaptive Join Algorithm for Dynamic Data Stream on Cloud System'
+  authors:
+  - Junhua Fang
+  - Rong Zhang
+  - Yan Zhao
+  - Kai Zheng
+  - Xiaofang Zhou
+  - Aoying Zhou
+  publisher: IEEE Transactions on Knowledge and Data Engineering
+  date: '2020-01-01'
+  link: https://doi.org/gqpncm
+- id: doi:10.1007/978-3-030-85896-4_15
+  title: Dynamic Environment Simulation for Database Performance Evaluation
+  authors:
+  - Chunxi Zhang
+  - Rong Zhang
+  - Qian Su
+  - Aoying Zhou
+  publisher: Web and Big Data
+  date: '2021-01-01'
+  link: https://doi.org/gqpncn
+- id: doi:10.1142/11709
+  title: Load Balance for Distributed Real-time Computing Systems
+  authors:
+  - Junhua Fang
+  - Rong Zhang
+  - Aoying Zhou
+  publisher: East China Normal University Scientific Reports
+  date: '2020-07-01'
+  link: https://doi.org/gqpncp
+- id: doi:10.1007/s11704-019-8438-0
+  title: Benchmarking on intensive transaction processing
+  authors:
+  - Chunxi Zhang
+  - Yuming Li
+  - Rong Zhang
+  - Weining Qian
+  - Aoying Zhou
+  publisher: Frontiers of Computer Science
+  date: '2020-01-03'
+  link: https://doi.org/gqpncq
+- id: doi:10.1007/978-3-030-60290-1_8
+  title: Evaluating Fault Tolerance of Distributed Stream Processing Systems
+  authors:
+  - Xiaotong Wang
+  - Cheng Jiang
+  - Junhua Fang
+  - Ke Shu
+  - Rong Zhang
+  - Weining Qian
+  - Aoying Zhou
+  publisher: Web and Big Data
+  date: '2020-01-01'
+  link: https://doi.org/gqpncs
+- id: doi:10.1007/978-3-030-60290-1_34
+  title: Quantitative Contention Generation for Performance Evaluation on OLTP Databases
+  authors:
+  - Chunxi Zhang
+  - Rong Zhang
+  - Weining Qian
+  - Ke Shu
+  - Aoying Zhou
+  publisher: Web and Big Data
+  date: '2020-01-01'
+  link: https://doi.org/gqpnct
+- id: doi:10.1007/978-3-030-71058-3_5
+  title: 'Artemis: An Automatic Test Suite Generator for Large Scale OLAP Database'
+  authors:
+  - Kaiming Mi
+  - Chunxi Zhang
+  - Weining Qian
+  - Rong Zhang
+  publisher: Benchmarking, Measuring, and Optimizing
+  date: '2021-01-01'
+  link: https://doi.org/gqpncv
+- id: doi:10.1007/s11280-018-0656-0
+  title: Integrating workload balancing and fault tolerance in distributed stream
+    processing system
+  authors:
+  - Junhua Fang
+  - Pingfu Chao
+  - Rong Zhang
+  - Xiaofang Zhou
+  publisher: World Wide Web
+  date: '2019-01-07'
+  link: https://doi.org/gqpncw
+- id: doi:10.1007/978-3-030-26075-0_15
+  title: 'Apara: Workload-Aware Data Partition and Replication for Parallel Databases'
+  authors:
+  - Xiaolei Zhang
+  - Chunxi Zhang
+  - Yuming Li
+  - Rong Zhang
+  - Aoying Zhou
+  publisher: Web and Big Data
+  date: '2019-01-01'
+  link: https://doi.org/gqpncx
+- id: doi:10.1007/s11704-016-6194-y
+  title: Distribution-free data density estimation in large-scale networks
+  authors:
+  - Minqi Zhou
+  - Rong Zhang
+  - Weining Qian
+  - Aoying Zhou
+  publisher: Frontiers of Computer Science
+  date: '2018-12-01'
+  link: https://doi.org/gqpncz
+- id: doi:10.1109/TPDS.2018.2827380
+  title: Distributed Stream Rebalance for Stateful Operator Under Workload Variance
+  authors:
+  - Junhua Fang
+  - Rong Zhang
+  - Tom Z. J. Fu
+  - Zhenjie Zhang
+  - Aoying Zhou
+  - Xiaofang Zhou
+  publisher: IEEE Transactions on Parallel and Distributed Systems
+  date: '2018-10-01'
+  link: https://doi.org/gfbfnj
+- id: doi:10.1007/978-3-030-32813-9_13
+  title: Benchmarking for Transaction Processing Database Systems in Big Data Era
+  authors:
+  - Chunxi Zhang
+  - Yuming Li
+  - Rong Zhang
+  - Weining Qian
+  - Aoying Zhou
+  publisher: Benchmarking, Measuring, and Optimizing
+  date: '2019-01-01'
+  link: https://doi.org/gnf67r
+- id: doi:10.1007/978-3-319-91458-9_52
+  title: 'AdaptMX: Flexible Join-Matrix Streaming System for Distributed Theta-Joins'
+  authors:
+  - Xiaotong Wang
+  - Cheng Jiang
+  - Junhua Fang
+  - Xiangfeng Wang
+  - Rong Zhang
+  publisher: Database Systems for Advanced Applications
+  date: '2018-01-01'
+  link: https://doi.org/gqpnc3
+- id: doi:10.1007/s11280-017-0431-7
+  title: Distributed stream join under workload variance
+  authors:
+  - Junhua Fang
+  - Rong Zhang
+  - Xiaotong Wang
+  - Aoying Zhou
+  publisher: World Wide Web
+  date: '2017-01-23'
+  link: https://doi.org/gqpnc4
+- id: doi:10.1007/978-3-319-55699-4_39
+  title: Cost-Effective Data Partition for Distributed Stream Processing System
+  authors:
+  - Xiaotong Wang
+  - Junhua Fang
+  - Yuming Li
+  - Rong Zhang
+  - Aoying Zhou
+  publisher: Database Systems for Advanced Applications
+  date: '2017-01-01'
+  link: https://doi.org/gqpndj
+- id: doi:10.1145/3078597.3078613
+  title: Parallel Stream Processing Against Workload Skewness and Variance
+  authors:
+  - Junhua Fang
+  - Rong Zhang
+  - Tom Z.J. Fu
+  - Zhenjie Zhang
+  - Aoying Zhou
+  - Junhua Zhu
+  publisher: Proceedings of the 26th International Symposium on High-Performance Parallel
+    and Distributed Computing
+  date: '2017-06-26'
+  link: https://doi.org/gqpnm2
+- id: doi:10.1007/s10115-015-0880-1
+  title: Learning user credibility for product ranking
+  authors:
+  - Rong Zhang
+  - Ming Gao
+  - Xiaofeng He
+  - Aoying Zhou
+  publisher: Knowledge and Information Systems
+  date: '2015-09-30'
+  link: https://doi.org/f79gqn
+- id: doi:10.1007/978-3-319-45817-5_1
+  title: Flexible and Adaptive Stream Join Algorithm
+  authors:
+  - Junhua Fang
+  - Xiaotong Wang
+  - Rong Zhang
+  - Aoying Zhou
+  publisher: Web Technologies and Applications
+  date: '2016-01-01'
+  link: https://doi.org/gqpnm4
+- id: doi:10.1007/978-3-319-45814-4_2
+  title: 'NERank: Ranking Named Entities in Document Collections'
+  authors:
+  - Chengyu Wang
+  - Rong Zhang
+  - Xiaofeng He
+  - Guomin Zhou
+  - "Aoying\_ Zhou"
+  publisher: Web Technologies and Applications
+  date: '2016-01-01'
+  link: https://doi.org/gqpnm5
+- id: doi:10.1145/2983323.2983705
+  title: Error Link Detection and Correction in Wikipedia
+  authors:
+  - Chengyu Wang
+  - Rong Zhang
+  - Xiaofeng He
+  - Aoying Zhou
+  publisher: Proceedings of the 25th ACM International on Conference on Information
+    and Knowledge Management
+  date: '2016-10-24'
+  link: https://doi.org/gqpnm6
+- id: doi:10.1145/2983323.2983773
+  title: Cost-Effective Stream Join Algorithm on Cloud System
+  authors:
+  - Junhua Fang
+  - Rong Zhang
+  - Xiaotong Wang
+  - Tom Z.J. Fu
+  - Zhenjie Zhang
+  - Aoying Zhou
+  publisher: Proceedings of the 25th ACM International on Conference on Information
+    and Knowledge Management
+  date: '2016-10-24'
+  link: https://doi.org/gqpnnb
+- id: doi:10.1007/978-3-319-39958-4_7
+  title: Learning User Credibility on Aspects from Review Texts
+  authors:
+  - Yifan Gao
+  - Yuming Li
+  - Yanhong Pan
+  - Jiali Mao
+  - Rong Zhang
+  publisher: Web-Age Information Management
+  date: '2016-01-01'
+  link: https://doi.org/gqpnnd
+- id: doi:10.1007/978-3-319-48740-3_35
+  title: Event Phase Extraction and Summarization
+  authors:
+  - Chengyu Wang
+  - Rong Zhang
+  - Xiaofeng He
+  - Guomin Zhou
+  - Aoying Zhou
+  publisher: "Web Information Systems Engineering \u2013 WISE 2016"
+  date: '2016-01-01'
+  link: https://doi.org/gqpnng
+- id: doi:10.1145/2872518.2889348
+  title: 'NERank: Ranking Named Entities in Document Collections'
+  authors:
+  - Chengyu Wang
+  - Rong Zhang
+  - Xiaofeng He
+  - Aoying Zhou
+  publisher: Proceedings of the 25th International Conference Companion on World Wide
+    Web - WWW '16 Companion
+  date: '2016-01-01'
+  link: https://doi.org/gqpnnh
+- id: doi:10.1007/s11704-014-3492-0
+  title: Product-oriented review summarization and scoring
+  authors:
+  - Rong Zhang
+  - Wenzhe Yu
+  - Chaofeng Sha
+  - Xiaofeng He
+  - Aoying Zhou
+  publisher: Frontiers of Computer Science
+  date: '2015-01-21'
+  link: https://doi.org/gqpnnk
+- id: doi:10.1007/s11280-014-0296-y
+  title: Detecting anomaly in data streams by fractal model
+  authors:
+  - Rong Zhang
+  - Minqi Zhou
+  - Xueqing Gong
+  - Xiaofeng He
+  - Weining Qian
+  - Shouke Qin
+  - Aoying Zhou
+  publisher: World Wide Web
+  date: '2014-06-10'
+  link: https://doi.org/gqpnnm
+- id: doi:10.1109/WISA.2015.63
+  title: 'ACID Encountering the CAP Theorem: Two Bank Case Studies'
+  authors:
+  - Chao Kong
+  - Ming Gao
+  - Weining Qian
+  - Minqi Zhou
+  - Xueqing Gong
+  - Rong Zhang
+  - Aoying Zhou
+  publisher: 2015 12th Web Information System and Application Conference (WISA)
+  date: '2015-09-01'
+  link: https://doi.org/gqpnnp
+- id: doi:10.1007/978-3-319-19548-3_29
+  title: 'SEMI: A Scalable Entity Matching System Based on MapReduce'
+  authors:
+  - Pingfu Chao
+  - Yuming Li
+  - Zhu Gao
+  - Junhua Fang
+  - Xiaofeng He
+  - Rong Zhang
+  publisher: Lecture Notes in Computer Science
+  date: '2015-01-01'
+  link: https://doi.org/gqpnnq
+- id: doi:10.1007/978-3-319-28121-6_15
+  title: Multi-dimensional User Credibility Analysis on Review Content
+  authors:
+  - Yifan Gao
+  - Yuming Li
+  - Rong Zhang
+  publisher: Web Technologies and Applications
+  date: '2015-01-01'
+  link: https://doi.org/gqpnnr
+- id: doi:10.1007/978-3-319-25255-1_42
+  title: Random-Based Algorithm for Efficient Entity Matching
+  authors:
+  - Pingfu Chao
+  - Zhu Gao
+  - Yuming Li
+  - Junhua Fang
+  - Rong Zhang
+  - Aoying Zhou
+  publisher: Web Technologies and Applications
+  date: '2015-01-01'
+  link: https://doi.org/gqpnns
+- id: doi:10.1007/978-3-319-25255-1_51
+  title: User Generated Content Oriented Chinese Taxonomy Construction
+  authors:
+  - Jinyang Li
+  - Chengyu Wang
+  - Xiaofeng He
+  - Rong Zhang
+  - Ming Gao
+  publisher: Web Technologies and Applications
+  date: '2015-01-01'
+  link: https://doi.org/gqpnnt
+- id: doi:10.1007/978-3-319-18123-3_33
+  title: A Restaurant Recommendation System by Analyzing Ratings and Aspects in Reviews
+  authors:
+  - Yifan Gao
+  - Wenzhe Yu
+  - Pingfu Chao
+  - Rong Zhang
+  - Aoying Zhou
+  - Xiaoyan Yang
+  publisher: Database Systems for Advanced Applications
+  date: '2015-01-01'
+  link: https://doi.org/gqpnnv
+- id: doi:10.1109/ICDEW.2015.7129545
+  title: Challenges in Chinese knowledge graph construction
+  authors:
+  - Chengyu Wang
+  - Ming Gao
+  - Xiaofeng He
+  - Rong Zhang
+  publisher: 2015 31st IEEE International Conference on Data Engineering Workshops
+  date: '2015-04-01'
+  link: https://doi.org/gqpnnw
+- id: doi:10.1109/ICDE.2015.7113308
+  title: Dish comment summarization based on bilateral topic analysis
+  authors:
+  - Rong Zhang
+  - Zhenjie Zhang
+  - Xiaofeng He
+  - Aoying Zhou
+  publisher: 2015 IEEE 31st International Conference on Data Engineering
+  date: '2015-04-01'
+  link: https://doi.org/gqpnnx
+- id: doi:10.1007/978-3-319-21042-1_20
+  title: Review Comment Analysis for Predicting Ratings
+  authors:
+  - Rong Zhang
+  - Yifan Gao
+  - Wenzhe Yu
+  - Pingfu Chao
+  - Xiaoyan Yang
+  - Ming Gao
+  - Aoying Zhou
+  publisher: Web-Age Information Management
+  date: '2015-01-01'
+  link: https://doi.org/gqpnnz
+- id: doi:10.1007/978-3-319-21042-1_30
+  title: Computing Probability Threshold Set Similarity on Probabilistic Sets
+  authors:
+  - Lei Wang
+  - Ming Gao
+  - Rong Zhang
+  - Cheqing Jin
+  - Aoying Zhou
+  publisher: Web-Age Information Management
+  date: '2015-01-01'
+  link: https://doi.org/gqpnpc
+- id: doi:10.1007/978-3-319-21042-1_48
+  title: Efficient MapReduce-Based Method for Massive Entity Matching
+  authors:
+  - Pingfu Chao
+  - Zhu Gao
+  - Yuming Li
+  - Junhua Fang
+  - Rong Zhang
+  - Aoying Zhou
+  publisher: Web-Age Information Management
+  date: '2015-01-01'
+  link: https://doi.org/gqpnpf
+- id: doi:10.1002/dac.2619
+  title: 'MR-tree: an efficient index for MapReduce'
+  authors:
+  - Chunsheng Li
+  - Jie Chen
+  - Cheqing Jin
+  - Rong Zhang
+  - Aoying Zhou
+  publisher: International Journal of Communication Systems
+  date: '2013-08-08'
+  link: https://doi.org/gqpnpn
+- id: doi:10.1109/ASONAM.2014.6921558
+  title: Online evaluation re-scoring based on review behavior analysis
+  authors:
+  - Rong Zhang
+  - Xiaofeng He
+  - Aoying Zhou
+  - Chaofeng Sha
+  publisher: 2014 IEEE/ACM International Conference on Advances in Social Networks
+    Analysis and Mining (ASONAM 2014)
+  date: '2014-08-01'
+  link: https://doi.org/gqpnpq
+- id: doi:10.1007/978-3-319-05810-8_27
+  title: Probabilistic Reverse Top-k Queries
+  authors:
+  - Cheqing Jin
+  - Rong Zhang
+  - Qiangqiang Kang
+  - Zhao Zhang
+  - Aoying Zhou
+  publisher: Database Systems for Advanced Applications
+  date: '2014-01-01'
+  link: https://doi.org/gqpnpr
+- id: doi:10.1007/978-3-319-05813-9_36
+  title: 'TaxiHailer: A Situation-Specific Taxi Pick-Up Points Recommendation System'
+  authors:
+  - Leyi Song
+  - Chengyu Wang
+  - Xiaoyi Duan
+  - Bing Xiao
+  - Xiao Liu
+  - Rong Zhang
+  - Xiaofeng He
+  - Xueqing Gong
+  publisher: Database Systems for Advanced Applications
+  date: '2014-01-01'
+  link: https://doi.org/gqpnpv
+- id: doi:10.1007/s11704-013-1256-x
+  title: Context-sensitive Web service discovery over the bipartite graph model
+  authors:
+  - Rong Zhang
+  - Koji Zettsu
+  - Yutaka Kidawara
+  - Yasushi Kiyoki
+  - Aoying Zhou
+  publisher: Frontiers of Computer Science
+  date: '2013-09-25'
+  link: https://doi.org/gqpnpw
+- id: doi:10.1007/978-3-642-37401-2_70
+  title: Selecting a Diversified Set of Reviews
+  authors:
+  - Wenzhe Yu
+  - Rong Zhang
+  - Xiaofeng He
+  - Chaofeng Sha
+  publisher: Web Technologies and Applications
+  date: '2013-01-01'
+  link: https://doi.org/gqpnqh
+- id: doi:10.1007/978-3-642-37450-0_28
+  title: A Hybrid Framework for Product Normalization in Online Shopping
+  authors:
+  - Li Wang
+  - Rong Zhang
+  - Chaofeng Sha
+  - Xiaofeng He
+  - Aoying Zhou
+  publisher: Database Systems for Advanced Applications
+  date: '2013-01-01'
+  link: https://doi.org/gqpnqk
+- id: doi:10.1109/ICDM.2013.62
+  title: Search Behavior Based Latent Semantic User Segmentation for Advertising Targeting
+  authors:
+  - Xueqing Gong
+  - Xinyu Guo
+  - Rong Zhang
+  - Xiaofeng He
+  - Aoying Zhou
+  publisher: 2013 IEEE 13th International Conference on Data Mining
+  date: '2013-12-01'
+  link: https://doi.org/gqpnqm
+- id: doi:10.1007/978-3-642-39527-7_37
+  title: Threshold Selection for Classification with Skewed Class Distribution
+  authors:
+  - Xiaofeng He
+  - Rong Zhang
+  - Aoying Zhou
+  publisher: Web-Age Information Management
+  date: '2013-01-01'
+  link: https://doi.org/gqpnqn
+- id: doi:10.1007/978-3-642-41230-1_46
+  title: "Predicting Users\u2019 Age Range in Micro-blog Network"
+  authors:
+  - Chengyu Wang
+  - Bing Xiao
+  - Xiang Li
+  - Jiawen Zhu
+  - Xiaofeng He
+  - Rong Zhang
+  publisher: Lecture Notes in Computer Science
+  date: '2013-01-01'
+  link: https://doi.org/gqpnqp
+- id: doi:10.1109/CGC.2012.11
+  title: Web Service Ranking Based on Context
+  authors:
+  - Rong Zhang
+  - Koji Zettsu
+  - Yutaka Kidawara
+  - Yasushi Kiyoki
+  publisher: 2012 Second International Conference on Cloud and Green Computing
+  date: '2012-11-01'
+  link: https://doi.org/gqpnqq
+- id: doi:10.1145/2396761.2398591
+  title: Credibility-based product ranking for C2C transactions
+  authors:
+  - Rong Zhang
+  - Chao Feng Sha
+  - Min Qi Zhou
+  - Ao Ying Zhou
+  publisher: Proceedings of the 21st ACM international conference on Information and
+    knowledge management - CIKM '12
+  date: '2012-01-01'
+  link: https://doi.org/gqpnqr
+- id: doi:10.1145/2187980.2188171
+  title: Exploiting shopping and reviewing behavior to re-score online evaluations
+  authors:
+  - Rong Zhang
+  - ChaoFeng Sha
+  - Minqi Zhou
+  - Aoying Zhou
+  publisher: Proceedings of the 21st international conference companion on World Wide
+    Web - WWW '12 Companion
+  date: '2012-01-01'
+  link: https://doi.org/gqpnqt
+- id: doi:10.1007/978-3-642-20149-3_31
+  title: Context-Sensitive Query Expansion over the Bipartite Graph Model for Web
+    Service Search
+  authors:
+  - Rong Zhang
+  - Koji Zettsu
+  - Yutaka Kidawara
+  - Yasushi Kiyoki
+  publisher: Database Systems for Advanced Applications
+  date: '2011-01-01'
+  link: https://doi.org/frhnnr
+- id: doi:10.1109/IUCS.2010.5666772
+  title: 'Services in the Cloud Computing era: A survey'
+  authors:
+  - Minqi Zhou
+  - Rong Zhang
+  - Dadan Zeng
+  - Weining Qian
+  publisher: 2010 4th International Universal Communication Symposium
+  date: '2010-10-01'
+  link: https://doi.org/c8b9hw
+- id: doi:10.1109/SKG.2010.18
+  title: Join Optimization in the MapReduce Environment for Column-wise Data Store
+  authors:
+  - Minqi Zhou
+  - Rong Zhang
+  - Dadan Zeng
+  - Weining Qian
+  - Aoying Zhou
+  publisher: 2010 Sixth International Conference on Semantics, Knowledge and Grids
+  date: '2010-11-01'
+  link: https://doi.org/bfbt2f
+- id: doi:10.1109/SKG.2010.19
+  title: 'Security and Privacy in Cloud Computing: A Survey'
+  authors:
+  - Minqi Zhou
+  - Rong Zhang
+  - Wei Xie
+  - Weining Qian
+  - Aoying Zhou
+  publisher: 2010 Sixth International Conference on Semantics, Knowledge and Grids
+  date: '2010-11-01'
+  link: https://doi.org/fgjt5x
+- id: doi:10.1007/978-3-642-14246-8_36
+  title: Exploiting Service Context for Web Service Search Engine
+  authors:
+  - Rong Zhang
+  - Koji Zettsu
+  - Yutaka Kidawara
+  - Yasushi Kiyoki
+  publisher: Web-Age Information Management
+  date: '2010-01-01'
+  link: https://doi.org/dqv5s7
+- id: doi:10.1016/j.future.2008.02.010
+  title: An efficient peer-to-peer indexing tree structure for multidimensional data
+  authors:
+  - Rong Zhang
+  - Weining Qian
+  - Aoying Zhou
+  - Minqi Zhou
+  publisher: Future Generation Computer Systems
+  date: '2009-01-01'
+  link: https://doi.org/dfs3xw
+- id: doi:10.1145/1667780.1667834
+  title: 'SOBEX: distributed service search engine that exploits service collaboration
+    context'
+  authors:
+  - Rong Zhang
+  - Koji Zettsu
+  - Takafumi Nakanishi
+  - Yutaka Kidawara
+  - Yasushi Kiyoki
+  publisher: Proceedings of the 3rd International Universal Communication Symposium
+    on - IUCS '09
+  date: '2009-01-01'
+  link: https://doi.org/dvndb6
+- id: doi:10.1109/SKG.2009.89
+  title: Context-Based Web Service Clustering
+  authors:
+  - Rong Zhang
+  - Koji Zettsu
+  - Takafumi Nakanishi
+  - Yutaka Kidawara
+  - Yasushi Kiyoki
+  publisher: 2009 Fifth International Conference on Semantics, Knowledge and Grid
+  date: '2009-01-01'
+  link: https://doi.org/dbvvkf
+- id: doi:10.1016/j.datak.2008.06.013
+  title: Adaptive indexing for content-based search in P2P systems
+  authors:
+  - Aoying Zhou
+  - Rong Zhang
+  - Weining Qian
+  - Quang Hieu Vu
+  - Tianming Hu
+  publisher: Data &amp; Knowledge Engineering
+  date: '2008-12-01'
+  link: https://doi.org/ctdjnc
+- id: doi:10.1007/s11704-008-0025-8
+  title: Decentralized architecture for resource management of group-based distributed
+    systems
+  authors:
+  - Rong Zhang
+  - Koji Zettsu
+  - Yutaka Kidawara
+  - Yasushi Kiyoki
+  publisher: Frontiers of Computer Science in China
+  date: '2008-08-12'
+  link: https://doi.org/dq85w5
+- id: doi:10.1109/ICDE.2008.4497617
+  title: 'COSTA: Adaptive Indexing for Terms in a Large-scale Distributed System'
+  authors:
+  - Aoying Zhou
+  - Rong Zhang
+  - Quang Hieu Vu
+  - Weining Qian
+  publisher: 2008 IEEE 24th International Conference on Data Engineering
+  date: '2008-04-01'
+  link: https://doi.org/b3fqd6
+- id: doi:10.1007/978-3-540-71703-4_7
+  title: 'GChord: Indexing for Multi-Attribute Query in P2P System with Low Maintenance
+    Cost'
+  authors:
+  - Minqi Zhou
+  - Rong Zhang
+  - Weining Qian
+  - Aoying Zhou
+  publisher: 'Advances in Databases: Concepts, Systems and Applications'
+  date: '2007-01-01'
+  link: https://doi.org/brz9pg
+- id: doi:10.4108/infoscale.2007.908
+  title: 'SDI: A Swift Tree Structure for Multi-dimensional Data Indexing in Peer-to-Peer
+    Networks'
+  authors:
+  - Rong Zhang
+  - Weining Qian
+  - Minqi Zhou
+  - Aoying Zhou
+  publisher: Proceedings of the 2nd International ICST Conference on Scalable Information
+    Systems
+  date: '2007-01-01'
+  link: https://doi.org/gqpnrg
+- id: doi:10.1109/ICDE.2006.169
+  title: 'VBI-Tree: A Peer-to-Peer Framework for Supporting Multi-Dimensional Indexing
+    Schemes'
+  authors:
+  - H.V. Jagadish
+  - ' Beng Chin Ooi'
+  - ' Quang Hieu Vu'
+  - ' Rong Zhang'
+  - ' Aoying Zhou'
+  publisher: 22nd International Conference on Data Engineering (ICDE'06)
+  date: '2006-01-01'
+  link: https://doi.org/cxtt65
+- id: doi:10.1145/1142473.1142475
+  title: Speeding up search in peer-to-peer networks with a multi-way tree structure
+  authors:
+  - H. V. Jagadish
+  - Beng Chin Ooi
+  - Kian-Lee Tan
+  - Quang Hieu Vu
+  - Rong Zhang
+  publisher: Proceedings of the 2006 ACM SIGMOD international conference on Management
+    of data  - SIGMOD '06
+  date: '2006-01-01'
+  link: https://doi.org/dg6354
