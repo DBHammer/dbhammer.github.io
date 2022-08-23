@@ -141,6 +141,9 @@ def cite_with_manubot(source):
     # source id
     id = source.get("id")
 
+    if source.get('manual'):
+        return source
+        
     # run Manubot and get results as json
     try:
         commands = ["manubot", "cite", id, "--log-level=ERROR"]

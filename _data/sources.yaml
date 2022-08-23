@@ -105,3 +105,91 @@
 - id: doi:10.4108/infoscale.2007.908
 - id: doi:10.1109/ICDE.2006.169
 - id: doi:10.1145/1142473.1142475
+- id: 面向复杂查询的可扩展应用场景生成
+  manual: true
+  title: 面向复杂查询的可扩展应用场景生成
+  publisher:
+    会议名称 第39届CCF中国数据库学术会议（NDBC 2022）
+  authors:
+    - 李好
+    - 王清帅
+    - 张蓉
+    - 钱卫宁
+  date: '2022-08-20'
+- id: 分布式数据流上的高性能分发策略
+  manual: true
+  title: 分布式数据流上的高性能分发策略
+  publisher:
+    软件学报
+  authors:
+    - 房俊华
+    - 王晓桐
+    - 张蓉
+    - 周傲英
+  date: '2016-01-01'
+- id: 考虑观点多样性的评论选择问题
+  manual: true
+  title: 考虑观点多样性的评论选择问题
+  publisher:
+    计算机研究与发展
+  authors:
+    - 余文喆
+    - 沙朝锋
+    - 何晓丰
+    - 张蓉
+  date: '2015-05-15'
+- id: 电子商务商品归一化方法研究
+  manual: true
+  title: 电子商务商品归一化方法研究
+  publisher:
+    计算机学报
+  authors:
+    - 王立
+    - 张蓉
+    - 沙朝锋
+    - 王晓玲
+    - 周傲英
+  date: '2014-01-01'
+- id: 电子商务系统中的商品推荐系统
+  manual: true
+  title: 电子商务系统中的商品推荐系统
+  publisher:
+    华东师范大学学报
+  authors:
+    - 余文喆
+    - 张蓉
+    - 王立
+  date: '2013-01-01'
+- id: 一种支持多维数据范围查询的对等计算索引框架
+  manual: true
+  title: 一种支持多维数据范围查询的对等计算索引框架
+  publisher:
+    计算机研究与发展
+  authors:
+    - 张蓉
+    - 钱卫宁
+    - 周傲英
+  date: '2009-01-01'
+- id: 大规模分布式系统中的多属性查询处理
+  manual: true
+  title: 大规模分布式系统中的多属性查询处理
+  publisher:
+    计算机学报
+  authors:
+    - 周傲英
+    - 周敏奇
+    - 钱卫宁
+    - 张蓉
+  date: '2008-01-01'
+- id: 一站式服务推荐系统
+  manual: true
+  title: 一站式服务推荐系统
+  publisher:
+    NDBC 2014
+  authors:
+    - 高祎璠
+    - 郑芷凌
+    - 余文喆
+    - 程文亮
+    - 张蓉
+  date: '2014-01-01'
