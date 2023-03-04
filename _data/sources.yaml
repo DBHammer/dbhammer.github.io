@@ -1,3 +1,34 @@
+- id: "Dike: A Benchmark Suite for Distributed Transactional Databases"
+  manual: true
+  title: "Dike: A Benchmark Suite for Distributed Transactional Databases"
+  authors:
+    - Huidong Zhang
+    - Luyi Qu
+    - Qingshuai Wang
+    - Rong Zhang
+    - Peng Cai
+    - Quanqing Xu
+    - Zhifeng Yang
+    - Chuanhui Yang
+  publisher: 2023 ACM SIGMOD/PODS International Conference on Management of Data (SIGMOD)
+  date: '2023-01-01'
+- id: "Leopard: A Black-Box Approach for Efficiently Verifying Various Isolation Levels"
+  manual: true
+  title: "Leopard: A Black-Box Approach for Efficiently Verifying Various Isolation Levels"
+  authors:
+    - Keqiang Li
+    - Siyang Weng
+    - Peiyuan Liu
+    - Lyu Ni
+    - Chengcheng Yang
+    - Rong Zhang
+    - Xuan Zhou
+    - Jianghang Lou
+    - Gui Huang
+    - Weining Qian
+    - Aoying Zhou
+  publisher: 2023 IEEE International Conference on Data Engineering (ICDE)
+  date: '2023-01-01'
 - id: doi:10.1109/TKDE.2022.3153651
   title: A Scalable Query-Aware Enormous Database Generator for Database Evaluation
   publisher: IEEE Transactions on Knowledge and Data Engineering
