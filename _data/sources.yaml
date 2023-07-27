@@ -136,11 +136,11 @@
 - id: doi:10.4108/infoscale.2007.908
 - id: doi:10.1109/ICDE.2006.169
 - id: doi:10.1145/1142473.1142475
-- id: HTAP 数据库共享模型与优化策略
+- id: HTAP数据库系统数据共享模型与优化策略
   manual: true
-  title: 面向复杂查询的可扩展应用场景生成
+  title: HTAP数据库系统数据共享模型与优化策略
   publisher:
-    软件学报 (2023)
+    软件学报
   authors:
     - 胡梓锐
     - 翁思扬
