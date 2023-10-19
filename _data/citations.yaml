@@ -1,5 +1,19 @@
 # GENERATED AUTOMATICALLY, DO NOT EDIT
 
+- id: 'Leopard: A General Test Suite for Isolation Level Verification'
+  manual: true
+  title: 'Leopard: A General Test Suite for Isolation Level Verification'
+  authors:
+  - Peiyuan Liu
+  - Siyang Weng
+  - Keqiang Li
+  - Lyu Ni
+  - Chengcheng Yang
+  - Rong Zhang
+  - Weining Qian
+  - Dian Qiao
+  publisher: CIDR
+  date: '2024-01-17'
 - id: 'Dike: A Benchmark Suite for Distributed Transactional Databases'
   manual: true
   title: 'Dike: A Benchmark Suite for Distributed Transactional Databases'
@@ -860,13 +874,28 @@
     of data  - SIGMOD '06
   date: '2006-01-01'
   link: https://doi.org/dg6354
+- id: "HTAP\u6570\u636E\u5E93\u7CFB\u7EDF\u6570\u636E\u5171\u4EAB\u6A21\u578B\u4E0E\
+    \u4F18\u5316\u7B56\u7565"
+  manual: true
+  title: "HTAP\u6570\u636E\u5E93\u7CFB\u7EDF\u6570\u636E\u5171\u4EAB\u6A21\u578B\u4E0E\
+    \u4F18\u5316\u7B56\u7565"
+  publisher: "\u8F6F\u4EF6\u5B66\u62A5"
+  authors:
+  - "\u80E1\u6893\u9510"
+  - "\u7FC1\u601D\u626C"
+  - "\u4FDE\u878D"
+  - "\u5F90\u91D1\u51EF"
+  - "\u738B\u6E05\u5E05"
+  - "\u5F20\u84C9"
+  - "\u5468\u70DC"
+  date: '2023-07-12'
 - manual: true
   id: "\u9762\u5411\u590D\u6742\u67E5\u8BE2\u7684\u53EF\u6269\u5C55\u5E94\u7528\u573A\
     \u666F\u751F\u6210"
   title: "\u9762\u5411\u590D\u6742\u67E5\u8BE2\u7684\u53EF\u6269\u5C55\u5E94\u7528\
     \u573A\u666F\u751F\u6210"
   publisher: "\u7B2C39\u5C4ACCF\u4E2D\u56FD\u6570\u636E\u5E93\u5B66\u672F\u4F1A\u8BAE\
-    \uFF08NDBC 2022\uFF09"
+    \ (NDBC 2022)"
   authors:
   - "\u674E\u597D"
   - "\u738B\u6E05\u5E05"

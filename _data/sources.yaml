@@ -1,3 +1,17 @@
+- id: "Leopard: A General Test Suite for Isolation Level Verification"
+  manual: true
+  title: "Leopard: A General Test Suite for Isolation Level Verification"
+  authors:
+    - Peiyuan Liu
+    - Siyang Weng
+    - Keqiang Li
+    - Lyu Ni
+    - Chengcheng Yang
+    - Rong Zhang
+    - Weining Qian
+    - Dian Qiao
+  publisher: CIDR
+  date: '2024-01-17'
 - id: "Dike: A Benchmark Suite for Distributed Transactional Databases"
   manual: true
   title: "Dike: A Benchmark Suite for Distributed Transactional Databases"
