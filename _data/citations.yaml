@@ -10,7 +10,7 @@
   - Peng Cai
   - Xuan Zhou
   - Aoying Zhou
-  publisher: DASFAA
+  publisher: 2024 IEEE International Conference on Data Engineering (ICDE)
   date: '2024-03-20'
 - id: "Touchstone+ : Query Aware Database Generation for Match Operators"
   manual: true
@@ -24,8 +24,8 @@
   - Rong Zhang
   - Xuan Zhou
   - Quanqing Xu
-  publisher: DASFAA
-  date: '2024-03-20'
+  publisher: 2024 Database Systems for Advanced Applications (DASFAA)
+  date: '2024-03-19'
 - id: 'Lauca: A Workload Duplicator for Benchmarking Transactional Database Performance'
   manual: true
   title: 'Lauca: A Workload Duplicator for Benchmarking Transactional Database Performance'
@@ -37,7 +37,7 @@
   - Peng cai
   - Weining Qian
   - Aoying Zhou
-  publisher: TKDE
+  publisher: 2024 IEEE Transactions on Knowledge and Data Engineering (TKDE)
   date: '2024-02-21'
 - id: 'Leopard: A General Test Suite for Isolation Level Verification'
   manual: true
