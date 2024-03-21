@@ -1,5 +1,45 @@
 # GENERATED AUTOMATICALLY, DO NOT EDIT
-
+- id: "Touchstone+ : Query Aware Database Generation for Match Operators"
+  manual: true
+  title: "Touchstone+ : Query Aware Database Generation for Match Operators"
+  authors:
+  - Qingshuai Wang
+  - Hao Li
+  - Zirui Hu
+  - Rong Zhang
+  - Chengcheng Yang
+  - Peng Cai
+  - Xuan Zhou
+  - Aoying Zhou
+  publisher: DASFAA
+  date: '2024-03-20'
+- id: "Touchstone+ : Query Aware Database Generation for Match Operators"
+  manual: true
+  title: "Touchstone+ : Query Aware Database Generation for Match Operators"
+  authors:
+  - Hao Li
+  - Qingshuai Wang
+  - Zirui Hu
+  - Xuhua Huang
+  - Lv Ni
+  - Rong Zhang
+  - Xuan Zhou
+  - Quanqing Xu
+  publisher: DASFAA
+  date: '2024-03-20'
+- id: 'Lauca: A Workload Duplicator for Benchmarking Transactional Database Performance'
+  manual: true
+  title: 'Lauca: A Workload Duplicator for Benchmarking Transactional Database Performance'
+  authors:
+  - Siyang Weng
+  - Qingshuai Wang
+  - Luyi Qu
+  - Rong Zhang
+  - Peng cai
+  - Weining Qian
+  - Aoying Zhou
+  publisher: TKDE
+  date: '2024-02-21'
 - id: 'Leopard: A General Test Suite for Isolation Level Verification'
   manual: true
   title: 'Leopard: A General Test Suite for Isolation Level Verification'
