@@ -12,6 +12,20 @@
   - Aoying Zhou
   publisher: 2024 IEEE International Conference on Data Engineering (ICDE)
   date: '2024-03-20'
+- id: "Functionality-Aware Database Tuning viaMulti-Task Learning"
+  manual: true
+  title: "Functionality-Aware Database Tuning viaMulti-Task Learning"
+  authors:
+  - Zhongwei Yue
+  - Shujian Peng
+  - Peng Cai
+  - Xuan Zhou
+  - Huiqi Hu
+  - Rong Zhang
+  - Quanqing Xu
+  - Chuanhui Yang
+  publisher: 2024 IEEE International Conference on Data Engineering (ICDE)
+  date: '2024-03-19'
 - id: "Touchstone+ : Query Aware Database Generation for Match Operators"
   manual: true
   title: "Touchstone+ : Query Aware Database Generation for Match Operators"
@@ -25,7 +39,7 @@
   - Xuan Zhou
   - Quanqing Xu
   publisher: 2024 Database Systems for Advanced Applications (DASFAA)
-  date: '2024-03-19'
+  date: '2024-03-18'
 - id: 'Lauca: A Workload Duplicator for Benchmarking Transactional Database Performance'
   manual: true
   title: 'Lauca: A Workload Duplicator for Benchmarking Transactional Database Performance'
