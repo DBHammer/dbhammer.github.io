@@ -1,6 +1,7 @@
 - id: "Mirage: Generating Enormous Databases for Complex Workloads"
   manual: true
   title: "Mirage: Generating Enormous Databases for Complex Workloads"
+  link: https://ieeecps.org/files/5PaGiJbkZ2aHTM4ikja9GH
   authors:
   - Qingshuai Wang
   - Hao Li
@@ -12,9 +13,9 @@
   - Aoying Zhou
   publisher: 2024 IEEE International Conference on Data Engineering (ICDE)
   date: '2024-03-20'
-- id: "Functionality-Aware Database Tuning viaMulti-Task Learning"
+- id: "Functionality-Aware Database Tuning via Multi-Task Learning"
   manual: true
-  title: "Functionality-Aware Database Tuning viaMulti-Task Learning"
+  title: "Functionality-Aware Database Tuning via Multi-Task Learning"
   authors:
   - Zhongwei Yue
   - Shujian Peng
