@@ -928,6 +928,24 @@
     of data  - SIGMOD '06
   date: '2006-01-01'
   link: https://doi.org/dg6354
+- id: "HTAP\u8BC4\u6D4B\u57FA\u51C6\u7684\u8BC4\u6D4B\u80FD\u529B\u7EAA\u7ECF"
+  manual: true
+  title: "HTAP\u8BC4\u6D4B\u57FA\u51C6\u7684\u8BC4\u6D4B\u80FD\u529B\u7EAA\u7ECF"
+  publisher: "\u8F6F\u4EF6\u5B66\u62A5"
+  authors:
+  - "\u7FC1\u601D\u626C"
+  - "\u7FBD\u878D"
+  - "\u738B\u6E05\u5E05"
+  - "\u80E1\u6893\u9510"
+  - "\u502A\u84CF"
+  - "\u5F20\u84C9"
+  - "\u5468\u70DC"
+  - "\u5468\u50B2\u82F1"
+  - "\u5F90\u6CC9\u6E05"
+  - "\u6768\u4F20\u8F89"
+  - "\u5218\u7EF4"
+  - "\u6768\u6500\u98DE"
+  date: '2024-05-20'
 - id: "HTAP\u6570\u636E\u5E93\u7CFB\u7EDF\u6570\u636E\u5171\u4EAB\u6A21\u578B\u4E0E\
     \u4F18\u5316\u7B56\u7565"
   manual: true

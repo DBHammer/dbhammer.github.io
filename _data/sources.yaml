@@ -191,6 +191,25 @@
 - id: doi:10.4108/infoscale.2007.908
 - id: doi:10.1109/ICDE.2006.169
 - id: doi:10.1145/1142473.1142475
+- id: HTAP评测基准的评测能力综述
+  manual: true
+  title: HTAP评测基准的评测能力综述
+  publisher:
+    软件学报
+  authors:
+    - 翁思扬
+    - 俞融
+    - 王清帅
+    - 胡梓锐
+    - 倪葎
+    - 张蓉
+    - 周烜
+    - 周傲英
+    - 徐泉清
+    - 杨传辉
+    - 刘维
+    - 杨攀飞
+  date: '2024-05-20'
 - id: HTAP数据库系统数据共享模型与优化策略
   manual: true
   title: HTAP数据库系统数据共享模型与优化策略
