@@ -14,6 +14,10 @@ student:
   icon: fas fa-user-graduate
   text: Student
 
-graduated:
+graduated_phd:
+  icon: fas fa-graduation-cap
+  text: Graduated PHD Student
+
+graduated_post:
   icon: fas fa-user-graduate
-  text: Student
+  text: Graduated Master Student

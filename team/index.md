@@ -39,14 +39,24 @@ nav:
   filters="role: post"
 %}
 
-## 毕业生
+## 毕业博士生
 
 {%
   include member-list.html
   data="members"
   component="portrait"
   style="small"
-  filters="role: graduated"
+  filters="role: graduated_phd"
+%}
+
+## 毕业硕士生
+
+{%
+  include member-list.html
+  data="members"
+  component="portrait"
+  style="small"
+  filters="role: graduated_post"
 %}
 
 {% include section.html %}
