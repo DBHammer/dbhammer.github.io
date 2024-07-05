@@ -1,6 +1,6 @@
 ---
 title: DBHammer Paper List Sharing
-tags: paper list
+tags: paperlist
 author: 胡梓锐
 member: 胡梓锐 
 ---
