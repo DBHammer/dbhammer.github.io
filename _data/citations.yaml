@@ -1,3 +1,16 @@
+- id: "DBStorm: Generating Various Effective Workloads for Testing Isolation Levels"
+  manual: true
+  title: "DBStorm: Generating Various Effective Workloads for Testing Isolation Levels"
+  authors:
+    - Keqiang Li
+    - Siyang Weng
+    - Lyu Ni
+    - Chengcheng Yang
+    - Rong Zhang
+    - Xuan Zhou
+    - Aoying Zhou
+  publisher: ISSTA
+  date: '2024-07-16'
 - id: "Mirage: Generating Enormous Databases for Complex Workloads"
   manual: true
   title: "Mirage: Generating Enormous Databases for Complex Workloads"
