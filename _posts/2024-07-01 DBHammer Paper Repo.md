@@ -1,6 +1,6 @@
 ---
-title: DBHammer Paper Repo
-tags: benchmark
+title: DBHammer Paper List Sharing
+tags: paper list
 author: 胡梓锐
 member: 胡梓锐 
 ---
