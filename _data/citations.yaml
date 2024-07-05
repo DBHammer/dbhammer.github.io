@@ -95,6 +95,32 @@
   - Chuanhui Yang
   publisher: 2023 ACM SIGMOD/PODS International Conference on Management of Data (SIGMOD)
   date: '2023-01-01'
+- id: 'Workload-Aware Log-Structured Merge Key-Value Store for NVM-SSD Hybrid Storage'
+  manual: true
+  title: 'Workload-Aware Log-Structured Merge Key-Value Store for NVM-SSD Hybrid Storage'
+  authors:
+  - Lixiang Chen
+  - Ruihao Chen
+  - Chengcheng Yang
+  - Yuxing Han
+  - Chengcheng Yang
+  - Rong Zhang
+  - Xuan Zhou
+  - Peiquan Jin
+  - Weining Qian
+  publisher: 2023 IEEE International Conference on Data Engineering (ICDE)
+  date: '2023-01-01'
+- id: 'An Optimized Solution for Highly Contended Transactional Workloads'
+  manual: true
+  title: 'An Optimized Solution for Highly Contended Transactional Workloads'
+  authors:
+  - Chunxi Zhang
+  - Shuyan Zhang
+  - Ting Chen
+  - Rong Zhang
+  - Kai Liu
+  publisher: 2023 International Symposium on Dependable Software Engineering:Theories, Tools, and Applications (SETTA)
+  date: '2023-01-01'
 - id: 'Leopard: A Black-Box Approach for Efficiently Verifying Various Isolation Levels'
   manual: true
   title: 'Leopard: A Black-Box Approach for Efficiently Verifying Various Isolation
