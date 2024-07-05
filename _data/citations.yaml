@@ -24,7 +24,7 @@
   - Peng Cai
   - Xuan Zhou
   - Aoying Zhou
-  publisher: 2024 IEEE International Conference on Data Engineering (ICDE)
+  publisher: IEEE International Conference on Data Engineering (ICDE)
   date: '2024-03-20'
 - id: "Functionality-Aware Database Tuning via Multi-Task Learning"
   manual: true
@@ -38,7 +38,7 @@
   - Rong Zhang
   - Quanqing Xu
   - Chuanhui Yang
-  publisher: 2024 IEEE International Conference on Data Engineering (ICDE)
+  publisher: IEEE International Conference on Data Engineering (ICDE)
   date: '2024-03-19'
 - id: "Touchstone+ : Query Aware Database Generation for Match Operators"
   manual: true
@@ -52,7 +52,7 @@
   - Rong Zhang
   - Xuan Zhou
   - Quanqing Xu
-  publisher: 2024 Database Systems for Advanced Applications (DASFAA)
+  publisher: Database Systems for Advanced Applications (DASFAA)
   date: '2024-03-18'
 - id: 'Lauca: A Workload Duplicator for Benchmarking Transactional Database Performance'
   manual: true
@@ -65,7 +65,7 @@
   - Peng cai
   - Weining Qian
   - Aoying Zhou
-  publisher: 2024 IEEE Transactions on Knowledge and Data Engineering (TKDE)
+  publisher: IEEE Transactions on Knowledge and Data Engineering (TKDE)
   date: '2024-02-21'
 - id: 'Leopard: A General Test Suite for Isolation Level Verification'
   manual: true
@@ -79,7 +79,7 @@
   - Rong Zhang
   - Weining Qian
   - Dian Qiao
-  publisher: CIDR
+  publisher: International Conference on Innovative Data Systems Research (CIDR)
   date: '2024-01-17'
 - id: 'Dike: A Benchmark Suite for Distributed Transactional Databases'
   manual: true
@@ -93,7 +93,7 @@
   - Quanqing Xu
   - Zhifeng Yang
   - Chuanhui Yang
-  publisher: 2023 ACM SIGMOD/PODS International Conference on Management of Data (SIGMOD)
+  publisher: ACM SIGMOD/PODS International Conference on Management of Data (SIGMOD)
   date: '2023-01-01'
 - id: 'Workload-Aware Log-Structured Merge Key-Value Store for NVM-SSD Hybrid Storage'
   manual: true
@@ -108,7 +108,7 @@
   - Xuan Zhou
   - Peiquan Jin
   - Weining Qian
-  publisher: 2023 IEEE International Conference on Data Engineering (ICDE)
+  publisher: IEEE International Conference on Data Engineering (ICDE)
   date: '2023-01-01'
 - id: 'An Optimized Solution for Highly Contended Transactional Workloads'
   manual: true
@@ -119,7 +119,7 @@
   - Ting Chen
   - Rong Zhang
   - Kai Liu
-  publisher: 2023 International Symposium on Dependable Software Engineering:Theories, Tools, and Applications (SETTA)
+  publisher: International Symposium on Dependable Software Engineering:Theories, Tools, and Applications (SETTA)
   date: '2023-01-01'
 - id: 'Leopard: A Black-Box Approach for Efficiently Verifying Various Isolation Levels'
   manual: true
@@ -137,7 +137,7 @@
   - Gui Huang
   - Weining Qian
   - Aoying Zhou
-  publisher: 2023 IEEE International Conference on Data Engineering (ICDE)
+  publisher: IEEE International Conference on Data Engineering (ICDE)
   date: '2023-01-01'
 - id: doi:10.1109/TKDE.2022.3153651
   title: A Scalable Query-Aware Enormous Database Generator for Database Evaluation
@@ -167,7 +167,7 @@
   - Xiaoyan Yang
   - Zhenjie Zhang
   - Aoying Zhou
-  publisher: 2018 USENIX Annual Technical Conference (USENIX ATC 18)
+  publisher: USENIX Annual Technical Conference (USENIX ATC)
   date: '2018-01-01'
   link: https://www.usenix.org/conference/atc18/presentation/li-yuming
   image: /illustration/paper.touchstone.1.png
@@ -194,19 +194,6 @@
   link: https://doi.org/gqb25r
   image: /illustration/AreCurrentBenchmark.jpg
   extra-links: null
-- id: doi:10.48550/arXiv.1912.07172
-  title: 'Lauca: Generating Application-Oriented Synthetic Workloads'
-  authors:
-  - Yuming Li
-  - Rong Zhang
-  - Yuchen Li
-  - Ke Shu
-  - Shuyan Zhang
-  - Aoying Zhou
-  publisher: arXiv
-  date: '2019-01-01'
-  link: https://doi.org/gqb26g
-  image: /illustration/lauca.png
 - id: doi:10.1007/s11704-020-0248-x
   title: A comprehensive study on fault tolerance in stream processing systems
   authors:
@@ -242,7 +229,7 @@
   - Ke Shu
   - Weining Qian
   - Aoying Zhou
-  publisher: 2022 IEEE 38th International Conference on Data Engineering (ICDE)
+  publisher: IEEE 38th International Conference on Data Engineering (ICDE)
   date: '2022-05-01'
   link: https://doi.org/gqpnck
 - id: doi:10.1109/TKDE.2019.2947055
@@ -254,7 +241,7 @@
   - Kai Zheng
   - Xiaofang Zhou
   - Aoying Zhou
-  publisher: IEEE Transactions on Knowledge and Data Engineering
+  publisher: IEEE Transactions on Knowledge and Data Engineering (TKDE)
   date: '2020-01-01'
   link: https://doi.org/gqpncm
 - id: doi:10.1007/978-3-030-85896-4_15
@@ -448,7 +435,7 @@
   - Rong Zhang
   - Xiaofeng He
   - Guomin Zhou
-  - "Aoying\_ Zhou"
+  - "Aoying Zhou"
   publisher: Web Technologies and Applications
   date: '2016-01-01'
   link: https://doi.org/gqpnm5
