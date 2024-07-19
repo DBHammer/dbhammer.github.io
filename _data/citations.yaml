@@ -165,7 +165,7 @@
   - Query-aware Data Generator
   - OLAP Database Testing
   - Query Generator
-- id: Touchstone: Generating Enormous Query-Aware Test Databases
+- id: 'Touchstone: Generating Enormous Query-Aware Test Databases'
   title: 'Touchstone: Generating Enormous Query-Aware Test Databases'
   link: https://www.usenix.org/conference/atc18/presentation/li-yuming
   authors:
