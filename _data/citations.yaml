@@ -1,6 +1,7 @@
 - id: "DBStorm: Generating Various Effective Workloads for Testing Isolation Levels"
   manual: true
   title: "DBStorm: Generating Various Effective Workloads for Testing Isolation Levels"
+  link: https://2024.issta.org/details/issta-2024-papers/61/DBStorm-Generating-Various-Effective-Workloads-for-Testing-Isolation-Levels
   authors:
     - Keqiang Li
     - Siyang Weng
@@ -57,6 +58,7 @@
 - id: 'Lauca: A Workload Duplicator for Benchmarking Transactional Database Performance'
   manual: true
   title: 'Lauca: A Workload Duplicator for Benchmarking Transactional Database Performance'
+  link: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10416761
   authors:
   - Siyang Weng
   - Qingshuai Wang
@@ -70,6 +72,7 @@
 - id: 'Leopard: A General Test Suite for Isolation Level Verification'
   manual: true
   title: 'Leopard: A General Test Suite for Isolation Level Verification'
+  link: https://www.cidrdb.org/cidr2024/papers/p44-liu.pdf
   authors:
   - Peiyuan Liu
   - Siyang Weng
@@ -84,6 +87,7 @@
 - id: 'Dike: A Benchmark Suite for Distributed Transactional Databases'
   manual: true
   title: 'Dike: A Benchmark Suite for Distributed Transactional Databases'
+  link: https://dl.acm.org/doi/abs/10.1145/3555041.3589710
   authors:
   - Huidong Zhang
   - Luyi Qu
@@ -98,6 +102,7 @@
 - id: 'Workload-Aware Log-Structured Merge Key-Value Store for NVM-SSD Hybrid Storage'
   manual: true
   title: 'Workload-Aware Log-Structured Merge Key-Value Store for NVM-SSD Hybrid Storage'
+  link: https://ieeexplore.ieee.org/document/10184519
   authors:
   - Lixiang Chen
   - Ruihao Chen
@@ -112,6 +117,7 @@
 - id: 'An Optimized Solution for Highly Contended Transactional Workloads'
   manual: true
   title: 'An Optimized Solution for Highly Contended Transactional Workloads'
+  link: https://link.springer.com/chapter/10.1007/978-981-99-8664-4_23
   authors:
   - Chunxi Zhang
   - Shuyan Zhang
@@ -122,8 +128,8 @@
   date: '2023-01-01'
 - id: 'Leopard: A Black-Box Approach for Efficiently Verifying Various Isolation Levels'
   manual: true
-  title: 'Leopard: A Black-Box Approach for Efficiently Verifying Various Isolation
-    Levels'
+  title: 'Leopard: A Black-Box Approach for Efficiently Verifying Various Isolation Levels'
+  link: https://ieeexplore.ieee.org/document/10184872
   authors:
   - Keqiang Li
   - Siyang Weng
@@ -138,8 +144,9 @@
   - Aoying Zhou
   publisher: IEEE International Conference on Data Engineering (ICDE)
   date: '2023-01-01'
-- id: doi:10.1109/TKDE.2022.3153651
+- id: 'A Scalable Query-Aware Enormous Database Generator for Database Evaluation'
   title: A Scalable Query-Aware Enormous Database Generator for Database Evaluation
+  link: https://ieeexplore.ieee.org/document/9720100
   authors:
   - Qingshuai Wang
   - Yuming Li
@@ -158,8 +165,9 @@
   - Query-aware Data Generator
   - OLAP Database Testing
   - Query Generator
-- id: url:https://www.usenix.org/conference/atc18/presentation/li-yuming
+- id: Touchstone: Generating Enormous Query-Aware Test Databases
   title: 'Touchstone: Generating Enormous Query-Aware Test Databases'
+  link: https://www.usenix.org/conference/atc18/presentation/li-yuming
   authors:
   - Yuming Li
   - Rong Zhang
@@ -168,7 +176,6 @@
   - Aoying Zhou
   publisher: USENIX Annual Technical Conference (USENIX ATC)
   date: '2018-01-01'
-  link: https://www.usenix.org/conference/atc18/presentation/li-yuming
   image: /illustration/paper.touchstone.1.png
   repo: DBHammer/Touchstone
   extra-links:
@@ -176,6 +183,7 @@
     link: https://github.com/DBHammer/Touchstone
 - id: doi:10.1016/j.tbench.2022.100031
   title: Are current benchmarks adequate to evaluate distributed transactional databases?
+  link: https://www.sciencedirect.com/science/article/pii/S2772485922000187
   authors:
   - Luyi Qu
   - Qingshuai Wang
@@ -195,6 +203,7 @@
   extra-links: null
 - id: doi:10.1007/s11704-020-0248-x
   title: A comprehensive study on fault tolerance in stream processing systems
+  link: https://link.springer.com/article/10.1007/s11704-020-0248-x
   authors:
   - Xiaotong Wang
   - Chunxi Zhang
@@ -218,8 +227,8 @@
   date: '2022-08-09'
   link: https://doi.org/gqpnch
 - id: doi:10.1109/ICDE53745.2022.00036
-  title: Application-Oriented Workload Generation for Transactional Database Performance
-    Evaluation
+  title: Application-Oriented Workload Generation for Transactional Database Performance Evaluation
+  link: https://ieeexplore.ieee.org/document/9835481
   authors:
   - Luyi Qu
   - Yuming Li
@@ -233,6 +242,7 @@
   link: https://doi.org/gqpnck
 - id: doi:10.1109/TKDE.2019.2947055
   title: 'A-DSP: An Adaptive Join Algorithm for Dynamic Data Stream on Cloud System'
+  link: https://ieeexplore.ieee.org/document/8868214
   authors:
   - Junhua Fang
   - Rong Zhang
@@ -245,6 +255,7 @@
   link: https://doi.org/gqpncm
 - id: doi:10.1007/978-3-030-85896-4_15
   title: Dynamic Environment Simulation for Database Performance Evaluation
+  link: https://link.springer.com/chapter/10.1007/978-3-030-85896-4_15
   authors:
   - Chunxi Zhang
   - Rong Zhang
@@ -264,6 +275,7 @@
   link: https://doi.org/gqpncp
 - id: doi:10.1007/s11704-019-8438-0
   title: Benchmarking on intensive transaction processing
+  link: https://link.springer.com/article/10.1007/s11704-019-8438-0
   authors:
   - Chunxi Zhang
   - Yuming Li
@@ -275,6 +287,7 @@
   link: https://doi.org/gqpncq
 - id: doi:10.1007/978-3-030-60290-1_8
   title: Evaluating Fault Tolerance of Distributed Stream Processing Systems
+  link: https://link.springer.com/chapter/10.1007/978-3-030-60290-1_8
   authors:
   - Xiaotong Wang
   - Cheng Jiang
@@ -288,6 +301,7 @@
   link: https://doi.org/gqpncs
 - id: doi:10.1007/978-3-030-60290-1_34
   title: Quantitative Contention Generation for Performance Evaluation on OLTP Databases
+  link: https://link.springer.com/chapter/10.1007/978-3-030-60290-1_34
   authors:
   - Chunxi Zhang
   - Rong Zhang
@@ -299,6 +313,7 @@
   link: https://doi.org/gqpnct
 - id: doi:10.1007/978-3-030-71058-3_5
   title: 'Artemis: An Automatic Test Suite Generator for Large Scale OLAP Database'
+  link: https://link.springer.com/chapter/10.1007/978-3-030-71058-3_5
   authors:
   - Kaiming Mi
   - Chunxi Zhang
@@ -971,6 +986,7 @@
   manual: true
   title: "HTAP\u8bc4\u6d4b\u57fa\u51c6\u7684\u8bc4\u6d4b\u80fd\u529b\u7efc\u8ff0"
   publisher: "\u8F6F\u4EF6\u5B66\u62A5"
+  link: https://jos.org.cn/jos/article/pdf/7225
   authors:
   - "\u7FC1\u601D\u626C"
   - "\u4fde\u878d"
@@ -991,6 +1007,7 @@
   title: "HTAP\u6570\u636E\u5E93\u7CFB\u7EDF\u6570\u636E\u5171\u4EAB\u6A21\u578B\u4E0E\
     \u4F18\u5316\u7B56\u7565"
   publisher: "\u8F6F\u4EF6\u5B66\u62A5"
+  link: https://jos.org.cn/jos/article/pdf/6901
   authors:
   - "\u80E1\u6893\u9510"
   - "\u7FC1\u601D\u626C"
