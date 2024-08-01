@@ -41,6 +41,20 @@
   - Chuanhui Yang
   publisher: IEEE International Conference on Data Engineering (ICDE)
   date: '2024-03-19'
+- id: "SPQO: Learning to Safely Reuse Cached Plans for Dynamic Workloads"
+  manual: true
+  title: "SPQO: Learning to Safely Reuse Cached Plans for Dynamic Workloads"
+  authors:
+  - Sijia Li
+  - Peng Cai
+  - Yiqi Shen
+  - Huiqi Hu
+  - Rong Zhang
+  - Xuan Zhou
+  - Quanqing Xu
+  - Chuanhui Yang
+  publisher: Database Systems for Advanced Applications (DASFAA)
+  date: '2024-03-17'
 - id: "Touchstone+ : Query Aware Database Generation for Match Operators"
   manual: true
   title: "Touchstone+ : Query Aware Database Generation for Match Operators"
