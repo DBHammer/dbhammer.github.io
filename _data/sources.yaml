@@ -86,7 +86,7 @@
   date: '2023-01-01'
 - id: doi:10.1109/TKDE.2022.3153651
   title: A Scalable Query-Aware Enormous Database Generator for Database Evaluation
-  publisher: IEEE Transactions on Knowledge and Data Engineering
+  publisher: IEEE Transactions on Knowledge and Data Engineering (TKDE)
   authors:
     - Qingshuai Wang
     - Yuming Li
