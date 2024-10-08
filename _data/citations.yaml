@@ -1,3 +1,15 @@
+- id: "Benchmarking Distributed Transactional Database Systems"
+  manual: true
+  title: "Benchmarking Distributed Transactional Database Systems"
+  link: none
+  authors:
+    - Hailin He
+    - Siyang Weng
+    - Huidong Zhang
+    - Rong Zhang
+    - Xuan Zhou
+  publisher: BenchCouncil Transactions on Benchmarks, Standards and Evaluations
+  date: '2024-10-01'
 - id: "DBStorm: Generating Various Effective Workloads for Testing Isolation Levels"
   manual: true
   title: "DBStorm: Generating Various Effective Workloads for Testing Isolation Levels"
@@ -15,7 +27,7 @@
 - id: "Mirage: Generating Enormous Databases for Complex Workloads"
   manual: true
   title: "Mirage: Generating Enormous Databases for Complex Workloads"
-  link: https://ieeecps.org/files/5PaGiJbkZ2aHTM4ikja9GH
+  link: https://www.computer.org/csdl/proceedings-article/icde/2024/171500d989/1YOtBpuCaTS
   authors:
   - Qingshuai Wang
   - Hao Li
@@ -58,6 +70,7 @@
 - id: "Touchstone+ : Query Aware Database Generation for Match Operators"
   manual: true
   title: "Touchstone+ : Query Aware Database Generation for Match Operators"
+  link: https://link.springer.com/chapter/10.1007/978-981-97-5552-3_18
   authors:
   - Hao Li
   - Qingshuai Wang
