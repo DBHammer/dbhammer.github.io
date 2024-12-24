@@ -13,7 +13,20 @@
   - Y Dong
   - Xuan Zhou
   publisher: IEEE International Conference on Data Engineering (ICDE)
-  date: '2024-12-01'
+  date: '2025-01-01'
+- id: "Artemis: A Customizable Workload Generation Toolkit for Benchmarking Cardinality Estimation "
+  manual: true
+  title: "Artemis: A Customizable Workload Generation Toolkit for Benchmarking Cardinality Estimation "
+  link: 
+  authors:
+  - Zirui Hu
+  - Rong Zhang
+  - Chengcheng Yang
+  - Xuan Zhou
+  - Quanqing Xu
+  - Chuanhui Yang
+  publisher: IEEE International Conference on Data Engineering (ICDE)
+  date: '2025-01-01'
 - id: "Benchmarking Distributed Transactional Database Systems"
   manual: true
   title: "Benchmarking Distributed Transactional Database Systems"
