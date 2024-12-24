@@ -1,45 +1,47 @@
-{%- if include.style == "small" -%}
-  {%- assign width = 200 -%}
-{%- else -%}
-  {%- assign width = 350 -%}
-{%- endif -%}
-
-{%- assign placeholder = "images/placeholder.svg" | relative_url -%}
-
-{%- if include.link -%}
-  {%- assign tag = "a" -%}
-{%- else -%}
-  {%- assign tag = "span" -%}
-{%- endif -%}
-
-{::nomarkdown}
-<span class="card" style="--width: {{ width }}px">
-  <{{ tag }} href="{{ include.link | relative_url }}" class="card_image">
+{{ " " }}
+<div class="card" data-style="{{ include.style }}">
+  <a
+    {% if include.link %}
+      href="{{ include.link | relative_url | uri_escape }}"
+    {% endif %}
+    aria-label="{{ include.title | default: "card link" | regex_strip }}"
+    class="card-image"
+  >
     <img
-      src="{{ include.image | relative_url }}"
-      onerror="this.src = '{{ placeholder }}'; this.onerror = null;"
+      src="{{ include.image | relative_url | uri_escape }}"
+      alt="{{ include.title | default: "card image" | regex_strip }}"
       loading="lazy"
-      alt=""
+      {% include fallback.html %}
     >
-  </{{ tag }}>
+  </a>
 
-  {%- if include.title -%}
-    <{{ tag }} href="{{ include.link | relative_url }}" {% if include.tooltip %}data-tooltip="{{ include.tooltip }}"{% endif %} class="card_title">
-      {{- include.title -}}
-    </{{ tag }}>
-  {%- endif -%}
+  <div class="card-text">
+    {% if include.title %}
+      <a
+        {% if include.link %}
+          href="{{ include.link | relative_url | uri_escape }}"
+        {% endif %}
+        {% if include.tooltip %}
+          data-tooltip="{{ include.tooltip | xml_escape }}"
+        {% endif %}
+        class="card-title"
+      >
+        {{ include.title }}
+    </a>
+    {% endif %}
 
-  {%- if include.subtitle -%}
-    <span class="card_subtitle">{{- include.subtitle -}}</span>
-  {%- endif -%}
+    {% if include.subtitle %}
+      <span class="card-subtitle">{{ include.subtitle }}</span>
+    {% endif %}
 
-  {%- if include.description -%}
-    {{- include.description | markdownify -}}
-  {%- endif -%}
+    {% if include.description %}
+      <p>
+        {{ include.description | markdownify | remove: "<p>" | remove: "</p>" }}
+      </p>
+    {% endif %}
 
-  {%- if include.tags or include.repo -%}
-    {%- include tags.html tags=include.tags repo=include.repo -%}      
-  {%- endif -%}
-
-</span>
-{:/}
+    {% if include.tags or include.repo %}
+      {% include tags.html tags=include.tags repo=include.repo %}
+    {% endif %}
+  </div>
+</div>

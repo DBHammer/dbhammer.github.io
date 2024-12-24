@@ -2,42 +2,50 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
+{% capture floatcontent %}
 
-<!-- {%- include figure.html image=page.image -%} -->
+{% include portrait.html lookup=page.slug %}
 
-<p class="center">
-  {%- include role.html type=page.role text=true description=page.description -%}
-</p>
-
-<p class="center">
-  {%- for entry in page.links -%}
-    {%- assign key = entry[0] -%}
-    {%- assign value = entry[1] -%}
-    {%- include link.html type=key icon="" text="" tooltip="" link=value -%}
-  {%- endfor -%}
-</p>
-
-<div class="member-intro">
-  {{ content }}
+<div>
+  {% for link in page.links %}
+    {% assign key = link[0] %}
+    {% assign value = link[1] %}
+    {% include button.html type=key link=value style="bare" %}<br>
+  {% endfor %}
 </div>
 
-<!-- {%- assign aliases = "" | split: ',' -%}
+{% endcapture %}
 
-{%- if page.aliases.first -%}
-  {%- assign aliases = aliases | concat: page.aliases -%}
-{%- elsif page.aliases -%}
-  {%- assign aliases = aliases | push: page.aliases -%}
-{%- elsif page.title -%}
-  {%- assign aliases = aliases | push: page.title -%}
-{%- endif -%} -->
+{% include float.html content=floatcontent %}
 
-<!-- {%- assign search = aliases | join: '" "' | prepend: '"' | append: '"' | prepend: "/research/?search=" -%}
+{{ content }}
 
-{%- capture text -%}
-  {{ page.title }}'s papers
-{%- endcapture -%} -->
+{% assign aliases = page.aliases
+  | default: page.name
+  | default: page.title
+  | join: ","
+  | split: ","
+  | array_filter
+%}
 
-<!-- <p class="center">
-  {%- include link.html icon="fas fa-book-open" text=text link=search style="button" -%}
-</p> -->
+{% capture search -%}
+  research/?search={% for alias in aliases %}"{{ alias }}" {% endfor %}
+{%- endcapture %}
+
+<p class="center">
+  <a href="{{ search | relative_url | uri_escape }}">
+    Search for {{ page.name | default: page.title }}'s papers on the Research page
+  </a>
+</p>
+
+{% capture search -%}
+  blog/?search={{ page.name }}
+{%- endcapture %}
+
+<!--
+<p class="center">
+  <a href="{{ search | relative_url | uri_escape }}">
+    See {{ page.name | default: page.title }}'s posts on the Blog page
+  </a>
+</p>
+-->

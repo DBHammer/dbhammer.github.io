@@ -1,0 +1,113 @@
+- type: 奖项
+  date: "2022-01-25"
+  content: >
+    祝贺李可强、翁思扬、胡梓锐获长三角金融科技创新与应用全球大赛大学生创新奖!
+  link: '../asserts/orca.pdf'
+
+- type: 奖项
+  date: "2022-05-10"
+  content: >
+    华东师范大学数据科学与工程学院DBHammer项目组的两支团队在首届“OceanBase数据库大赛”中获得优异表现。由连薛超, 翁思扬, 胡梓锐组成的东亚男儿团队荣获亚军, 张惠东和徐金凯组成的HoniiTro19荣获季军。祝贺!
+  link: '../asserts/ob.pdf'
+
+- type: 奖项
+  date: "2022-07-13"
+  content: >
+    祝贺胡梓锐、翁思扬获VLDBSS 2022优秀学员一等奖!
+  link: '../asserts/vldbss.pdf'
+
+- type: 奖项
+  date: "2022-10-13"
+  content: >
+    华东师范大学数据科学与工程学院DBHammer项目组徐金凯, 连薛超, 简炜组成的团队荣获第四届PolarDB全球数据库大赛赛道2: 分布式NewSQL性能挑战季军 (全国第八), 祝贺!
+  link: ''
+
+- type: 奖项
+  date: "2023-11-01"
+  content: >
+    祝贺张惠东荣获硕士研究生国家奖学金, 胡梓锐荣获博士研究生企业二等奖学金!
+  link: ''
+
+- type: 奖项
+  date: "2023-06-01"
+  content: >
+    祝贺瞿璐祎，陈婷荣获上海市优秀毕业生!
+  link: ''
+
+- type: 奖项
+  date: "2023-12-01"
+  content: >
+    祝贺Lauca:Application-Oriented Workload Generation for Transactional Database Performance Evaluation 入选 BenchCouncil Bench100荣誉!
+  link: '../asserts/lauca.pdf'
+
+- type: 奖项
+  date: "2023-07-25"
+  content: >
+    祝贺翁思扬、胡梓锐获DaSE Summer School (主题: 智能时代的数据系统) 2023优秀学员!
+  link: ''
+
+- type: 活动
+  date: "2023-11-01"
+  content: >
+    祝贺胡梓锐参与 2023 TiDB Talent Plan 的课程讲解 (主题：如何开始学习这门课-基于学习的基数/代价预估研究基础) !
+  link: '../asserts/tidbtp.pdf'
+
+- type: 奖项
+  date: "2024-11-01"
+  content: >
+    祝贺翁思扬荣获博士研究生企业一等奖学金!
+  link: ''
+
+- type: 奖项
+  date: "2024-05-25"
+  content: >
+    祝贺王清帅荣获上海市优秀毕业生, 俞融、李可强荣获华东师范大学优秀毕业生!
+  link: ''
+
+- type: 奖项
+  date: "2024-07-14"
+  content: >
+    祝贺杨洪宇、董昊朴获中国数据库暑期学校2024优秀学员一等奖!
+  link: ''
+
+- type: 参会
+  date: "2024-12-13"
+  content: >
+    祝贺曾令扬前往广州参与BenchCouncils2024分享科研成果! 
+  link: ''
+
+- type: 参会
+  date: "2024-12-14"
+  content: >
+    祝贺黄煦华前往天津参与ACM China SIGOPS (ChinaSys) 2024分享科研成果!
+  link: ''
+
+- type: 参会
+  date: "2024-07-08"
+  content: >
+    祝贺黄煦华前往日本参与Database Systems for Advanced Applications (2024 DASFAA) 分享科研成果!
+  link: ''
+
+- type: 参会
+  date: "2024-06-08"
+  content: >
+    祝贺胡梓锐前往荷兰乌特勒支参与IEEE International Conference on Data Engineering (2024 ICDE) 分享科研成果!
+  link: ''
+
+- type: 参会
+  date: "2024-08-08"
+  content: >
+    祝贺何海林前往新疆乌鲁木齐参与CCF中国数据库学术会议 (2024 NDBC) 分享科研成果!
+  link: ''
+
+- type: 奖项
+  date: "2022-03-21"
+  content: >
+    祝贺瞿璐祎和陈婷分别荣获Oceanbase技术征文第二期一、二等奖!
+  link: ''
+
+- type: 奖项
+  date: "2022-05-20"
+  content: >
+    祝贺项兆坤荣获Oceanbase技术征文第三期二等奖!
+  link: ''

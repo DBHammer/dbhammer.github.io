@@ -13,6 +13,7 @@ DBHammer实验室（导师：张蓉教授），华东师范大学数据科学与
   image="images/description.png"
   link="team"
   width="400px"
+
 %}
 
 {% include section.html %}
