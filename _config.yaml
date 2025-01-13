@@ -16,8 +16,8 @@ links:
   orcid: 0000-0002-5182-2093
   google-scholar: iJtZsaQAAAAJ
   github: dbhammer
-  twitter: YourLabHandle
-  youtube: YourLabChannel
+  # twitter: YourLabHandle
+  # youtube: YourLabChannel
 
 ### jekyll settings
 
@@ -49,11 +49,15 @@ collections:
 
 # jekyll plugins
 plugins:
-  - jekyll-spaceship
-  - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-feed
-  - jekyll-last-modified-at
+  - jekyll-sitemap
+  # - jekyll-github-metadata
+  # - jekyll-avatar
+  # - jekyll-gist
+  # - jekyll-mentions
+  # - jekyll-relative-links
+  # - jemoji
 
 # code block syntax highlighting
 highlighter: rouge
