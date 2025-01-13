@@ -31,11 +31,3 @@ nav:
 {% include list.html data="members" component="portrait" filter="role == 'graduated_post'" %}
 
 {% include section.html %}
-
-## Join
-
-欢迎各位对数据库技术感兴趣的同学加入我们！
-{:.center}
-
-{% include link.html type="email" link="rzhang@dase.ecnu.edu.cn" text="联系我们" icon="" style="button" %}
-{:.center}
