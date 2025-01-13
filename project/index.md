@@ -24,22 +24,30 @@ DBHammer实验室研发了多款支持数据库系统评测的工具，包括：
 
 ## 面向数据库的功能评测
 
-{% include list.html component="toolcard" data="tools" filters="group: function-evaluation" %}
+{% include list.html component="card" data="projects" filter="group == 'function-evaluation'" %}
 
 {% include section.html %}
 
+
 ## 面向应用的数据库性能评测
 
-{% include list.html component="toolcard" data="tools" filters="group: load-simulation" %}
+{% include list.html component="card" data="projects" filter="group == 'load-simulation'" %}
 
 {% include section.html %}
 
 ## 面向新型数据库的Benchmark
 
-{% include list.html component="toolcard" data="tools" filters="group: benchmark" %}
+{% include list.html component="card" data="projects" filter="group == 'benchmark'" %}
 
 {% include section.html %}
 
+
 ## 数据库测试平台
 
-{% include list.html component="toolcard" style="large" data="tools" filters="group: general" %}
+{% include list.html component="card" data="projects" filter="group == 'general'" %}
+
+{% include section.html %}
+
+## More
+
+{% include list.html component="card" data="projects" filter="!group" style="small" %}

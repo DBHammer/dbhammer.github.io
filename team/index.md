@@ -11,53 +11,24 @@ nav:
 
 ## 教师
 
-{%
-  include list.html
-  data="members"
-  component="portrait"
-  style="small"
-  filters="role: professor"
-%}
+{% include list.html data="members" component="portrait" filter="role == 'professor'" %}
+
 
 ## 博士研究生
 
-{%
-  include list.html
-  data="members"
-  component="portrait"
-  style="small"
-  filters="role: phd"
-%}
+{% include list.html data="members" component="portrait" filter="role == 'phd'" %}
 
 ## 硕士研究生
 
-{%
-  include list.html
-  data="members"
-  component="portrait"
-  style="small"
-  filters="role: post"
-%}
+{% include list.html data="members" component="portrait" filter="role == 'post'" %}
 
 ## 毕业博士生
 
-{%
-  include list.html
-  data="members"
-  component="portrait"
-  style="small"
-  filters="role: graduated_phd"
-%}
+{% include list.html data="members" component="portrait" filter="role == 'graduated_phd'" %}
 
 ## 毕业硕士生
 
-{%
-  include list.html
-  data="members"
-  component="portrait"
-  style="small"
-  filters="role: graduated_post"
-%}
+{% include list.html data="members" component="portrait" filter="role == 'graduated_post'" %}
 
 {% include section.html %}
 
