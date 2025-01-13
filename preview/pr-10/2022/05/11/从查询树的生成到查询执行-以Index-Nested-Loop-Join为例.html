@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en" data-dark="false">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!--
+  put your analytics (e.g. Google Analytics) tracking code here
+-->
+
+  <!--
+  put your search engine verification (e.g. Google Search Console) tag here
+-->
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>从查询树的生成到查询执行 — 以Index Nested Loop Join为例 | DBHammer</title>
+
+<link rel="icon" href="">
+
+<meta name="title" content="从查询树的生成到查询执行 — 以Index Nested Loop Join为例">
+<meta name="description" content="DaSE, ECNU. The official website of DBHammer, DaSE, ECNU.">
+
+<meta property="og:title" content="从查询树的生成到查询执行 — 以Index Nested Loop Join为例">
+<meta property="og:site_title" content="DBHammer">
+<meta property="og:description" content="DaSE, ECNU. The official website of DBHammer, DaSE, ECNU.">
+<meta property="og:url" content="/preview/pr-">
+<meta property="og:image" content="">
+<meta property="og:locale" content="en_US">
+
+<meta property="twitter:title" content="从查询树的生成到查询执行 — 以Index Nested Loop Join为例">
+<meta property="twitter:description" content="DaSE, ECNU. The official website of DBHammer, DaSE, ECNU.">
+<meta property="twitter:url" content="/preview/pr-">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="">
+
+
+  <meta name="author" content="胡梓锐">
+  <meta property="og:type" content="article">
+  <meta property="og:updated_time" content="2025-01-13T07:16:39+00:00">
+  <meta property="article:published_time" content="2022-05-11T00:00:00+00:00">
+  <meta property="article:modified_time" content="2025-01-13T07:16:39+00:00">
+  <meta name="revised" content="2025-01-13T07:16:39+00:00">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "BlogPosting",
+      "author": { "@type": "Person", "name": "从查询树的生成到查询执行 — 以Index Nested Loop Join为例" },
+      "datePublished": "2022-05-11T00:00:00+00:00",
+      "dateModified": "2025-01-13T07:16:39+00:00",
+    
+    "name": "从查询树的生成到查询执行 — 以Index Nested Loop Join为例",
+    "description": "DaSE, ECNU. The official website of DBHammer, DaSE, ECNU.",
+    "headline": "从查询树的生成到查询执行 — 以Index Nested Loop Join为例",
+    "publisher": {
+      "@type": "Organization",
+      "logo": { "@type": "ImageObject", "url": "" }
+    },
+    "url": "/preview/pr-"
+  }
+</script>
+
+<link rel="alternate" type="application/rss+xml" href="/preview/pr-/feed.xml">
+
+  <!-- Google Fonts -->
+<!-- automatically get url from fonts used in theme file -->
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?display=swap&&family=Barlow:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600&amp;family=Roboto+Mono:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600" rel="stylesheet">
+
+<!-- Font Awesome icons (load asynchronously due to size) -->
+
+<link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet" media="none" onload="this.removeAttribute('media'); this.onload = null;">
+<noscript>
+  <link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet">
+</noscript>
+
+  <!-- third party styles -->
+<!-- https://stylishthemes.github.io/Syntax-Themes/pygments/ -->
+<link href="https://cdn.jsdelivr.net/gh/StylishThemes/Syntax-Themes/pygments/css-github/pygments-tomorrow-night-eighties.css" rel="stylesheet">
+
+<!-- include all sass in styles folder -->
+
+
+  
+    <link href="/preview/pr-/_styles/-theme.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/alert.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/all.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/anchor.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/background.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/banner.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/blog-article.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/body.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/bold.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/button.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/card.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/checkbox.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/citation.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/code.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/cols.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/dark-toggle.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/details.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/feature.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/figure.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/float.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/font.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/footer.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/form.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/gallery.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/grid.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/header.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/heading.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/highlight.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/icon.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/image.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/input.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/link.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/list.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/main.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/member-intro.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/paragraph.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/portrait.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/post-excerpt.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/post-info.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/post-nav.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/quote.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/role.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/rule.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/search-box.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/search-info.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/section.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/table.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/tags.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/textbox.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/tooltip.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/two-col.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/util.css" rel="stylesheet">
+  
+
+
+<!-- include all css in styles folder -->
+
+
+
+  <!-- third party scripts -->
+<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+<script src="https://unpkg.com/tippy.js@6" defer></script>
+<script src="https://unpkg.com/mark.js@8" defer></script>
+
+<!-- include all js in scripts folder -->
+
+
+  <script src="/preview/pr-/_scripts/anchors.js"></script>
+
+  <script src="/preview/pr-/_scripts/dark-mode.js"></script>
+
+  <script src="/preview/pr-/_scripts/fetch-tags.js"></script>
+
+  <script src="/preview/pr-/_scripts/search.js"></script>
+
+  <script src="/preview/pr-/_scripts/site-search.js"></script>
+
+  <script src="/preview/pr-/_scripts/table-wrap.js"></script>
+
+  <script src="/preview/pr-/_scripts/tooltip.js"></script>
+
+  <script src="/preview/pr-/_scripts/tooltips.js"></script>
+
+  <script src="/preview/pr-/_scripts/true-hide.js"></script>
+
+  <script src="/preview/pr-/_scripts/util.js"></script>
+
+
+</head>
+
+  <body>
+    
+
+
+
+
+
+
+
+<header class="background" style="--image: url('')" data-dark="true">
+  <a href="/preview/pr-/" class="home">
+    
+      <span class="logo">
+        
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="-50 -50 100 100" style="overflow: visible">
+  <style>
+  circle {
+    animation: float 2s ease-out forwards infinite,
+    fade 2s ease-out forwards infinite;
+  }
+  circle:nth-of-type(1) {
+    animation-delay: 0.1s;
+  }
+  circle:nth-of-type(2) {
+    animation-delay: 0.4s;
+  }
+  circle:nth-of-type(3) {
+    animation-delay: 1.1s;
+  }
+  @keyframes float {
+    50% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-45px);
+    }
+  }
+  @keyframes fade {
+    75% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  </style>
+  <circle fill="#b3e5fc" cx="0" cy="0" r="3"></circle>
+  <circle fill="#b3e5fc" cx="0" cy="0" r="3"></circle>
+  <circle fill="#b3e5fc" cx="0" cy="0" r="3"></circle>
+  <path fill="#81d4fa" d="
+      M 0.0 -15.0
+      L -21.7 -2.5
+      L -21.7 22.5
+      L -0.0 35.0
+      L 21.7 22.5
+      L 21.7 -2.5
+      z
+    "></path>
+  <path fill="#b3e5fc" d="
+      M 0.0 -15.0
+      L -21.7 -2.5
+      L 0 10
+      L 21.7 -2.5
+      z
+    "></path>
+  <path fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="
+      M -15 -43
+      L -10 -43
+      L -10 -19.2
+      L -30.3 -7.5
+      L -30.3 27.5
+      L -0 45
+      L 30.3 27.5
+      L 30.3 -7.5
+      L 10 -19.2
+      L 10 -43
+      L 15 -43
+    "></path>
+</svg>
+
+        
+      </span>
+    
+    
+      <span class="title-text" data-tooltip="Home">
+        
+          <span class="title">DBHammer</span>
+        
+        
+          <span class="subtitle">DaSE, ECNU</span>
+        
+      </span>
+    
+  </a>
+
+  <input class="nav-toggle" type="checkbox" aria-label="show/hide nav">
+
+  <nav>
+    
+    
+      
+        <a href="/preview/pr-/project/" data-tooltip="Software, datasets, and more">
+          项目
+        </a>
+      
+    
+      
+        <a href="/preview/pr-/blog/" data-tooltip="Musings and miscellany">
+          博客
+        </a>
+      
+    
+      
+        <a href="/preview/pr-/research/" data-tooltip="Published works">
+          论文
+        </a>
+      
+    
+      
+        <a href="/preview/pr-/news/" data-tooltip="News">
+          新闻
+        </a>
+      
+    
+      
+        <a href="/preview/pr-/contact/" data-tooltip="Email, address, and location">
+          联系我们
+        </a>
+      
+    
+      
+        <a href="/preview/pr-/team/" data-tooltip="About our team">
+          成员
+        </a>
+      
+    
+  </nav>
+</header>
+
+    <main>
+      <!--
+  modify main content of page:
+  - add section breaks
+  - attach section properties
+  - filter out blank sections
+-->
+
+
+
+
+
+
+  
+  
+  
+
+  <section class="background" data-size="1">
+    <!--
+  background: ;
+  dark: ;
+  size: 1;
+-->
+
+
+<h1 class="center">从查询树的生成到查询执行 — 以Index Nested Loop Join为例</h1>
+
+<div class="post-info">
+  
+    
+    
+      
+
+
+
+<div class="portrait-wrapper">
+  <a href="/preview/pr-/members/%E8%83%A1%E6%A2%93%E9%94%90.html" class="portrait" data-style="tiny" aria-label="胡梓锐">
+    
+      <i class="icon fas fa-graduation-cap"></i>
+    
+
+    <img src="/preview/pr-/photos/huzirui.jpg" class="portrait-image" alt="member portrait" loading="lazy" onerror="this.src = '/preview/pr-/images/fallback.svg'; this.onerror = null;">
+
+    
+      <span class="portrait-name">
+        胡梓锐
+      </span>
+    
+
+    
+      <span class="portrait-description">
+        
+      </span>
+    
+
+    
+  </a>
+</div>
+
+    
+  
+
+  
+  
+
+  
+    <span data-tooltip="Originally published on">
+      <i class="icon fa-regular fa-calendar"></i>
+      <span>May 11, 2022</span>
+    </span>
+  
+
+  
+    <span data-tooltip="Last updated on">
+      <i class="icon fa-solid fa-clock-rotate-left"></i>
+      <span>January 13, 2025</span>
+    </span>
+  
+</div>
+
+
+  
+
+
+  <div class="tags" data-link="/preview/pr-/blog">
+    
+      <a href="blog?search=%22tag:%20query%22" class="tag" data-tooltip='Show items with the tag "query"'>
+        query
+      </a>
+    
+  </div>
+  </section>
+
+  
+  
+  
+
+  <section class="background" data-size="page">
+    <!--
+  background: ;
+  dark: ;
+  size: ;
+-->
+
+
+<blockquote>
+  <p>💡 <strong>作者：华东师范大学 数据科学与工程学院 DBHammer项目组 东亚男儿团队</strong></p>
+</blockquote>
+
+<p>本文主体面向对OceanBase数据库源码以及系统性能优化感兴趣的初学者供以技术交流，笔者来自<a href="https://dbhammer.github.io/">华东师范大学数据科学与工程学院DBHammer项目组</a>。</p>
+
+<p>在OceanBase数据库大赛的复赛阶段，我们需要对OceanBase 3.1版本的Nested Loop Join（下称NLJ）这一功能进行优化。因此，在这里我们以NLJ为例，简要介绍我们对OB从查询树的生成到查询执行的一些认识。文章主要从OB的基础代码组织逻辑、查询树的生成和查询执行三个方面进行介绍。</p>
+
+<h2 id="ob的代码组织逻辑">OB的代码组织逻辑</h2>
+
+<p>在刚开始研读OB的代码时，OB简洁的代码风格让人印象深刻。一般而言，OB的函数返回值不是函数的处理结果，而是函数的执行状态。与之相对的，函数的处理结果会通过修改引用参数的方式向上传递。因此，通过分析每个函数的返回值，可以简单得知这个函数的执行流程。所以，在OB的代码中经常能看到类似的代码：</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">func_1</span><span class="p">)){</span>
+     <span class="n">logging</span>
+ <span class="p">}</span> <span class="k">else</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">func_2</span><span class="p">)){</span>
+     <span class="n">logging</span>
+ <span class="p">}</span> <span class="k">else</span> <span class="p">(</span><span class="n">OB_SUCC</span><span class="p">(</span><span class="n">func_3</span><span class="p">)){</span>
+     <span class="n">logging</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+<p>这样的代码实际上相当于顺序执行func_1、func_2、func_3，并在函数执行失败/成功的时候输出日志信息，不继续执行剩下的函数。为了后续叙述的简洁，对于类似的代码，我们将省略函数执行失败的异常处理。</p>
+
+<h2 id="查询树的生成以index-nested-loop-join为例">查询树的生成：以Index Nested Loop Join为例</h2>
+
+<p>在生成物理的查询树之前，OB会先生成逻辑的查询计划，然后根据这个逻辑的查询计划确定实际执行的物理计划。在NLJ中，最重要的就是join算子的生成，所以我们以join算子的生成为例介绍这一部分。</p>
+
+<p>join算子的生成主要依赖于<code class="language-plaintext highlighter-rouge">ObStaticEngineCG::generate_join_spec(ObLogJoin&amp; op, ObJoinSpec&amp; spec)</code>函数。这一函数接收两个引用参数op和spec，op是join对应的逻辑计划，当有多个join条件时，op详细记录第一个join条件，并将其他的join条件存储在<code class="language-plaintext highlighter-rouge">other_join_conditions</code>里；spec是生成的物理执行计划。<code class="language-plaintext highlighter-rouge">generate_join_spec()</code>分为两个部分。在第一部分，它会处理首要的join条件，判断逻辑计划中首要的join条件的join类型，根据这个类型选择生成对应的物理计划。在第二部分，它遍历<code class="language-plaintext highlighter-rouge">other_join_conditions</code>，逐个调用接口函数生成物理执行计划。通过这种方式，OB能够自然地实现对逻辑计划的递归展开，从而构建出对应的物理执行树。我们对这一函数进行了整理和提取，抽象出其中的逻辑如下：</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kt">int</span> <span class="n">ObStaticEngineCG</span><span class="o">::</span><span class="n">generate_join_spec</span><span class="p">(</span><span class="n">ObLogJoin</span><span class="o">&amp;</span> <span class="n">op</span><span class="p">,</span> <span class="n">ObJoinSpec</span><span class="o">&amp;</span> <span class="n">spec</span><span class="p">)</span>
+ <span class="p">{</span>
+   <span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">OB_SUCCESS</span><span class="p">;</span>
+   <span class="kt">bool</span> <span class="n">is_late_mat</span> <span class="o">=</span> <span class="p">(</span><span class="n">phy_plan_</span><span class="o">-&gt;</span><span class="n">get_is_late_materialized</span><span class="p">()</span> <span class="o">||</span> <span class="n">op</span><span class="p">.</span><span class="n">is_late_mat</span><span class="p">());</span>
+   <span class="n">phy_plan_</span><span class="o">-&gt;</span><span class="n">set_is_late_materialized</span><span class="p">(</span><span class="n">is_late_mat</span><span class="p">);</span>
+
+   <span class="n">spec</span><span class="p">.</span><span class="n">join_type_</span> <span class="o">=</span> <span class="n">op</span><span class="p">.</span><span class="n">get_join_type</span><span class="p">();</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">MERGE_JOIN</span> <span class="o">==</span> <span class="n">op</span><span class="p">.</span><span class="n">get_join_algo</span><span class="p">())</span> <span class="p">{</span>
+       <span class="c1">// 查询计划是merge join时的处理，暂略</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">NESTED_LOOP_JOIN</span> <span class="o">==</span> <span class="n">op</span><span class="p">.</span><span class="n">get_join_algo</span><span class="p">())</span> <span class="p">{</span>  <span class="c1">// nested loop join</span>
+     <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">op</span><span class="p">.</span><span class="n">get_equal_join_conditions</span><span class="p">().</span><span class="n">count</span><span class="p">())</span> <span class="p">{</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+       <span class="n">ObBasicNestedLoopJoinSpec</span><span class="o">&amp;</span> <span class="n">nlj_spec</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">ObBasicNestedLoopJoinSpec</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">spec</span><span class="p">);</span>
+       <span class="n">nlj_spec</span><span class="p">.</span><span class="n">enable_gi_partition_pruning_</span> <span class="o">=</span> <span class="n">op</span><span class="p">.</span><span class="n">is_enable_gi_partition_pruning</span><span class="p">();</span>
+       <span class="k">const</span> <span class="n">ObIArray</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="p">,</span> <span class="n">ObRawExpr</span><span class="o">*&gt;&gt;&amp;</span> <span class="n">nl_params</span> <span class="o">=</span> <span class="n">op</span><span class="p">.</span><span class="n">get_nl_params</span><span class="p">();</span>
+       <span class="k">if</span> <span class="p">(</span><span class="n">nlj_spec</span><span class="p">.</span><span class="n">enable_gi_partition_pruning_</span> <span class="o">&amp;&amp;</span>
+           <span class="n">OB_FAIL</span><span class="p">(</span><span class="n">do_gi_partition_pruning</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">nlj_spec</span><span class="p">)))</span> <span class="p">{</span> <span class="c1">// 如果可以的话，进行分区裁剪</span>
+       <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">nlj_spec</span><span class="p">.</span><span class="n">init_param_count</span><span class="p">(</span><span class="n">nl_params</span><span class="p">.</span><span class="n">count</span><span class="p">())))</span> <span class="p">{</span> <span class="c1">// 初始化join的参数数量</span>
+       <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+         <span class="n">ObIArray</span><span class="o">&lt;</span><span class="n">ObRawExpr</span><span class="o">*&gt;&amp;</span> <span class="n">exec_param_exprs</span> <span class="o">=</span> <span class="n">op</span><span class="p">.</span><span class="n">get_stmt</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">get_exec_param_ref_exprs</span><span class="p">();</span>
+         <span class="n">ARRAY_FOREACH</span><span class="p">(</span><span class="n">nl_params</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span><span class="c1">// 遍历每个参数</span>
+         <span class="p">{</span>
+             <span class="c1">// 根据参数生成物理执行算子，具体内容略</span>
+         <span class="p">}</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">OB_SUCC</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">PHY_NESTED_LOOP_JOIN</span> <span class="o">==</span> <span class="n">spec</span><span class="p">.</span><span class="n">type_</span><span class="p">)</span> <span class="p">{</span>
+           <span class="c1">// 判断能否使用batch nlj，如果可以就更新flag</span>
+           <span class="kt">bool</span> <span class="n">use_batch_nlj</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+           <span class="n">ObNestedLoopJoinSpec</span><span class="o">&amp;</span> <span class="n">nlj</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">ObNestedLoopJoinSpec</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">spec</span><span class="p">);</span>
+           <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">op</span><span class="p">.</span><span class="n">can_use_batch_nlj</span><span class="p">(</span><span class="n">use_batch_nlj</span><span class="p">)))</span> <span class="p">{</span><span class="c1">// 判断能不能用，当join条件有复数字段组成时不使用batch</span>
+           <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">use_batch_nlj</span><span class="p">)</span> <span class="p">{</span>
+             <span class="n">nlj</span><span class="p">.</span><span class="n">use_group_</span> <span class="o">=</span> <span class="n">use_batch_nlj</span><span class="p">;</span>
+             <span class="k">if</span> <span class="p">(</span><span class="n">OB_ISNULL</span><span class="p">(</span><span class="n">nlj</span><span class="p">.</span><span class="n">get_right</span><span class="p">())</span> <span class="o">||</span> <span class="n">PHY_TABLE_SCAN</span> <span class="o">!=</span> <span class="n">nlj</span><span class="p">.</span><span class="n">get_right</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">type_</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 只有table scan的时候才会选择batch nlj</span>
+             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+               <span class="k">const</span> <span class="n">ObTableScanSpec</span><span class="o">*</span> <span class="n">right_tsc</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">ObTableScanSpec</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">nlj</span><span class="p">.</span><span class="n">get_right</span><span class="p">());</span>
+               <span class="k">const_cast</span><span class="o">&lt;</span><span class="n">ObTableScanSpec</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">right_tsc</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">batch_scan_flag_</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+             <span class="p">}</span>
+           <span class="p">}</span>
+         <span class="p">}</span>
+       <span class="p">}</span>
+     <span class="p">}</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">HASH_JOIN</span> <span class="o">==</span> <span class="n">op</span><span class="p">.</span><span class="n">get_join_algo</span><span class="p">())</span> <span class="p">{</span>
+     <span class="c1">// 查询计划是hash join时的处理，暂略</span>
+   <span class="p">}</span>
+   <span class="k">const</span> <span class="n">common</span><span class="o">::</span><span class="n">ObIArray</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="p">,</span> <span class="n">ObRawExpr</span><span class="o">*&gt;&gt;&amp;</span> <span class="n">exec_params</span> <span class="o">=</span> <span class="n">op</span><span class="p">.</span><span class="n">get_exec_params</span><span class="p">();</span>
+ 
+   <span class="c1">// 2. add other join conditions</span>
+   <span class="k">const</span> <span class="n">ObIArray</span><span class="o">&lt;</span><span class="n">ObRawExpr</span><span class="o">*&gt;&amp;</span> <span class="n">other_join_conds</span> <span class="o">=</span> <span class="n">op</span><span class="p">.</span><span class="n">get_other_join_conditions</span><span class="p">();</span>
+   <span class="c1">// 初始化other condition</span>
+   <span class="n">OZ</span><span class="p">(</span><span class="n">spec</span><span class="p">.</span><span class="n">other_join_conds_</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="n">other_join_conds</span><span class="p">.</span><span class="n">count</span><span class="p">()));</span>
+ 
+   <span class="n">ARRAY_FOREACH</span><span class="p">(</span><span class="n">other_join_conds</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="c1">// 遍历剩下的条件</span>
+   <span class="p">{</span>
+     <span class="c1">// 逐个生成剩下条件的物理算子</span>
+   <span class="p">}</span>  <span class="c1">// end for</span>
+ 
+   <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">generate_join_spec()</code> 对于NLJ最为特别的处理就是判断能否使用batch NLJ，这也是我们所关注的第一个优化点。通过debug我们知道，由于比赛中的查询语句的join条件含有两个字段，这个函数不会选择使用batch NLJ。因此，我们通过扩展OB对batch NLJ的支持和修改判定条件，使得<code class="language-plaintext highlighter-rouge">generate_join_spec()</code>能将比赛中的查询转化为batch NLJ的物理执行计划。</p>
+
+<h2 id="查询执行以index-nested-loop-join为例">查询执行：以Index Nested Loop Join为例</h2>
+
+<p>当逻辑执行计划里的NLJ经过<code class="language-plaintext highlighter-rouge">generate_join_spec</code>转换为物理的执行算子之后，OB就会通过火山模型逐层执行物理算子，并一次向上层算子呈递一行数据。对于NLJ而言，这部分功能主要由<code class="language-plaintext highlighter-rouge">ObNestedLoopJoinOp::inner_get_next_row()</code>实现。这一函数并不需要返回值，是因为它会直接通过修改上下文信息的方式保存一次调用所获取的数据。</p>
+
+<p>作为一个join算子，<code class="language-plaintext highlighter-rouge">ObNestedLoopJoinOp</code>很自然地含有两个子节点。对于比赛中的查询语句，我们可以很容易知道这两个子节点都是table scan算子。且不论左右节点的区别，每次调用join算子时需要从左右节点分别获取一行数据并连接。但在执行过程中可能出现很多种情况，比如右节点获取的数据与左节点获取的数据不匹配，遍历完右节点都无法与左节点当前的数据匹配等等。因此，为了更好地实现这部分逻辑，OB在函数中实现了一个小型的状态机，根据当前状态选择后续需要执行的函数。示意图如下：</p>
+
+<pre><code class="language-flow">start=&gt;start: 开始inner_get_next_row
+end=&gt;end: 返回结果
+left_op=&gt;operation: read_left_operate()
+left_going=&gt;operation: read_left_func_going()
+left_end=&gt;operation: read_left_func_end()
+right_op=&gt;operation: read_right_operate()
+right_going=&gt;operation: read_right_func_going()
+right_end=&gt;operation: read_right_func_end()
+iter_end1=&gt;condition: 左节点存在下一行数据
+iter_end2=&gt;condition: 右节点存在下一行数据
+output_product=&gt;condition: 连接成功
+
+start-&gt;left_op-&gt;iter_end1
+iter_end1(yes)-&gt;left_going-&gt;right_op-&gt;iter_end2
+iter_end1(no)-&gt;left_end-&gt;end
+iter_end2(yes)-&gt;right_going-&gt;output_product
+iter_end2(no)-&gt;right_end-&gt;output_product
+output_product(yes)-&gt;end
+output_product(no)-&gt;left_op
+</code></pre>
+<p>其代码抽象如下：</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">ObNestedLoopJoinOp</span><span class="o">::</span><span class="n">inner_get_next_row</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">OB_SUCCESS</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">OB_UNLIKELY</span><span class="p">(</span><span class="n">LEFT_SEMI_JOIN</span> <span class="o">==</span> <span class="n">MY_SPEC</span><span class="p">.</span><span class="n">join_type_</span> <span class="o">||</span> <span class="n">LEFT_ANTI_JOIN</span> <span class="o">==</span> <span class="n">MY_SPEC</span><span class="p">.</span><span class="n">join_type_</span><span class="p">))</span> <span class="p">{</span>
+   	<span class="c1">// 处理半连接，具体内容略</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">state_operation_func_type</span> <span class="n">state_operation</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="n">state_function_func_type</span> <span class="n">state_function</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">func</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="n">output_row_produced_</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">OB_SUCC</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">output_row_produced_</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">state_operation</span> <span class="o">=</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">ObNestedLoopJoinOp</span><span class="o">::</span><span class="n">state_operation_func_</span><span class="p">[</span><span class="n">state_</span><span class="p">];</span><span class="c1">// state_取值为left right，表示当前执行左节点还是右节点的任务</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">OB_ITER_END</span> <span class="o">==</span> <span class="p">(</span><span class="n">ret</span> <span class="o">=</span> <span class="p">(</span><span class="k">this</span><span class="o">-&gt;*</span><span class="n">state_operation</span><span class="p">)()))</span> <span class="p">{</span>
+        <span class="n">func</span> <span class="o">=</span> <span class="n">FT_ITER_END</span><span class="p">;</span><span class="c1">// func的取值为end、going，对应取流程图中end或是going后缀的函数</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">OB_SUCCESS</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">ret</span><span class="p">))</span> <span class="p">{</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">func</span> <span class="o">=</span> <span class="n">FT_ITER_GOING</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">OB_SUCC</span><span class="p">(</span><span class="n">ret</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">state_function</span> <span class="o">=</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">ObNestedLoopJoinOp</span><span class="o">::</span><span class="n">state_function_func_</span><span class="p">[</span><span class="n">state_</span><span class="p">][</span><span class="n">func</span><span class="p">];</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">((</span><span class="k">this</span><span class="o">-&gt;*</span><span class="n">state_function</span><span class="p">)())</span> <span class="o">&amp;&amp;</span> <span class="n">OB_ITER_END</span> <span class="o">!=</span> <span class="n">ret</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>  <span class="c1">// while end</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>其中一共包含6个函数，分别是左右节点的<code class="language-plaintext highlighter-rouge">operate(),func_going(),func_end()</code>函数。其中，<code class="language-plaintext highlighter-rouge">operate()</code>函数负责从对应子节点获取一行数据；<code class="language-plaintext highlighter-rouge">func_going()</code>函数负责判断是否需要切换为另一个节点的函数，并做预处理，如<code class="language-plaintext highlighter-rouge">left_func_going()</code>会根据左节点获取的数据，准备扫描右节点所需要的参数（值得一提的是，因为实际上这个函数会深入底层更新右节点的迭代器，所以开销是很大的），<code class="language-plaintext highlighter-rouge">right_func_going()</code>负责判断是否连接成功；<code class="language-plaintext highlighter-rouge">func_end()</code>判断是否得到了需要的结果，并修改<code class="language-plaintext highlighter-rouge">inner_get_next_row()</code>的返回值。</p>
+
+<p>在这6个函数中，<code class="language-plaintext highlighter-rouge">func_going()</code>和<code class="language-plaintext highlighter-rouge">func_end()</code>的函数逻辑都比较简单，我们不再在这里赘述。以下主要介绍左右节点的<code class="language-plaintext highlighter-rouge">operate()</code>函数，这也是我们优化batch_nlj所主要关心的函数。</p>
+
+<h3 id="join的左子节点实现batch-or-not-batch">Join的左子节点实现：batch, or not batch</h3>
+
+<p>根据在构建物理执行树时的判断，left_operate()存在两种执行逻辑，分别对应不使用batch NLJ和使用batch NLJ。当不使用batch nlj时，函数直接调用对应算子的next_row()方法。这一方法会不断向下获取一行数据，具体的调用栈如下：</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">oceanbase</span><span class="o">::</span><span class="n">storage</span><span class="o">::</span><span class="n">ObmultipleScanMergeImpI</span><span class="o">::</span><span class="n">supply_consume</span><span class="p">()</span>
+ <span class="n">oceanbase</span><span class="o">::</span><span class="n">storage</span><span class="o">::</span><span class="n">ObmultipleScanMergeImpI</span><span class="o">::</span><span class="n">inner_get_next_row</span><span class="p">()</span>
+ <span class="n">oceanbase</span><span class="o">::</span><span class="n">storage</span><span class="o">::</span><span class="n">ObmultipleScanMerge</span><span class="o">::</span><span class="n">inner_get_next_row</span><span class="p">()</span>
+ <span class="n">oceanbase</span><span class="o">::</span><span class="n">storage</span><span class="o">::</span><span class="n">ObmultipleMerge</span><span class="o">::</span><span class="n">get_next_row</span><span class="p">()</span>
+ <span class="n">oceanbase</span><span class="o">::</span><span class="n">storage</span><span class="o">::</span><span class="n">ObTableScanStoreRowIterator</span><span class="o">::</span><span class="n">get_next_row</span><span class="p">()</span>
+ <span class="n">oceanbase</span><span class="o">::</span><span class="n">storage</span><span class="o">::</span><span class="n">ObTableScanRangeArrayRowIterator</span><span class="o">::</span><span class="n">get_next_row</span><span class="p">()</span>
+ <span class="n">oceanbase</span><span class="o">::</span><span class="n">storage</span><span class="o">::</span><span class="n">ObTableScanIterator</span><span class="o">::</span><span class="n">get_next_row</span><span class="p">()</span>
+ <span class="n">oceanbase</span><span class="o">::</span><span class="n">sql</span><span class="o">::</span><span class="n">ObTableScanOp</span><span class="o">::</span><span class="n">get_next_row_with_mode</span><span class="p">()</span>
+ <span class="n">oceanbase</span><span class="o">::</span><span class="n">sql</span><span class="o">::</span><span class="n">ObTableScanOp</span><span class="o">::</span><span class="n">inner_get_next_row</span><span class="p">()</span>
+ <span class="n">oceanbase</span><span class="o">::</span><span class="n">sql</span><span class="o">::</span><span class="n">ObOperator</span><span class="o">::</span><span class="n">get_next_row</span><span class="p">()</span>
+ <span class="n">oceanbase</span><span class="o">::</span><span class="n">sql</span><span class="o">::</span><span class="n">ObJoinOp</span><span class="o">::</span><span class="n">get_next_left_row</span><span class="p">()</span>
+ <span class="n">oceanbase</span><span class="o">::</span><span class="n">sql</span><span class="o">::</span><span class="n">ObBasicNestedLoopJoin</span><span class="o">::</span><span class="n">get_next_left_row</span><span class="p">()</span>
+</code></pre></div></div>
+<p>通过检查代码，我们发现每层调用的逻辑都非常清晰，主要是调用下层接口以及异常处理，因此不再赘述。我们主要讨论使用batch NLJ时的执行逻辑。</p>
+
+<p>当使用batch NLJ时，join算子会先取出左节点中的一批数据，然后再逐个与右节点进行匹配。这种方式可以更好地利用数据的局部性，提高对磁盘数据的访问效率。为了实现批量获取数据，同时又不改变程序其他部分的逻辑，使用batch NLJ时需要在第一次调用时连续调用多次算子的<code class="language-plaintext highlighter-rouge">next_row()</code>方法并存储对应的数据，在后续调用时直接从存储的数据中导出对应数据。其代码抽象如下：</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kt">int</span> <span class="n">ObNestedLoopJoinOp</span><span class="o">::</span><span class="n">group_read_left_operate</span><span class="p">()</span>
+ <span class="p">{</span>
+   <span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">OB_SUCCESS</span><span class="p">;</span>
+   <span class="n">ObTableScanOp</span><span class="o">*</span> <span class="n">right_tsc</span> <span class="o">=</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">ObTableScanOp</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">right_</span><span class="p">);</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">left_store_iter_</span><span class="p">.</span><span class="n">is_valid</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">left_store_iter_</span><span class="p">.</span><span class="n">has_next</span><span class="p">())</span> <span class="p">{</span>
+     <span class="c1">// 当当前还有存储数据时，直接获取存储数据，具体内容略</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="c1">// 没有存储数据时，批量获取数据</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">right_tsc</span><span class="o">-&gt;</span><span class="n">group_rescan_init</span><span class="p">(</span><span class="n">MY_SPEC</span><span class="p">.</span><span class="n">batch_size_</span><span class="p">)))</span> <span class="p">{</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">is_left_end_</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 判断左节点是否已经取完</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+       <span class="k">if</span> <span class="p">(</span><span class="n">OB_ISNULL</span><span class="p">(</span><span class="n">mem_context_</span><span class="p">))</span> <span class="p">{</span>
+           <span class="c1">// 初始化存储数据的结构，具体内容略</span>
+       <span class="p">}</span>
+ 
+       <span class="kt">bool</span> <span class="n">ignore_end</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+       <span class="k">if</span> <span class="p">(</span><span class="n">OB_SUCC</span><span class="p">(</span><span class="n">ret</span><span class="p">))</span> <span class="p">{</span>
+           <span class="c1">//初始化或重置访问数据和它的迭代器left_store_和left_store_iter_，具体内容略</span>
+         <span class="p">}</span>
+         <span class="n">save_last_row_</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+         <span class="k">while</span> <span class="p">(</span><span class="n">OB_SUCC</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">is_full</span><span class="p">())</span> <span class="p">{</span>
+             <span class="c1">// 批量获取数据</span>
+           <span class="n">clear_evaluated_flag</span><span class="p">();</span> <span class="c1">// 清理访问参数</span>
+           <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">get_next_left_row</span><span class="p">()))</span> <span class="p">{</span> <span class="c1">// 获取下一行</span>
+             <span class="k">if</span> <span class="p">(</span><span class="n">OB_ITER_END</span> <span class="o">!=</span> <span class="n">ret</span><span class="p">)</span> <span class="p">{</span>
+             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+               <span class="n">is_left_end_</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+             <span class="p">}</span>
+           <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">left_store_</span><span class="p">.</span><span class="n">add_row</span><span class="p">(</span><span class="n">left_</span><span class="o">-&gt;</span><span class="n">get_spec</span><span class="p">().</span><span class="n">output_</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">eval_ctx_</span><span class="p">)))</span> <span class="p">{</span><span class="c1">// 存储到存储到对应的结构left_store_中</span>
+           <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">prepare_rescan_params</span><span class="p">(</span><span class="nb">true</span> <span class="cm">/*is_group*/</span><span class="p">)))</span> <span class="p">{</span>
+           <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">deep_copy_dynamic_obj</span><span class="p">()))</span> <span class="p">{</span>
+           <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">right_tsc</span><span class="o">-&gt;</span><span class="n">group_add_query_range</span><span class="p">()))</span> <span class="p">{</span> <span class="c1">// 存储对应的右节点访问参数</span>
+           <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+             <span class="n">ignore_end</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+           <span class="p">}</span>
+         <span class="p">}</span>
+       <span class="p">}</span>
+ 
+       <span class="k">if</span> <span class="p">(</span><span class="n">OB_SUCC</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">ignore_end</span> <span class="o">&amp;&amp;</span> <span class="n">OB_ITER_END</span> <span class="o">==</span> <span class="n">ret</span><span class="p">))</span> <span class="p">{</span>
+         <span class="c1">// 更新迭代器left_store_iter_，并更新右节点的访问参数，具体内容略</span>
+       <span class="p">}</span>
+     <span class="p">}</span>
+   <span class="p">}</span>
+ 
+   <span class="k">if</span> <span class="p">(</span><span class="n">OB_SUCC</span><span class="p">(</span><span class="n">ret</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// 从存储结构left_store_里拿一行数据，作为本次调用的返回结果</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">left_store_iter_</span><span class="p">.</span><span class="n">get_next_row</span><span class="p">(</span><span class="n">left_</span><span class="o">-&gt;</span><span class="n">get_spec</span><span class="p">().</span><span class="n">output_</span><span class="p">,</span> <span class="n">eval_ctx_</span><span class="p">)))</span> <span class="p">{</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+       <span class="n">left_row_joined_</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+     <span class="p">}</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+<p>可以注意到，在执行过程中，<code class="language-plaintext highlighter-rouge">group_read_left_operate()</code>会存储每一行数据对应的右节点访问参数。更具体来说，是这一行数据对应第一个join条件字段的值。因此，如果存在多于一个join字段，剩余的字段值不会被存储，这导致使用batch NLJ时无法正确根据join条件过滤结果，这也是OB原本只限制在join条件唯一时使用batch NLJ的原因。为了使用batch NLJ，我们对存储结构进行扩展，使它能存储剩余条件字段的值，从而保证对于比赛的查询语句也能有效且正确使用batch NLJ。</p>
+
+<h3 id="join的右节点实现index-merge">J<strong>oin的右节点实现：index merge</strong>
+</h3>
+
+<p>与左节点稍有不同，右节点并非是一个普通的table scan，而是一个带有index的scan。因此，在这个算子扫描结果的时候，会首先在索引表中进行搜索和定位，然后基于定位的结果直接构造数据表中的迭代器，从而加速数据的获取。这一流程在代码上的体现便是这个算子同时维护了两张表的迭代器，分别是数据表的<code class="language-plaintext highlighter-rouge">main_iter_</code>和索引表的<code class="language-plaintext highlighter-rouge">index_iter_</code>。其代码抽象如下：</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kt">int</span> <span class="n">ObIndexMerge</span><span class="o">::</span><span class="n">get_next_row</span><span class="p">(</span><span class="n">ObStoreRow</span><span class="o">*&amp;</span> <span class="n">row</span><span class="p">)</span>
+ <span class="p">{</span>
+   <span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">OB_SUCCESS</span><span class="p">;</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">OB_UNLIKELY</span><span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">index_iter_</span><span class="p">)</span> <span class="o">||</span> <span class="n">OB_UNLIKELY</span><span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">access_ctx_</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// 没有初始化</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">access_ctx_</span><span class="o">-&gt;</span><span class="n">is_end</span><span class="p">())</span> <span class="p">{</span> <span class="c1">// 已经扫描完了</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+     <span class="k">while</span> <span class="p">(</span><span class="n">OB_SUCC</span><span class="p">(</span><span class="n">ret</span><span class="p">))</span> <span class="p">{</span>
+       <span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">!=</span> <span class="n">main_iter_</span> <span class="o">&amp;&amp;</span> <span class="n">OB_SUCC</span><span class="p">(</span><span class="n">main_iter_</span><span class="o">-&gt;</span><span class="n">get_next_row</span><span class="p">(</span><span class="n">row</span><span class="p">)))</span> <span class="p">{</span> <span class="c1">// 数据表获取到一行数据，直接结束</span>
+         <span class="k">break</span><span class="p">;</span>
+       <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">OB_ITER_END</span> <span class="o">==</span> <span class="n">ret</span><span class="p">)</span> <span class="p">{</span>
+           <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">access_ctx_</span><span class="o">-&gt;</span><span class="n">is_end</span><span class="p">())</span> <span class="p">{</span>
+             <span class="n">ret</span> <span class="o">=</span> <span class="n">OB_SUCCESS</span><span class="p">;</span>
+           <span class="p">}</span>
+           <span class="n">main_iter_</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+         <span class="p">}</span>
+ 
+         <span class="k">if</span> <span class="p">(</span><span class="n">OB_SUCC</span><span class="p">(</span><span class="n">ret</span><span class="p">))</span> <span class="p">{</span>
+           <span class="c1">// batch get main table rowkeys from index table</span>
+           <span class="c1">// 初始化键值参数等结构，具体内容略</span>
+           <span class="k">for</span> <span class="p">(</span><span class="kt">int64_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">OB_SUCC</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">MAX_NUM_PER_BATCH</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+             <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">index_iter_</span><span class="o">-&gt;</span><span class="n">get_next_row</span><span class="p">(</span><span class="n">index_row</span><span class="p">)))</span> <span class="p">{</span> <span class="c1">// 索引表获取数据</span>
+               <span class="k">if</span> <span class="p">(</span><span class="n">OB_ARRAY_BINDING_SWITCH_ITERATOR</span> <span class="o">==</span> <span class="n">ret</span><span class="p">)</span> <span class="p">{</span>
+                 <span class="o">++</span><span class="n">index_range_array_cursor_</span><span class="p">;</span>
+                 <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">index_iter_</span><span class="o">-&gt;</span><span class="n">switch_iterator</span><span class="p">(</span><span class="n">index_range_array_cursor_</span><span class="p">)))</span> <span class="p">{</span>
+                 <span class="p">}</span>
+               <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">OB_ITER_END</span> <span class="o">!=</span> <span class="n">ret</span><span class="p">)</span> <span class="p">{</span>
+               <span class="p">}</span>
+             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="c1">// 存储获取的数据</span>
+               <span class="n">src_key</span><span class="p">.</span><span class="n">assign</span><span class="p">(</span><span class="n">index_row</span><span class="o">-&gt;</span><span class="n">row_val_</span><span class="p">.</span><span class="n">cells_</span><span class="p">,</span> <span class="n">rowkey_cnt_</span><span class="p">);</span>
+               <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">src_key</span><span class="p">.</span><span class="n">deep_copy</span><span class="p">(</span><span class="n">dest_key</span><span class="p">.</span><span class="n">get_store_rowkey</span><span class="p">(),</span> <span class="n">rowkey_allocator_</span><span class="p">)))</span> <span class="p">{</span>
+               <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                 <span class="n">dest_key</span><span class="p">.</span><span class="n">set_range_array_idx</span><span class="p">(</span><span class="n">index_row</span><span class="o">-&gt;</span><span class="n">range_array_idx_</span><span class="p">);</span>
+                 <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">rowkeys_</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">dest_key</span><span class="p">)))</span> <span class="p">{</span>
+                 <span class="p">}</span>
+               <span class="p">}</span>
+             <span class="p">}</span>
+           <span class="p">}</span>
+           <span class="k">if</span> <span class="p">(</span><span class="n">OB_SUCC</span><span class="p">(</span><span class="n">ret</span><span class="p">))</span> <span class="p">{</span>
+             <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">table_iter_</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">rowkeys_</span><span class="p">)))</span> <span class="p">{</span> <span class="c1">// 根据索引表的数据初始化数据表的迭代器</span>
+             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+               <span class="n">main_iter_</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">table_iter_</span><span class="p">;</span>
+             <span class="p">}</span>
+           <span class="p">}</span>
+         <span class="p">}</span>
+       <span class="p">}</span>
+     <span class="p">}</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+ <span class="p">}</span>
+</code></pre></div></div>
+<h2 id="总结如何从代码结构上对ob的源码进行分析">总结：如何从代码结构上对OB的源码进行分析？</h2>
+
+<p>或许很多人会像我们一样，在一开始看到源码的时候不知所措。毕竟，OB作为一个非常庞大的项目，很难快速找到入手的部分。根据我们的经验，在这种情况下，一般可以先使用perf来快速找到最耗时的执行部分，这部分代码往往与核心逻辑紧密相关，如我们上述展示的部分代码。在此基础上，结合gdb debug，可以获取到执行过程中的主要调用栈。往往我们会发现调用栈很深，但是其中大部分的代码都不会涉及到核心逻辑，不需要逐个深入地研究。因此，再通过OB的代码自注释和基本的数据库知识可以有效地定位到所想要修改的部分。</p>
+
+<p>当定位到要修改的部分之后，如何具体地分析源码的逻辑呢？首先需要熟悉OB的代码风格，能将连续的条件嵌套重新翻译为顺序执行。然后通过代码的自注释去感受实现的功能，由于OB中大部分的类都带有很多层的嵌套，在一开始不断深挖某个细节很容易晕头转向，采用“不求甚解”的态度，先宏观上把握整个执行流程，对于代码的分析会更有利。在了解了整体的流程之后，再结合逐步调试去深入理解其中的执行流程。</p>
+
+<p>希望上述的方法分享，能够帮助大家分析OB代码，为大家在开源社区中的贡献添砖加瓦。</p>
+  </section>
+
+  
+  
+  
+
+  <section class="background" data-size="page">
+    <!--
+  background: ;
+  dark: ;
+  size: ;
+-->
+
+
+<div class="post-nav">
+  <span>
+    
+      <i class="icon fa-solid fa-angle-left"></i> Previous post<br>
+      <a href="/preview/pr-/2022/05/11/OceanBase%E5%86%85%E6%A0%B8%E5%88%9D%E6%8E%A2.html">
+        OceanBase内核初探
+      </a>
+    
+  </span>
+  <span>
+    
+      Next post <i class="icon fa-solid fa-angle-right"></i><br>
+      <a href="/preview/pr-/2022/05/25/Oceanbase%E4%B8%ADLSM-Tree%E7%9A%84%E5%88%86%E5%B1%82%E8%AE%BE%E8%AE%A1%E5%8F%8A%E5%85%B6%E4%BC%98%E7%BC%BA%E7%82%B9.html">
+        Oceanbase中LSM-Tree的分层设计及其优缺点
+      </a>
+    
+  </span>
+</div>
+  </section>
+
+
+    </main>
+    
+
+
+<footer class="background" style="--image: url('')" data-dark="true" data-size="wide">
+  <!--
+    <div>
+      Extra details like contact info or address
+    </div>
+  -->
+
+  <div>
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="mailto:rzhang@dase.ecnu.edu.cn" data-tooltip="Email" data-style="bare" aria-label="Email">
+      <i class="icon fa-solid fa-envelope"></i>
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="tel:021-62235006" data-tooltip="Phone number" data-style="bare" aria-label="Phone number">
+      <i class="icon fa-solid fa-phone"></i>
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://orcid.org/0000-0002-5182-2093" data-tooltip="ORCID" data-style="bare" aria-label="ORCID">
+      <i class="icon fa-brands fa-orcid"></i>
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://scholar.google.com/citations?user=iJtZsaQAAAAJ" data-tooltip="Google Scholar" data-style="bare" aria-label="Google Scholar">
+      <i class="icon fa-brands fa-google"></i>
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://github.com/dbhammer" data-tooltip="GitHub" data-style="bare" aria-label="GitHub">
+      <i class="icon fa-brands fa-github"></i>
+      
+    </a>
+  </div>
+
+
+    
+  </div>
+
+  <div>
+    © 2025
+    DBHammer
+      |   Built with
+    <a href="https://github.com/greenelab/lab-website-template">
+      Lab Website Template
+    </a>
+  </div>
+
+  <input type="checkbox" class="dark-toggle" data-tooltip="Dark mode" aria-label="toggle dark mode" oninput="onDarkToggleChange(event)">
+</footer>
+
+  </body>
+</html>
