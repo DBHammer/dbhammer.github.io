@@ -1,1 +1,0 @@
-{"version":3,"sourceRoot":"","sources":["member-intro.scss"],"names":[],"mappings":"AAKE;EACE","sourcesContent":["@import \"palettes\";\n@import \"theme\";\n@import \"mixins\";\n\n.member-intro {\n  h1, h2, h3, h4, pre {\n    text-align: left;\n  }\n}"],"file":"member-intro.css"}
