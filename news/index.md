@@ -26,7 +26,7 @@ nav:
           </div>
           <!-- 新闻内容 -->
           <div class="col-span-12 md:col-span-11 md:col-start-2 text-black">
-            {{ item.content }}, <a href="{{ item.link }}" style="color:red; text-decoration:underline;"> PDF </a>
+            {{ item.content }} <a href="{{ item.link }}" style="color:red; text-decoration:underline;"> PDF </a>
           </div>
         </div>
       </li>

@@ -7,7 +7,8 @@ nav:
 
 # {% include icon.html icon="fa-regular fa-envelope" %}Contact
 
-欢迎各位同学加入 DBHammer 实验室！
+欢迎各位对数据库技术感兴趣的同学加入我们 DBHammer 实验室！
+{:.center}
 
 {%
   include button.html
