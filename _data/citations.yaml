@@ -47,24 +47,23 @@
   plugin: sources.py
   file: sources.yaml
   type: paper
-  description: Lorem ipsum _dolor_ **sit amet**, consectetur adipiscing elit, sed
-    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  image: https://journals.plos.org/ploscompbiol/article/figure/image?size=inline&id=info:doi/10.1371/journal.pcbi.1007128.g001&rev=2
+  description: A data and workload generation tool for cardinality estimation benchmarking collaborated with OceanBase.
+  image: '../illustration/paper/artemis.png'
   buttons:
-  - type: manubot
-    link: https://greenelab.github.io/meta-review/
   - type: source
-    text: Manuscript Source
-    link: https://github.com/greenelab/meta-review
+    text: Source Code
+    link: https://github.com/dbhammer
   - type: website
-    link: http://manubot.org/
+    link: http://github.com/dbhammer
   tags:
-  - open science
-  - collaboration
-  repo: greenelab/meta-review
-- id: doi:10.1101/573782
-  title: Sequential compression of gene expression across dimensionalities and methods
-    reveals no single best method or dimensionality
+  - AI4DB
+  - Worklod Generation
+  - Cardinality Estimation
+  repo: dbhammer/dbhammer.github.io
+- id: "Benchmarking Distributed Transactional Database Systems"
+  manual: true
+  title: "Benchmarking Distributed Transactional Database Systems"
+  link: none
   authors:
     - Hailin He
     - Siyang Weng
@@ -357,12 +356,10 @@
   - Aoying Zhou
   publisher: IEEE Transactions on Knowledge and Data Engineering (TKDE)
   date: '2020-01-01'
-  link: https://doi.org/gg7m48
-  image: https://ars.els-cdn.com/content/image/1-s2.0-S2001037020302804-gr1.jpg
-  plugin: sources.py
-  file: sources.yaml
-- id: doi:10.7554/eLife.32822
-  title: Sci-Hub provides access to nearly all scholarly literature
+  link: https://doi.org/gqpncm
+- id: doi:10.1007/978-3-030-85896-4_15
+  title: Dynamic Environment Simulation for Database Performance Evaluation
+  link: https://link.springer.com/chapter/10.1007/978-3-030-85896-4_15
   authors:
   - Chunxi Zhang
   - Rong Zhang
