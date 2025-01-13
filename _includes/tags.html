@@ -1,28 +1,33 @@
-{%- assign tags = "" | split: "," -%}
-{%- assign input = include.tags | join: "," | split: "," -%}
-{%- for tag in input -%}
-  {%- assign tag = tag | strip -%}
-  {%- if tag != "" -%}
-    {%- assign tags = tags | push: tag -%}
-  {%- endif -%}
-{%- endfor -%}
-
-{%- assign repo = include.repo | strip -%}
-{%- if repo == "" -%}
-  {%- assign repo = nil -%}
-{%- endif -%}
-{%- assign link = include.link | default: page.dir | absolute_url -%}
-
-{%- if tags.size > 0 or repo -%}
-  <div class="tags" {% if repo %}data-repo="{{ repo }}"{% endif %} {% if link %}data-link="{{ link }}"{% endif %}>
-    {%- for tag in tags -%}
+{% assign tags = include.tags
+  | object_items
+  | join: ","
+  | downcase
+  | split: ","
+  | array_filter
+  | join: ","
+  | regex_replace: "\s+", "-"
+  | split: ","
+  | uniq
+%}
+{% assign link = include.link | default: page.dir %}
+{% if tags.size > 0 or include.repo %}
+  <div
+    class="tags"
+    {% if include.repo %}
+      data-repo="{{ include.repo | xml_escape }}"
+    {% endif %}
+    {% if link %}
+      data-link="{{ link | relative_url | xml_escape }}"
+    {% endif %}
+  >
+    {% for tag in tags %}
       <a
-        {% if link %}href='{{ link }}?search="tag: {{ tag }}"'{% endif %}
+        href="{{ link }}?search=&quot;tag: {{ tag }}&quot;"
         class="tag"
-        data-tooltip='Show items with the tag "{{ tag }}"'
+        data-tooltip="Show items with the tag &quot;{{ tag }}&quot;"
       >
-        {{- tag -}}
+        {{ tag }}
       </a>
-    {%- endfor -%}
+    {% endfor %}
   </div>
-{%- endif -%}
+{% endif %}

@@ -1,55 +1,51 @@
-{%- if include.style == "small" -%}
-  {%- assign width = 100 -%}
-{%- else -%}
-  {%- assign width = 150 -%}
-{%- endif -%}
+{% if include.lookup %}
+  {% assign member = site.members 
+    | where_exp: "member", "member.slug == include.lookup"
+    | first
+  %}
+{% else %}
+  {% assign member = include %}
+{% endif %}
 
-{%- assign emptyarray = "" | split: "," -%}
-{%- assign id = include.slug | default: include.id | default: "" -%}
-{%- assign members = site.members | default: emptyarray -%} 
+{% assign type = site.data.types[member.role] %}
 
-{%- assign member = nil -%}
-{%- for m in members -%}
-  {%- if m.slug == id -%}
-    {%- assign member = m -%}
-  {%- endif -%}
-{%- endfor -%}
+<div class="portrait-wrapper">
+  <a
+    {% if page.slug != member.slug %}
+      href="{{ member.url | relative_url | uri_escape }}"
+    {% endif %}
+    class="portrait"
+    data-style="{{ include.style }}"
+    aria-label="{{ member.name | default: "member link" | regex_strip }}"
+  >
+    {% if type %}
+      {% include icon.html icon=type.icon %}
+    {% endif %}
 
-{%- assign url = include.url | default: "" -%}
-
-{::nomarkdown}
-<a {% if url %}href="{{ url | relative_url }}"{% endif %} class="portrait" style="--width: {{ width }}px">
-
-  {%- assign placeholder = "images/placeholder.svg" | relative_url -%}
-
-  {%- assign role = member.role | default: "" -%}
-  {%- if role -%}
-    {%- include role.html type=role -%}
-  {%- endif -%}
-  
-  {%- assign name = member.name | default: "" -%}
-  {%- assign image = member.image | default: "" -%}
-  <span class="portrait_image">
     <img
-      src="{{ image | relative_url }}"
-      onerror="this.src = '{{ placeholder }}'; this.onerror = null;"
+      src="{{ member.image | relative_url | uri_escape }}"
+      class="portrait-image"
+      alt="member portrait"
       loading="lazy"
-      alt="{{ name | default: 'Member portrait' }}"
+      {% include fallback.html %}
     >
-  </span>
 
-  {%- if name -%}
-    <span class="portrait_name">
-      {{ name }}
-    </span>
-  {%- endif -%}
+    {% if member.name %}
+      <span class="portrait-name">
+        {{ member.name }}
+      </span>
+    {% endif %}
 
-  {%- assign description = member.description | default: include.description | default: "" -%}
-  {%- if description -%}
-    <span class="portrait_description">
-      {{ description }}
-    </span>
-  {%- endif -%}
+    {% if member.description or type %}
+      <span class="portrait-description">
+        {{ member.description | default: type.description }}
+      </span>
+    {% endif %}
 
-</a>
-{:/}
+    {% if member.affiliation %}
+      <span class="portrait-affiliation">
+        {{ member.affiliation }}
+      </span>
+    {% endif %}
+  </a>
+</div>
