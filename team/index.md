@@ -12,7 +12,7 @@ nav:
 ## 教师
 
 {%
-  include member-list.html
+  include list.html
   data="members"
   component="portrait"
   style="small"
@@ -22,7 +22,7 @@ nav:
 ## 博士研究生
 
 {%
-  include member-list.html
+  include list.html
   data="members"
   component="portrait"
   style="small"
@@ -32,7 +32,7 @@ nav:
 ## 硕士研究生
 
 {%
-  include member-list.html
+  include list.html
   data="members"
   component="portrait"
   style="small"
@@ -42,7 +42,7 @@ nav:
 ## 毕业博士生
 
 {%
-  include member-list.html
+  include list.html
   data="members"
   component="portrait"
   style="small"
@@ -52,7 +52,7 @@ nav:
 ## 毕业硕士生
 
 {%
-  include member-list.html
+  include list.html
   data="members"
   component="portrait"
   style="small"
