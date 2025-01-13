@@ -110,4 +110,37 @@
   date: "2022-05-20"
   content: >
     祝贺项兆坤荣获Oceanbase技术征文第三期二等奖!
-  link: ''
+  link: '../asserts/xzk.pdf'
+
+- type: 奖项
+  date: "2024-10-01"
+  content: >
+    祝贺张惠东荣获华东师范大学优秀硕士学位论文!
+  link: '../asserts/zhd.pdf'
+
+- type: 奖项
+  date: "2023-07-01"
+  content: >
+    祝贺瞿璐祎荣获华东师范大学优秀硕士学位论文!
+  link: '../asserts/qly.pdf'
+
+- type: 奖项
+  date: "2015-06-09"
+  content: >
+    祝贺论文 'Review Comment Analysis for Predicting Ratings' 荣获 WAIM 的 Best Paper Runner-Up!
+  link: '../asserts/waim.pdf'
+
+- type: 奖项
+  date: "2015-06-09"
+  content: >
+    祝贺论文 'Review Comment Analysis for Predicting Ratings' 荣获 WAIM 的 Best Paper Runner-Up!
+  link: '../asserts/waim.pdf'
+
+- type: 奖项
+  date: "2016-11-23"
+  content: >
+    祝贺论文 'Flexible and Adaptive Stream Join Algorithm' 荣获 APWeb 的 Best Student Paper Award!
+  link: '../asserts/waim.pdf'
+
+  
+
