@@ -10,7 +10,11 @@ nav:
 <div class="news-list text-left">
 
 {%- assign data = site.news -%}
-{%- assign sorted_data = data | sort: "date" | reverse -%}
+{%- if data -%}
+  {%- assign sorted_data = data | sort: "date" | reverse -%}
+{%- else -%}
+  {%- assign sorted_data = null -%}
+{%- endif -%}
 
 <ul>
 {%- for item in sorted_data -%}
