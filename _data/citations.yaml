@@ -1,7 +1,7 @@
 - id: "Hyper: Hybrid Physical Design Advisor with Multi-agent Reinforcement Learning"
   manual: true
   title: "Hyper: Hybrid Physical Design Advisor with Multi-agent Reinforcement Learning"
-  link: 
+  link: none
   authors:
   - Zhicheng Pan
   - Y Zhang
@@ -33,7 +33,7 @@
 - id: "Artemis: A Customizable Workload Generation Toolkit for Benchmarking Cardinality Estimation "
   manual: true
   title: "Artemis: A Customizable Workload Generation Toolkit for Benchmarking Cardinality Estimation "
-  link: 
+  link: none
   authors:
   - Zirui Hu
   - Rong Zhang
