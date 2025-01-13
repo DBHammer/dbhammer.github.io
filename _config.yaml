@@ -49,15 +49,11 @@ collections:
 
 # jekyll plugins
 plugins:
+  - jekyll-spaceship
+  - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-feed
-  - jekyll-sitemap
-  # - jekyll-github-metadata
-  # - jekyll-avatar
-  # - jekyll-gist
-  # - jekyll-mentions
-  # - jekyll-relative-links
-  # - jemoji
+  - jekyll-last-modified-at
 
 # code block syntax highlighting
 highlighter: rouge
