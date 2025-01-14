@@ -197,6 +197,41 @@
   publisher: ACM SIGMOD/PODS International Conference on Management of Data (SIGMOD)
   date: '2023-01-01'
   image: '../illustration/paper/dike.png'
+- id: "Survey on Benchmarking Ability of HTAP Benchmarks"
+  manual: true
+  title: "Survey on Benchmarking Ability of HTAP Benchmarks"
+  publisher: "Journal of Software"
+  link: https://jos.org.cn/jos/article/pdf/7225
+  authors:
+  - "Siyang Weng"
+  - "Rong Yu"
+  - "Qingshuai Wang"
+  - "Zirui Hu"
+  - "Lv Ni"
+  - "Rong Zhang"
+  - "Xuan Zhou"
+  - "Aoying Zhou"
+  - "Quanqing Xu"
+  - "Chuanhui Yang"
+  - "Wei Liu"
+  - "Panfei Yang"
+  date: '2024-05-20'
+  image: '../illustration/paper/HTAP评测基准.png'
+- id: "Data Sharing Model and Optimization Strategies in HTAP Database Systems"
+  manual: true
+  title: "Data Sharing Model and Optimization Strategies in HTAP Database Systems"
+  publisher: "Journal of Software"
+  link: https://jos.org.cn/jos/article/pdf/6901
+  authors:
+  - "Zirui Hu"
+  - "Siyang Weng"
+  - "Qingshuai Wang"
+  - "Rong Yu"
+  - "Jinkai Xu"
+  - "Rong Zhang"
+  - "Xuan Zhou"
+  date: '2023-07-12'
+  image: '../illustration/paper/HTAP数据库系统数据共享模型与优化策略.png'
 - id: 'Workload-Aware Log-Structured Merge Key-Value Store for NVM-SSD Hybrid Storage'
   manual: true
   title: 'Workload-Aware Log-Structured Merge Key-Value Store for NVM-SSD Hybrid Storage'
@@ -1086,50 +1121,12 @@
   - "\u5F20\u84C9"
   date: '2024-07-01'
   image: '../illustration/paper/sherry.png'
-  
-- id: "HTAP\u8bc4\u6d4b\u57fa\u51c6\u7684\u8bc4\u6d4b\u80fd\u529b\u7efc\u8ff0"
-  manual: true
-  title: "HTAP\u8bc4\u6d4b\u57fa\u51c6\u7684\u8bc4\u6d4b\u80fd\u529b\u7efc\u8ff0"
-  publisher: "\u8F6F\u4EF6\u5B66\u62A5"
-  link: https://jos.org.cn/jos/article/pdf/7225
-  authors:
-  - "\u7FC1\u601D\u626C"
-  - "\u4fde\u878d"
-  - "\u738B\u6E05\u5E05"
-  - "\u80E1\u6893\u9510"
-  - "\u502a\u844e"
-  - "\u5F20\u84C9"
-  - "\u5468\u70DC"
-  - "\u5468\u50B2\u82F1"
-  - "\u5F90\u6CC9\u6E05"
-  - "\u6768\u4F20\u8F89"
-  - "\u5218\u7EF4"
-  - "\u6768\u6500\u98DE"
-  date: '2024-05-20'
-  image: '../illustration/paper/HTAP评测基准.png'
-- id: "HTAP\u6570\u636E\u5E93\u7CFB\u7EDF\u6570\u636E\u5171\u4EAB\u6A21\u578B\u4E0E\
-    \u4F18\u5316\u7B56\u7565"
-  manual: true
-  title: "HTAP\u6570\u636E\u5E93\u7CFB\u7EDF\u6570\u636E\u5171\u4EAB\u6A21\u578B\u4E0E\
-    \u4F18\u5316\u7B56\u7565"
-  publisher: "\u8F6F\u4EF6\u5B66\u62A5"
-  link: https://jos.org.cn/jos/article/pdf/6901
-  authors:
-  - "\u80E1\u6893\u9510"
-  - "\u7FC1\u601D\u626C"
-  - "\u4FDE\u878D"
-  - "\u5F90\u91D1\u51EF"
-  - "\u738B\u6E05\u5E05"
-  - "\u5F20\u84C9"
-  - "\u5468\u70DC"
-  date: '2023-07-12'
-  image: '../illustration/paper/HTAP数据库系统数据共享模型与优化策略.png'
-- manual: true
-  id: "\u9762\u5411\u590D\u6742\u67E5\u8BE2\u7684\u53EF\u6269\u5C55\u5E94\u7528\u573A\
+- id: "\u9762\u5411\u590D\u6742\u67E5\u8BE2\u7684\u53EF\u6269\u5C55\u5E94\u7528\u573A\
     \u666F\u751F\u6210"
   title: "\u9762\u5411\u590D\u6742\u67E5\u8BE2\u7684\u53EF\u6269\u5C55\u5E94\u7528\
     \u573A\u666F\u751F\u6210"
   publisher: "\u0043\u0043\u0046\u4e2d\u56fd\u6570\u636e\u5e93\u5b66\u672f\u4f1a\u8bae (NDBC)"
+  manual: true
   authors:
   - "\u674E\u597D"
   - "\u738B\u6E05\u5E05"
