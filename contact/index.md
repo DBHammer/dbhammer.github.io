@@ -24,4 +24,4 @@ nav:
 %}
 
 {% include section.html %}
-<script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=1PVFTMoU3_MjRGpV-yNfp7Q3f-yjxZVHldmVCbUZ2dU"></script>
+<!-- <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=1PVFTMoU3_MjRGpV-yNfp7Q3f-yjxZVHldmVCbUZ2dU"></script> -->
