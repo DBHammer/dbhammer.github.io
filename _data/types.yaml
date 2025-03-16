@@ -26,18 +26,6 @@ graduated_post:
   icon: fas fa-user-graduate
   text: Graduated Master Student
 
-undergrad:
-  icon: fa-solid fa-user-graduate
-  description: Undergraduate Student
-
-programmer:
-  icon: fa-solid fa-code
-  description: Programmer
-
-mascot:
-  icon: fa-solid fa-dog
-  description: Mascot
-
 # general
 
 link:
