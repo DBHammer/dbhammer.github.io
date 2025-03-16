@@ -1,3 +1,34 @@
+- id: "A Query-Aware Enormous Database Generator For System Performance Evaluation "
+  manual: true
+  title: "A Query-Aware Enormous Database Generator For System Performance Evaluation "
+  link: none
+  authors:
+  - Xuhua Huang
+  - Zirui Hu
+  - Siyang Weng
+  - Rong Zhang
+  - Chengcheng Yang
+  - Xuan Zhou
+  - Weining Qian
+  - Quanqing Xu
+  - Chuanhui Yang
+  publisher: ACM SIGMOD/PODS International Conference on Management of Data (SIGMOD)
+  date: '2025-03-16'
+  orcid: 0000-0002-4655-3773
+  plugin: sources.py
+  file: sources.yaml
+  type: paper
+  image: '../illustration/paper/mirage-demo.png'
+  buttons:
+  - type: source
+    text: Source Code
+    link: https://github.com/dbhammer
+  - type: website
+    link: http://github.com/dbhammer
+  tags:
+  - Worklod Generation
+  - Query Performance Tuning
+  repo: dbhammer/dbhammer.github.io
 - id: "Hyper: Hybrid Physical Design Advisor with Multi-agent Reinforcement Learning"
   manual: true
   title: "Hyper: Hybrid Physical Design Advisor with Multi-agent Reinforcement Learning"
