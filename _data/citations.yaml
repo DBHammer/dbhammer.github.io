@@ -1,18 +1,3 @@
-- id: 'Rabbit: Retrieval-Augmented Generation Enables Better Automatic Database Knob Tuning'
-  manual: true
-  title: 'Rabbit: Retrieval-Augmented Generation Enables Better Automatic Database Knob Tuning'
-  link: 
-  authors:
-  - Wenwen Sun
-  - Zhicheng Pan
-  - Zirui Hu
-  - Yu Liu
-  - Chengcheng Yang
-  - Rong Zhang
-  - Xuan Zhou
-  publisher: IEEE International Conference on Data Engineering (ICDE)
-  date: '2025-03-26'
-  image: '../illustration/paper/rabbit.png'
 - id: "A Query-Aware Enormous Database Generator For System Performance Evaluation "
   manual: true
   title: "A Query-Aware Enormous Database Generator For System Performance Evaluation "
