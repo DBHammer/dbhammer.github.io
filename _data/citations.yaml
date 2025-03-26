@@ -29,6 +29,21 @@
   - Worklod Generation
   - Query Performance Tuning
   repo: dbhammer/dbhammer.github.io
+- id: 'Rabbit: Retrieval-Augmented Generation Enables Better Automatic Database Knob Tuning'
+  manual: true
+  title: 'Rabbit: Retrieval-Augmented Generation Enables Better Automatic Database Knob Tuning'
+  link: none
+  authors:
+  - Wenwen Sun
+  - Zhicheng Pan
+  - Zirui Hu
+  - Yu Liu
+  - Chengcheng Yang
+  - Rong Zhang
+  - Xuan Zhou
+  publisher: IEEE International Conference on Data Engineering (ICDE)
+  date: '2025-03-26'
+  image: '../illustration/paper/rabbit.png'
 - id: "Hyper: Hybrid Physical Design Advisor with Multi-agent Reinforcement Learning"
   manual: true
   title: "Hyper: Hybrid Physical Design Advisor with Multi-agent Reinforcement Learning"
@@ -136,6 +151,7 @@
   date: '2024-03-20'
   image: '../illustration/paper/mirage.png'
 - id: "Functionality-Aware Database Tuning via Multi-Task Learning"
+  link: https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10598099
   manual: true
   title: "Functionality-Aware Database Tuning via Multi-Task Learning"
   authors:
@@ -151,6 +167,7 @@
   date: '2024-03-19'
   image: '../illustration/paper/functionality-aware.png'
 - id: "SPQO: Learning to Safely Reuse Cached Plans for Dynamic Workloads"
+  link: https://dl.acm.org/doi/10.1007/978-981-97-5552-3_21
   manual: true
   title: "SPQO: Learning to Safely Reuse Cached Plans for Dynamic Workloads"
   authors:
