@@ -32,7 +32,7 @@
 - id: 'Rabbit: Retrieval-Augmented Generation Enables Better Automatic Database Knob Tuning'
   manual: true
   title: 'Rabbit: Retrieval-Augmented Generation Enables Better Automatic Database Knob Tuning'
-  link: none
+  link: https://www.computer.org/csdl/proceedings-article/icde/2025/360300d807/26FZC51tvRC
   authors:
   - Wenwen Sun
   - Zhicheng Pan
@@ -47,7 +47,7 @@
 - id: "Hyper: Hybrid Physical Design Advisor with Multi-agent Reinforcement Learning"
   manual: true
   title: "Hyper: Hybrid Physical Design Advisor with Multi-agent Reinforcement Learning"
-  link: none
+  link: https://www.computer.org/csdl/proceedings-article/icde/2025/360300b565/26FZAbicw2A
   authors:
   - Zhicheng Pan
   - Yuanjia Zhang
@@ -78,8 +78,8 @@
   repo: dbhammer/dbhammer.github.io
 - id: "Artemis: A Customizable Workload Generation Toolkit for Benchmarking Cardinality Estimation "
   manual: true
-  title: "Artemis: A Customizable Workload Generation Toolkit for Benchmarking Cardinality Estimation "
-  link: none
+  title: "Artemis: A Customizable Workload Generation Toolkit for Benchmarking Cardinality Estimation"
+  link: https://www.computer.org/csdl/proceedings-article/icde/2025/360300e628/26FZD0CCVji
   authors:
   - Zirui Hu
   - Rong Zhang
