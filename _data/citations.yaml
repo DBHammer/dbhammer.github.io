@@ -76,7 +76,7 @@
   - AI4DB
   - Index Recommendation
   repo: dbhammer/dbhammer.github.io
-- id: "Artemis: A Customizable Workload Generation Toolkit for Benchmarking Cardinality Estimation (NDBC)"
+- id: "Artemis: A Customizable Workload Generation Toolkit for Benchmarking Cardinality Estimation (NDBC Version)"
   link: 
   manual: true
   title: "Artemis: A Customizable Workload Generation Toolkit for Benchmarking Cardinality Estimation"
@@ -84,7 +84,7 @@
   - Chenhao Lu
   - Zirui Hu
   - Rong Zhang
-  publisher: \u0043\u0043\u0046\u4e2d\u56fd\u6570\u636e\u5e93\u5b66\u672f\u4f1a\u8bae (NDBC)
+  publisher: National Database Conference of CCF (NDBC)
   date: '2025-06-30'
   image: '../illustration/paper/artemis.png'
 - id: "Artemis: A Customizable Workload Generation Toolkit for Benchmarking Cardinality Estimation"
