@@ -1,3 +1,16 @@
+- id: "面向关系型数据库锁机制实现的模糊测试框架"
+  link: 
+  manual: true
+  title: "面向关系型数据库锁机制实现的模糊测试框架"
+  authors:
+  - Hongyu Yang
+  - Siyang Weng
+  - Chenhao Lu
+  - Rong Zhang
+  - Xuan Zhou
+  publisher: National Database Conference of CCF (NDBC)
+  date: '2025-06-30'
+  image: ""
 - id: "A Query-Aware Enormous Database Generator For System Performance Evaluation "
   manual: true
   title: "A Query-Aware Enormous Database Generator For System Performance Evaluation "
