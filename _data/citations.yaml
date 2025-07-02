@@ -10,7 +10,7 @@
   - Xuan Zhou
   publisher: National Database Conference of CCF (NDBC)
   date: '2025-07-01'
-  image: '../illustration/paper/Falcon.png'
+  image: '../illustration/paper/Falcon.jpg'
 - id: "A Query-Aware Enormous Database Generator For System Performance Evaluation "
   manual: true
   title: "A Query-Aware Enormous Database Generator For System Performance Evaluation "
