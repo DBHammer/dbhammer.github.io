@@ -70,7 +70,7 @@ nav:
 {%
   include button.html
   type="address"
-  <!-- tooltip="Our location on Google Maps for easy navigation" -->
+  tooltip="Our location on Google Maps for easy navigation"
   link="https://www.google.com/maps/place/%E5%8D%8E%E4%B8%9C%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6/@31.227667,121.406829,17z"
 %}
 
