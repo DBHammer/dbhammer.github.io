@@ -9,8 +9,8 @@ nav:
 <!-- ───── Employment 区块 ───────────────────────── -->
 <h2 class="mt-10 text-xl font-semibold">毕业去向</h2>
 
-{%- assign masters = site.data.employment.masters | sort: "year" | reverse -%}
-{%- assign phds    = site.data.employment.phd                    -%}
+{%- assign masters = site.data.employment.masters | sort: "year" -%}
+{%- assign phds    = site.data.employment.phd  | sort: "year"  -%}
 
 {% if masters.size == 0 and phds.size == 0 %}
 <p class="text-gray-500">暂无数据。</p>
@@ -18,6 +18,7 @@ nav:
 
 <!-- ───── 硕士 ───── -->
 {% if masters.size > 0 %}
+<h3 class="mt-10 font-bold text-sky-600 mb-2">硕士</h3>
 <ul class="space-y-8">
   {% for batch in masters %}
   <li>
@@ -35,11 +36,15 @@ nav:
 <!-- ───── 博士 ───── -->
 {% if phds.size > 0 %}
 <h3 class="mt-10 font-bold text-sky-600 mb-2">博士</h3>
-<ul class="list-disc pl-6 space-y-1">
-  {% for p in phds %}
+<ul class="space-y-8">
+  {% for batch in phds %}
   <li>
-    {{ p.name }}：{{ p.dest }}
-    {% if p.note %}（{{ p.note }}）{% endif %}
+    <h3 class="font-bold text-sky-600 mb-2">{{ batch.year }} 届</h3>
+    <ul class="list-disc pl-6 space-y-1">
+      {% for p in batch.people %}
+      <li>{{ p.name }}：{{ p.dest }}{% if p.note %}（{{ p.note }}）{% endif %}</li>
+      {% endfor %}
+    </ul>
   </li>
   {% endfor %}
 </ul>
@@ -65,7 +70,7 @@ nav:
 {%
   include button.html
   type="address"
-  tooltip="Our location on Google Maps for easy navigation"
+  <!-- tooltip="Our location on Google Maps for easy navigation" -->
   link="https://www.google.com/maps/place/%E5%8D%8E%E4%B8%9C%E5%B8%88%E8%8C%83%E5%A4%A7%E5%AD%A6/@31.227667,121.406829,17z"
 %}
 

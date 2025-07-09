@@ -5,34 +5,45 @@
 masters:                            # ―――― 硕士生 ――――
   - year: 2022
     people:
-      - {name: 凌向荣, dest: 腾讯控股有限公司}
-      - {name: 罗瑶,   dest: 华为技术有限公司}
-      - {name: 简炜,   dest: 中国船舶集团有限公司}
-      - {name: 徐金凯, dest: 创业}
+      - {name: 项兆坤, dest: 新加坡国立大学 博士生}
 
-  - year: 2021
+  - year: 2023
     people:
-      - {name: 张惠东, dest: 北京奥星贝斯科技有限公司}
-      - {name: 刘沛源, dest: 腾讯控股有限公司}
-      - {name: 卢皙钰, dest: 摩根士丹利中国}
-      - {name: 俞融,   dest: 宁波镇海区委}
-      - {name: 李好,   dest: "***部队"}
-
-  - year: 2020
-    people:
-      - {name: 连薛超, dest: 字节跳动有限公司}
-      - {name: 游舒泓, dest: 中国金融期货交易所}      # ← 修正
+      - {name: 连薛超, dest: 字节跳动有限公司（字节）}
+      - {name: 游舒泓, dest: 中国金融期货交易所（中金所）}
       - {name: 陈婷,   dest: 国家电网有限公司}
       - {name: 瞿璐祎, dest: 国家电网有限公司}
 
-  - year: 2019
+  - year: 2024
     people:
-      - {name: 项兆坤, dest: 新加坡国立大学 博士生}
+      - {name: 张惠东, dest: 北京奥星贝斯科技有限公司（蚂蚁）}
+      - {name: 刘沛源, dest: 腾讯控股有限公司（腾讯）}
+      - {name: 卢皙钰, dest: 摩根士丹利中国（摩根）}
+      - {name: 俞融,   dest: 宁波镇海区委}
+      - {name: 李好,   dest: "***部队"}
+
+  - year: 2025
+    people:
+      - {name: 凌向荣, dest: 腾讯控股有限公司（腾讯）}
+      - {name: 罗瑶,   dest: 华为技术有限公司（华为）}
+      - {name: 简炜,   dest: 中国船舶集团有限公司（中船）}
+      - {name: 徐金凯, dest: 创业}
 
 phd:                                # ―――― 博士生 ――――
-  - {name: 房俊华, dest: 苏州大学}
-  - {name: 李宇明, dest: 华为技术有限公司, note: "硕转博"}
-  - {name: 张春熙, dest: 上交所技术有限责任公司, note: "硕转博"}
-  - {name: 王晓桐, dest: 上海市市场监督管理局信息应用研究中心, note: "硕转博"}
-  - {name: 王清帅, dest: 腾讯控股有限公司, note: "直博"}
-  - {name: 李可强, dest: 福州大学}
+  - year: 2017
+    people:
+      - {name: 房俊华, dest: 苏州大学}
+  
+  - year: 2019
+    people:
+      - {name: 李宇明, dest: 华为技术有限公司（华为）, note: "硕转博"}
+
+  - year: 2021
+    people:
+      - {name: 张春熙, dest: 上交所技术有限责任公司（上交所）, note: "硕转博"}
+      - {name: 王晓桐, dest: 上海市市场监督管理局信息应用研究中心, note: "硕转博"}
+
+  - year: 2024
+    people:
+      - {name: 王清帅, dest: 腾讯控股有限公司（腾讯）, note: "直博"}
+      - {name: 李可强, dest: 福州大学, note: "直博"}
