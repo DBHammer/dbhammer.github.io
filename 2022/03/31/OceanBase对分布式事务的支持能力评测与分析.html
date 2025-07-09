@@ -66,10 +66,10 @@
 
   <meta name="author" content="瞿璐祎">
   <meta property="og:type" content="article">
-  <meta property="og:updated_time" content="2025-07-02T00:57:04+00:00">
+  <meta property="og:updated_time" content="2025-07-09T08:04:51+00:00">
   <meta property="article:published_time" content="2022-03-31T00:00:00+00:00">
-  <meta property="article:modified_time" content="2025-07-02T00:57:04+00:00">
-  <meta name="revised" content="2025-07-02T00:57:04+00:00">
+  <meta property="article:modified_time" content="2025-07-09T08:04:51+00:00">
+  <meta name="revised" content="2025-07-09T08:04:51+00:00">
 
 
 <script type="application/ld+json">
@@ -79,7 +79,7 @@
       "@type": "BlogPosting",
       "author": { "@type": "Person", "name": "OceanBase对分布式事务的支持能力评测与分析" },
       "datePublished": "2022-03-31T00:00:00+00:00",
-      "dateModified": "2025-07-02T00:57:04+00:00",
+      "dateModified": "2025-07-09T08:04:51+00:00",
     
     "name": "OceanBase对分布式事务的支持能力评测与分析",
     "description": "DaSE, ECNU. The official website of DBHammer, DaSE, ECNU.",
@@ -477,6 +477,12 @@
       
     
       
+        <a href="/work/" data-tooltip="News">
+          新闻
+        </a>
+      
+    
+      
         <a href="/news/" data-tooltip="News">
           新闻
         </a>
@@ -490,7 +496,7 @@
     
       
         <a href="/contact/" data-tooltip="Email, address, and location">
-          联系我们
+          就业去向
         </a>
       
     
@@ -572,7 +578,7 @@
   
     <span data-tooltip="Last updated on">
       <i class="icon fa-solid fa-clock-rotate-left"></i>
-      <span>July 02, 2025</span>
+      <span>July 09, 2025</span>
     </span>
   
 </div>
@@ -583,7 +589,7 @@
 
   <div class="tags" data-link="/blog">
     
-      <a href="blog?search=%22tag:%20join%22" class="tag" data-tooltip='Show items with the tag "join"'>
+      <a href='blog?search="tag:%20join"' class="tag" data-tooltip='Show items with the tag "join"'>
         join
       </a>
     
@@ -1224,7 +1230,7 @@ obclient <span class="nt">-h10</span>.24.14.245 <span class="nt">-P2883</span> <
 <ul>
   <li>经过上方的实验，我们可以将OceanBase在分布式事务的支持能力上的实验表现总结为两点：
     <ul>
-      <li>在良好分区下，OceanBase能提供非常高的吞吐，表现十分优异。随着分布式事务比例的增长，OceanBase的性能会呈现下降的趋势，这也是大多数分布式事务型数据库所面临的难题和挑战<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>。</li>
+      <li>在良好分区下，OceanBase能提供非常高的吞吐，表现十分优异。随着分布式事务比例的增长，OceanBase的性能会呈现下降的趋势，这也是大多数分布式事务型数据库所面临的难题和挑战<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup><sup id="fnref:2"><a href="#fn:2" class="footnote" rel="footnote" role="doc-noteref">2</a></sup>。</li>
       <li>OceanBase所提供的tablegroup技术能够迎合业务的需求，就数据和业务进行良好的绑定。在我们的实验中，加入tablegroup机制让整个吞吐上升了整整3倍。</li>
     </ul>
   </li>
@@ -1234,10 +1240,10 @@ obclient <span class="nt">-h10</span>.24.14.245 <span class="nt">-P2883</span> <
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1" role="doc-endnote">
+    <li id="fn:1">
       <p><span name="ref1">Pavlo A, Curino C, Zdonik S. Skew-aware automatic database partitioning in shared-nothing, parallel OLTP systems[C]//Proceedings of the 2012 ACM SIGMOD International Conference on Management of Data. 2012: 61-72.</span> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">↩</a></p>
     </li>
-    <li id="fn:2" role="doc-endnote">
+    <li id="fn:2">
       <p>L. Qu, Q. Wang, T. Chen, K. Li, R. Zhang, X. Zhou, Q. Xu, Z. Yang, C. Yang, W. Qian, and A. Zhou, “Are current benchmarks adequate to evaluate distributed transactional databases?” BenchCouncil Transactions on Benchmarks, Standards and Evaluations, vol. 2, no. 1,p. 100031, 2022. [Online]. Available: https://www.sciencedirect.com/science/article/pii/S2772485922000187 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">↩</a></p>
     </li>
   </ol>

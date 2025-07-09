@@ -66,10 +66,10 @@
 
   <meta name="author" content="胡梓锐">
   <meta property="og:type" content="article">
-  <meta property="og:updated_time" content="2025-07-02T00:57:04+00:00">
+  <meta property="og:updated_time" content="2025-07-09T08:04:51+00:00">
   <meta property="article:published_time" content="2022-05-11T00:00:00+00:00">
-  <meta property="article:modified_time" content="2025-07-02T00:57:04+00:00">
-  <meta name="revised" content="2025-07-02T00:57:04+00:00">
+  <meta property="article:modified_time" content="2025-07-09T08:04:51+00:00">
+  <meta name="revised" content="2025-07-09T08:04:51+00:00">
 
 
 <script type="application/ld+json">
@@ -79,7 +79,7 @@
       "@type": "BlogPosting",
       "author": { "@type": "Person", "name": "从查询树的生成到查询执行 — 以Index Nested Loop Join为例" },
       "datePublished": "2022-05-11T00:00:00+00:00",
-      "dateModified": "2025-07-02T00:57:04+00:00",
+      "dateModified": "2025-07-09T08:04:51+00:00",
     
     "name": "从查询树的生成到查询执行 — 以Index Nested Loop Join为例",
     "description": "DaSE, ECNU. The official website of DBHammer, DaSE, ECNU.",
@@ -477,6 +477,12 @@
       
     
       
+        <a href="/work/" data-tooltip="News">
+          新闻
+        </a>
+      
+    
+      
         <a href="/news/" data-tooltip="News">
           新闻
         </a>
@@ -490,7 +496,7 @@
     
       
         <a href="/contact/" data-tooltip="Email, address, and location">
-          联系我们
+          就业去向
         </a>
       
     
@@ -572,7 +578,7 @@
   
     <span data-tooltip="Last updated on">
       <i class="icon fa-solid fa-clock-rotate-left"></i>
-      <span>July 02, 2025</span>
+      <span>July 09, 2025</span>
     </span>
   
 </div>
@@ -583,7 +589,7 @@
 
   <div class="tags" data-link="/blog">
     
-      <a href="blog?search=%22tag:%20query%22" class="tag" data-tooltip='Show items with the tag "query"'>
+      <a href='blog?search="tag:%20query"' class="tag" data-tooltip='Show items with the tag "query"'>
         query
       </a>
     
@@ -639,7 +645,7 @@
    <span class="n">spec</span><span class="p">.</span><span class="n">join_type_</span> <span class="o">=</span> <span class="n">op</span><span class="p">.</span><span class="n">get_join_type</span><span class="p">();</span>
    <span class="k">if</span> <span class="p">(</span><span class="n">MERGE_JOIN</span> <span class="o">==</span> <span class="n">op</span><span class="p">.</span><span class="n">get_join_algo</span><span class="p">())</span> <span class="p">{</span>
        <span class="c1">// 查询计划是merge join时的处理，暂略</span>
-   <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">NESTED_LOOP_JOIN</span> <span class="o">==</span> <span class="n">op</span><span class="p">.</span><span class="n">get_join_algo</span><span class="p">())</span> <span class="p">{</span>  <span class="c1">// nested loop join</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">NESTED_LOOP_JOIN</span> <span class="o">==</span> <span class="n">op</span><span class="p">.</span><span class="n">get_join_algo</span><span class="p">())</span> <span class="p">{</span>  <span class="c1">// nested loop join</span>
      <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">op</span><span class="p">.</span><span class="n">get_equal_join_conditions</span><span class="p">().</span><span class="n">count</span><span class="p">())</span> <span class="p">{</span>
      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
        <span class="n">ObBasicNestedLoopJoinSpec</span><span class="o">&amp;</span> <span class="n">nlj_spec</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">ObBasicNestedLoopJoinSpec</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">spec</span><span class="p">);</span>
@@ -647,7 +653,7 @@
        <span class="k">const</span> <span class="n">ObIArray</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="p">,</span> <span class="n">ObRawExpr</span><span class="o">*&gt;&gt;&amp;</span> <span class="n">nl_params</span> <span class="o">=</span> <span class="n">op</span><span class="p">.</span><span class="n">get_nl_params</span><span class="p">();</span>
        <span class="k">if</span> <span class="p">(</span><span class="n">nlj_spec</span><span class="p">.</span><span class="n">enable_gi_partition_pruning_</span> <span class="o">&amp;&amp;</span>
            <span class="n">OB_FAIL</span><span class="p">(</span><span class="n">do_gi_partition_pruning</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">nlj_spec</span><span class="p">)))</span> <span class="p">{</span> <span class="c1">// 如果可以的话，进行分区裁剪</span>
-       <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">nlj_spec</span><span class="p">.</span><span class="n">init_param_count</span><span class="p">(</span><span class="n">nl_params</span><span class="p">.</span><span class="n">count</span><span class="p">())))</span> <span class="p">{</span> <span class="c1">// 初始化join的参数数量</span>
+       <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">nlj_spec</span><span class="p">.</span><span class="n">init_param_count</span><span class="p">(</span><span class="n">nl_params</span><span class="p">.</span><span class="n">count</span><span class="p">())))</span> <span class="p">{</span> <span class="c1">// 初始化join的参数数量</span>
        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
          <span class="n">ObIArray</span><span class="o">&lt;</span><span class="n">ObRawExpr</span><span class="o">*&gt;&amp;</span> <span class="n">exec_param_exprs</span> <span class="o">=</span> <span class="n">op</span><span class="p">.</span><span class="n">get_stmt</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">get_exec_param_ref_exprs</span><span class="p">();</span>
          <span class="n">ARRAY_FOREACH</span><span class="p">(</span><span class="n">nl_params</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span><span class="c1">// 遍历每个参数</span>
@@ -659,7 +665,7 @@
            <span class="kt">bool</span> <span class="n">use_batch_nlj</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
            <span class="n">ObNestedLoopJoinSpec</span><span class="o">&amp;</span> <span class="n">nlj</span> <span class="o">=</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">ObNestedLoopJoinSpec</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">spec</span><span class="p">);</span>
            <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">op</span><span class="p">.</span><span class="n">can_use_batch_nlj</span><span class="p">(</span><span class="n">use_batch_nlj</span><span class="p">)))</span> <span class="p">{</span><span class="c1">// 判断能不能用，当join条件有复数字段组成时不使用batch</span>
-           <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">use_batch_nlj</span><span class="p">)</span> <span class="p">{</span>
+           <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">use_batch_nlj</span><span class="p">)</span> <span class="p">{</span>
              <span class="n">nlj</span><span class="p">.</span><span class="n">use_group_</span> <span class="o">=</span> <span class="n">use_batch_nlj</span><span class="p">;</span>
              <span class="k">if</span> <span class="p">(</span><span class="n">OB_ISNULL</span><span class="p">(</span><span class="n">nlj</span><span class="p">.</span><span class="n">get_right</span><span class="p">())</span> <span class="o">||</span> <span class="n">PHY_TABLE_SCAN</span> <span class="o">!=</span> <span class="n">nlj</span><span class="p">.</span><span class="n">get_right</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">type_</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 只有table scan的时候才会选择batch nlj</span>
              <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -670,7 +676,7 @@
          <span class="p">}</span>
        <span class="p">}</span>
      <span class="p">}</span>
-   <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">HASH_JOIN</span> <span class="o">==</span> <span class="n">op</span><span class="p">.</span><span class="n">get_join_algo</span><span class="p">())</span> <span class="p">{</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">HASH_JOIN</span> <span class="o">==</span> <span class="n">op</span><span class="p">.</span><span class="n">get_join_algo</span><span class="p">())</span> <span class="p">{</span>
      <span class="c1">// 查询计划是hash join时的处理，暂略</span>
    <span class="p">}</span>
    <span class="k">const</span> <span class="n">common</span><span class="o">::</span><span class="n">ObIArray</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int64_t</span><span class="p">,</span> <span class="n">ObRawExpr</span><span class="o">*&gt;&gt;&amp;</span> <span class="n">exec_params</span> <span class="o">=</span> <span class="n">op</span><span class="p">.</span><span class="n">get_exec_params</span><span class="p">();</span>
@@ -733,7 +739,7 @@ output_product(no)-&gt;left_op
       <span class="k">if</span> <span class="p">(</span><span class="n">OB_ITER_END</span> <span class="o">==</span> <span class="p">(</span><span class="n">ret</span> <span class="o">=</span> <span class="p">(</span><span class="k">this</span><span class="o">-&gt;*</span><span class="n">state_operation</span><span class="p">)()))</span> <span class="p">{</span>
         <span class="n">func</span> <span class="o">=</span> <span class="n">FT_ITER_END</span><span class="p">;</span><span class="c1">// func的取值为end、going，对应取流程图中end或是going后缀的函数</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="n">OB_SUCCESS</span><span class="p">;</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">ret</span><span class="p">))</span> <span class="p">{</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">ret</span><span class="p">))</span> <span class="p">{</span>
       <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
         <span class="n">func</span> <span class="o">=</span> <span class="n">FT_ITER_GOING</span><span class="p">;</span>
       <span class="p">}</span>
@@ -780,7 +786,7 @@ output_product(no)-&gt;left_op
      <span class="c1">// 当当前还有存储数据时，直接获取存储数据，具体内容略</span>
    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="c1">// 没有存储数据时，批量获取数据</span>
      <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">right_tsc</span><span class="o">-&gt;</span><span class="n">group_rescan_init</span><span class="p">(</span><span class="n">MY_SPEC</span><span class="p">.</span><span class="n">batch_size_</span><span class="p">)))</span> <span class="p">{</span>
-     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">is_left_end_</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 判断左节点是否已经取完</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">is_left_end_</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 判断左节点是否已经取完</span>
      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
        <span class="k">if</span> <span class="p">(</span><span class="n">OB_ISNULL</span><span class="p">(</span><span class="n">mem_context_</span><span class="p">))</span> <span class="p">{</span>
            <span class="c1">// 初始化存储数据的结构，具体内容略</span>
@@ -799,10 +805,10 @@ output_product(no)-&gt;left_op
              <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
                <span class="n">is_left_end_</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
              <span class="p">}</span>
-           <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">left_store_</span><span class="p">.</span><span class="n">add_row</span><span class="p">(</span><span class="n">left_</span><span class="o">-&gt;</span><span class="n">get_spec</span><span class="p">().</span><span class="n">output_</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">eval_ctx_</span><span class="p">)))</span> <span class="p">{</span><span class="c1">// 存储到存储到对应的结构left_store_中</span>
-           <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">prepare_rescan_params</span><span class="p">(</span><span class="nb">true</span> <span class="cm">/*is_group*/</span><span class="p">)))</span> <span class="p">{</span>
-           <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">deep_copy_dynamic_obj</span><span class="p">()))</span> <span class="p">{</span>
-           <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">right_tsc</span><span class="o">-&gt;</span><span class="n">group_add_query_range</span><span class="p">()))</span> <span class="p">{</span> <span class="c1">// 存储对应的右节点访问参数</span>
+           <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">left_store_</span><span class="p">.</span><span class="n">add_row</span><span class="p">(</span><span class="n">left_</span><span class="o">-&gt;</span><span class="n">get_spec</span><span class="p">().</span><span class="n">output_</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">eval_ctx_</span><span class="p">)))</span> <span class="p">{</span><span class="c1">// 存储到存储到对应的结构left_store_中</span>
+           <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">prepare_rescan_params</span><span class="p">(</span><span class="nb">true</span> <span class="cm">/*is_group*/</span><span class="p">)))</span> <span class="p">{</span>
+           <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">deep_copy_dynamic_obj</span><span class="p">()))</span> <span class="p">{</span>
+           <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">right_tsc</span><span class="o">-&gt;</span><span class="n">group_add_query_range</span><span class="p">()))</span> <span class="p">{</span> <span class="c1">// 存储对应的右节点访问参数</span>
            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
              <span class="n">ignore_end</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
            <span class="p">}</span>
@@ -835,7 +841,7 @@ output_product(no)-&gt;left_op
  <span class="p">{</span>
    <span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">OB_SUCCESS</span><span class="p">;</span>
    <span class="k">if</span> <span class="p">(</span><span class="n">OB_UNLIKELY</span><span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">index_iter_</span><span class="p">)</span> <span class="o">||</span> <span class="n">OB_UNLIKELY</span><span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">access_ctx_</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// 没有初始化</span>
-   <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">access_ctx_</span><span class="o">-&gt;</span><span class="n">is_end</span><span class="p">())</span> <span class="p">{</span> <span class="c1">// 已经扫描完了</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">access_ctx_</span><span class="o">-&gt;</span><span class="n">is_end</span><span class="p">())</span> <span class="p">{</span> <span class="c1">// 已经扫描完了</span>
    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
      <span class="k">while</span> <span class="p">(</span><span class="n">OB_SUCC</span><span class="p">(</span><span class="n">ret</span><span class="p">))</span> <span class="p">{</span>
        <span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">!=</span> <span class="n">main_iter_</span> <span class="o">&amp;&amp;</span> <span class="n">OB_SUCC</span><span class="p">(</span><span class="n">main_iter_</span><span class="o">-&gt;</span><span class="n">get_next_row</span><span class="p">(</span><span class="n">row</span><span class="p">)))</span> <span class="p">{</span> <span class="c1">// 数据表获取到一行数据，直接结束</span>
@@ -857,7 +863,7 @@ output_product(no)-&gt;left_op
                  <span class="o">++</span><span class="n">index_range_array_cursor_</span><span class="p">;</span>
                  <span class="k">if</span> <span class="p">(</span><span class="n">OB_FAIL</span><span class="p">(</span><span class="n">index_iter_</span><span class="o">-&gt;</span><span class="n">switch_iterator</span><span class="p">(</span><span class="n">index_range_array_cursor_</span><span class="p">)))</span> <span class="p">{</span>
                  <span class="p">}</span>
-               <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">OB_ITER_END</span> <span class="o">!=</span> <span class="n">ret</span><span class="p">)</span> <span class="p">{</span>
+               <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">OB_ITER_END</span> <span class="o">!=</span> <span class="n">ret</span><span class="p">)</span> <span class="p">{</span>
                <span class="p">}</span>
              <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="c1">// 存储获取的数据</span>
                <span class="n">src_key</span><span class="p">.</span><span class="n">assign</span><span class="p">(</span><span class="n">index_row</span><span class="o">-&gt;</span><span class="n">row_val_</span><span class="p">.</span><span class="n">cells_</span><span class="p">,</span> <span class="n">rowkey_cnt_</span><span class="p">);</span>
