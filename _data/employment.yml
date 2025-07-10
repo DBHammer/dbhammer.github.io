@@ -5,7 +5,7 @@
 masters:                            # ―――― 硕士生 ――――
   - year: 2022
     people:
-      - {name: 项兆坤, dest: 新加坡国立大学 博士生}
+      - {name: 项兆坤, dest: 英特尔亚太研发有限公司}
 
   - year: 2023
     people:
