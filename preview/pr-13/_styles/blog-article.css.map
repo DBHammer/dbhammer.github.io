@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["blog-article.scss"],"names":[],"mappings":"AAKE;EACE","sourcesContent":["@import \"palettes\";\n@import \"theme\";\n@import \"mixins\";\n\n.blog-article {\n  h1, h2, h3, h4, pre {\n    text-align: left;\n  }\n}"],"file":"blog-article.css"}
