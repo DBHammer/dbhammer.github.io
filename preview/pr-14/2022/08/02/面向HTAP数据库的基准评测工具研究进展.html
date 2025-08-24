@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en" data-dark="false">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!--
+  put your analytics (e.g. Google Analytics) tracking code here
+-->
+
+  <!--
+  put your search engine verification (e.g. Google Search Console) tag here
+-->
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>面向HTAP数据库的基准评测工具研究进展 | DBHammer</title>
+
+<link rel="icon" href="">
+
+<meta name="title" content="面向HTAP数据库的基准评测工具研究进展">
+<meta name="description" content="DaSE, ECNU. The official website of DBHammer, DaSE, ECNU.">
+
+<meta property="og:title" content="面向HTAP数据库的基准评测工具研究进展">
+<meta property="og:site_title" content="DBHammer">
+<meta property="og:description" content="DaSE, ECNU. The official website of DBHammer, DaSE, ECNU.">
+<meta property="og:url" content="/preview/pr-">
+<meta property="og:image" content="">
+<meta property="og:locale" content="en_US">
+
+<meta property="twitter:title" content="面向HTAP数据库的基准评测工具研究进展">
+<meta property="twitter:description" content="DaSE, ECNU. The official website of DBHammer, DaSE, ECNU.">
+<meta property="twitter:url" content="/preview/pr-">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="">
+
+
+  <meta name="author" content="俞融">
+  <meta property="og:type" content="article">
+  <meta property="og:updated_time" content="2025-08-24T16:00:45+00:00">
+  <meta property="article:published_time" content="2022-08-02T00:00:00+00:00">
+  <meta property="article:modified_time" content="2025-08-24T16:00:45+00:00">
+  <meta name="revised" content="2025-08-24T16:00:45+00:00">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "BlogPosting",
+      "author": { "@type": "Person", "name": "面向HTAP数据库的基准评测工具研究进展" },
+      "datePublished": "2022-08-02T00:00:00+00:00",
+      "dateModified": "2025-08-24T16:00:45+00:00",
+    
+    "name": "面向HTAP数据库的基准评测工具研究进展",
+    "description": "DaSE, ECNU. The official website of DBHammer, DaSE, ECNU.",
+    "headline": "面向HTAP数据库的基准评测工具研究进展",
+    "publisher": {
+      "@type": "Organization",
+      "logo": { "@type": "ImageObject", "url": "" }
+    },
+    "url": "/preview/pr-"
+  }
+</script>
+
+<link rel="alternate" type="application/rss+xml" href="/preview/pr-/feed.xml">
+
+  <!-- Google Fonts -->
+<!-- automatically get url from fonts used in theme file -->
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?display=swap&&family=Barlow:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600&amp;family=Roboto+Mono:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600" rel="stylesheet">
+
+<!-- Font Awesome icons (load asynchronously due to size) -->
+
+<link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet" media="none" onload="this.removeAttribute('media'); this.onload = null;">
+<noscript>
+  <link href="https://use.fontawesome.com/releases/v6.7.0/css/all.css" rel="stylesheet">
+</noscript>
+
+  <!-- third party styles -->
+<!-- https://stylishthemes.github.io/Syntax-Themes/pygments/ -->
+<link href="https://cdn.jsdelivr.net/gh/StylishThemes/Syntax-Themes/pygments/css-github/pygments-tomorrow-night-eighties.css" rel="stylesheet">
+
+<!-- include all sass in styles folder -->
+
+
+  
+    <link href="/preview/pr-/_styles/-theme.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/alert.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/all.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/anchor.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/background.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/banner.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/blog-article.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/body.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/bold.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/button.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/card.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/checkbox.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/citation.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/code.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/cols.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/dark-toggle.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/details.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/feature.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/figure.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/float.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/font.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/footer.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/form.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/gallery.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/grid.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/header.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/heading.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/highlight.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/icon.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/image.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/input.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/link.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/list.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/main.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/member-intro.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/paragraph.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/portrait.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/post-excerpt.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/post-info.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/post-nav.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/quote.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/role.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/rule.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/search-box.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/search-info.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/section.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/table.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/tags.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/textbox.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/tooltip.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/two-col.css" rel="stylesheet">
+  
+
+  
+    <link href="/preview/pr-/_styles/util.css" rel="stylesheet">
+  
+
+
+<!-- include all css in styles folder -->
+
+
+
+  <!-- third party scripts -->
+<script src="https://unpkg.com/@popperjs/core@2" defer></script>
+<script src="https://unpkg.com/tippy.js@6" defer></script>
+<script src="https://unpkg.com/mark.js@8" defer></script>
+
+<!-- include all js in scripts folder -->
+
+
+  <script src="/preview/pr-/_scripts/anchors.js"></script>
+
+  <script src="/preview/pr-/_scripts/dark-mode.js"></script>
+
+  <script src="/preview/pr-/_scripts/fetch-tags.js"></script>
+
+  <script src="/preview/pr-/_scripts/search.js"></script>
+
+  <script src="/preview/pr-/_scripts/site-search.js"></script>
+
+  <script src="/preview/pr-/_scripts/table-wrap.js"></script>
+
+  <script src="/preview/pr-/_scripts/tooltip.js"></script>
+
+  <script src="/preview/pr-/_scripts/tooltips.js"></script>
+
+  <script src="/preview/pr-/_scripts/true-hide.js"></script>
+
+  <script src="/preview/pr-/_scripts/util.js"></script>
+
+
+</head>
+
+  <body>
+    
+
+
+
+
+
+
+
+<header class="background" style="--image: url('')" data-dark="true">
+  <a href="/preview/pr-/" class="home">
+    
+      <span class="logo">
+        
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="-50 -50 100 100" style="overflow: visible">
+  <style>
+  circle {
+    animation: float 2s ease-out forwards infinite,
+    fade 2s ease-out forwards infinite;
+  }
+  circle:nth-of-type(1) {
+    animation-delay: 0.1s;
+  }
+  circle:nth-of-type(2) {
+    animation-delay: 0.4s;
+  }
+  circle:nth-of-type(3) {
+    animation-delay: 1.1s;
+  }
+  @keyframes float {
+    50% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-45px);
+    }
+  }
+  @keyframes fade {
+    75% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  </style>
+  <circle fill="#b3e5fc" cx="0" cy="0" r="3"></circle>
+  <circle fill="#b3e5fc" cx="0" cy="0" r="3"></circle>
+  <circle fill="#b3e5fc" cx="0" cy="0" r="3"></circle>
+  <path fill="#81d4fa" d="
+      M 0.0 -15.0
+      L -21.7 -2.5
+      L -21.7 22.5
+      L -0.0 35.0
+      L 21.7 22.5
+      L 21.7 -2.5
+      z
+    "></path>
+  <path fill="#b3e5fc" d="
+      M 0.0 -15.0
+      L -21.7 -2.5
+      L 0 10
+      L 21.7 -2.5
+      z
+    "></path>
+  <path fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="
+      M -15 -43
+      L -10 -43
+      L -10 -19.2
+      L -30.3 -7.5
+      L -30.3 27.5
+      L -0 45
+      L 30.3 27.5
+      L 30.3 -7.5
+      L 10 -19.2
+      L 10 -43
+      L 15 -43
+    "></path>
+</svg>
+
+        
+      </span>
+    
+    
+      <span class="title-text" data-tooltip="Home">
+        
+          <span class="title">DBHammer</span>
+        
+        
+          <span class="subtitle">DaSE, ECNU</span>
+        
+      </span>
+    
+  </a>
+
+  <input class="nav-toggle" type="checkbox" aria-label="show/hide nav">
+
+  <nav>
+    
+    
+      
+        <a href="/preview/pr-/project/" data-tooltip="Software, datasets, and more">
+          项目
+        </a>
+      
+    
+      
+        <a href="/preview/pr-/blog/" data-tooltip="Musings and miscellany">
+          博客
+        </a>
+      
+    
+      
+        <a href="/preview/pr-/research/" data-tooltip="Published works">
+          论文
+        </a>
+      
+    
+      
+        <a href="/preview/pr-/news/" data-tooltip="News">
+          新闻
+        </a>
+      
+    
+      
+        <a href="/preview/pr-/contact/" data-tooltip="Email, address, and location">
+          就业去向
+        </a>
+      
+    
+      
+        <a href="/preview/pr-/team/" data-tooltip="About our team">
+          成员
+        </a>
+      
+    
+  </nav>
+</header>
+
+    <main>
+      <!--
+  modify main content of page:
+  - add section breaks
+  - attach section properties
+  - filter out blank sections
+-->
+
+
+
+
+
+
+  
+  
+  
+
+  <section class="background" data-size="1">
+    <!--
+  background: ;
+  dark: ;
+  size: 1;
+-->
+
+
+<h1 class="center">面向HTAP数据库的基准评测工具研究进展</h1>
+
+<div class="post-info">
+  
+    
+    
+      
+
+
+
+<div class="portrait-wrapper">
+  <a href="/preview/pr-/members/%E4%BF%9E%E8%9E%8D.html" class="portrait" data-style="tiny" aria-label="俞融">
+    
+      <i class="icon fas fa-user-graduate"></i>
+    
+
+    <img src="/preview/pr-/photos/yurong.jpg" class="portrait-image" alt="member portrait" loading="lazy" onerror="this.src = '/preview/pr-/images/fallback.svg'; this.onerror = null;">
+
+    
+      <span class="portrait-name">
+        俞融
+      </span>
+    
+
+    
+      <span class="portrait-description">
+        
+      </span>
+    
+
+    
+  </a>
+</div>
+
+    
+  
+
+  
+  
+
+  
+    <span data-tooltip="Originally published on">
+      <i class="icon fa-regular fa-calendar"></i>
+      <span>August 02, 2022</span>
+    </span>
+  
+
+  
+    <span data-tooltip="Last updated on">
+      <i class="icon fa-solid fa-clock-rotate-left"></i>
+      <span>August 24, 2025</span>
+    </span>
+  
+</div>
+
+
+  
+
+
+  <div class="tags" data-link="/preview/pr-/blog">
+    
+      <a href='blog?search="tag:%20benchmark"' class="tag" data-tooltip='Show items with the tag "benchmark"'>
+        benchmark
+      </a>
+    
+      <a href='blog?search="tag:%20htap"' class="tag" data-tooltip='Show items with the tag "htap"'>
+        htap
+      </a>
+    
+  </div>
+  </section>
+
+  
+  
+  
+
+  <section class="background" data-size="page">
+    <!--
+  background: ;
+  dark: ;
+  size: ;
+-->
+
+
+<p>随着在线实时分析需求的增长，HTAP(Hybrid Transaction and Analitical Process)数据库随之出现，其能在同一个系统内实现 OLTP 负载和 OLAP 负载的高效处理，提供了对新鲜数据的分析能力。近年来，工业界和学术界提出了多种 HTAP 数据库架构，因此如何评测各种新型的 HTAP 数据库引起了学界和业界的广泛关注。</p>
+
+<p>本篇内容主要探讨面向HTAP数据库的基准评测工具，以及研究进展。OceanBase 作为从 OLTP 数据库系统扩展而来的分布式 HTAP 数据库系统，它提供了两种资源隔离方案：OLAP 负载占比低时，在主副本上执行分析任务，以获得实时的数据；OLAP 占比高时，在只读副本上执行分析任务，以实现显式物理隔离，故而 OceanBase 在隔离性和数据库性能上有机会做出比较好的权衡，即可能具有较好的 HTAP 负载支持能力。后续我们也将陆续发布 OceanBase 对 HTAP 负载的支持能力测试报告。</p>
+
+<h2 id="引言">引言</h2>
+
+<p>HTAP 数据库实现的难点在于 TP/AP 的资源隔离和数据同步。因此，除了评测 TP 负载面对高并发负载的性能和 AP 负载面对复杂查询的性能外，现有的 HTAP benchmark 在评估性能的设计上更加关注以下两个问题：</p>
+
+<p><strong>混合负载生成：</strong>生成 TP 和 AP 负载，并且控制 AP 与 TP 负载之间数据访问的交叉。</p>
+
+<p><strong>负载指标：</strong>量化评测混合负载运行时的隔离性，即相互之间的干扰程度。</p>
+
+<p>目前主流的 HTAP 评测基准（工具）有 CH-benCHmark(2011)[1]、HTAPBench(2017)[2]、OLxPBench(2022)[3]、HATtrick(2022)[4]。下面本文将对这 4 个工作从表模式和负载生成、测试方法、控制方法、测试指标等几个方面进行分析和总结。</p>
+
+<h3 id="一ch-benchmark">一、CH-benCHmark</h3>
+
+<p>它于 2011 年被提出，是第一个官方提出的混合负载评测基准，基于标准 OLTP 和 OLAP 基准完成定义。
+<img src="/auto-image/picrepo/a8d96710-23c6-47ca-b526-6671be3c02c9.png" alt="图1 CH-benCHmark的TP负载和AP负载运行模式[1]" style="width: 100%;"></p>
+
+<p class="center">图1 CH-benCHmark的TP负载和AP负载运行模式[1]</p>
+<p><strong>表模式和负载：</strong>把 TPC-C 和 TPC-H 表模式进行简单缝合。事务性负载使用 TPC-C 的 5 类负载，分析性负载使用 TPC-H 的 22 个查询。但是这种方式存在 AP 的扫描和 TP 的修改在数据访问空间上的不一致，较小的访问交叉使遇到读写冲突的概率较低，不同类型负载在处理上存在的资源干扰较低。</p>
+
+<p><strong>测试方法：</strong>分别运行 TPC-C 指定比例的事务和改装后类似 TPC-H 的 22 个查询，运行模式见图 1。在测试过程中，通过指定 OLAP 流的数量、OLTP 不同事务的初始占比和客户端数量，分别测量该负载模式下的 TP 和 AP 能力。同时，为了比较两类负载之间的相互干扰情况，测试需要至少进行三组，无 TP 流纯 AP 流负载、无 AP 流纯 TP 流负载和指定数量 TP 流和 AP 流负载，通过控制变量的方式人工地对测试结果进行隔离性、干扰性的分析。</p>
+
+<p><strong>测试指标：</strong>首次采用 
+<img src="/auto-image/picrepo/18146342-e343-4bb1-a210-344896859a3f.png" alt="图片"> 和 
+<img src="/auto-image/picrepo/ae0be21a-129d-4fd1-b3ef-6bc16b51cb9b.png" alt="图片">。虽然指标很客观，但不适用于数据库间的横向比较，适用于个体数据库的性能展示。</p>
+
+<h3 id="二htapbench">二、HTAPBench</h3>
+
+<p>HTAPBench[2] 在 2017 年首次提出以 TP 吞吐量为前提的评测流程。</p>
+
+<p><strong>表模式和负载：</strong>与 CH-benCHmark 所使用的保持一致。</p>
+
+<p><strong>测试方法：</strong>HTAPBench 通过指定应用可以容忍的 OLTP 目标吞吐下限范围，运行足够多的 TP 线程保证满足吞吐的初始下限，在执行过程中再根据 TP 吞吐的实时反馈来确定是否添加 OLAP 流，由此测得保证 TP 吞吐量下的最大 OLAP 能力，运行模式见图 2。这种测量方式包含了对于 TP/AP 之间相互干扰的考虑，只需要执行一次，较简便。</p>
+
+<p><strong>测试指标：</strong>HTAPBench 使用 
+<img src="/auto-image/picrepo/1531445c-1fed-440a-b39f-253c188e448f.png" alt="图片"> 进行单个 worker 性能之间的比较。</p>
+
+<p><strong>分布控制方法：</strong>HTAPBench 提出如何控制分析任务复杂度和查询访问模式这两个问题，主要目的是使得 AP 任务对 TP 生成数据的访问得到控制。同时提出使用密度估计的方法来确定当前数据库的数据分布，使之能够根据当前数据库状态动态确定分析查询。
+<img src="/auto-image/picrepo/cee27f8c-2fb2-4285-adbc-366965b24f41.png" alt="图2 HTAPBench运行模式示意图[2]" style="width: 100%;"></p>
+
+<p class="center">图2 HTAPBench运行模式示意图[2]</p>
+<h3 id="三olxpbench">三、OLxPBench</h3>
+
+<p>OLxPBench[3] 是中科院计算所研发的关于 HTAP 数据库基准的评测工具（工具架构见图 3），他们对 HTAP 数据库评测的任务进行分析，得出负载应当满足三个特征，即实时查询、语义一致性和面向特定领域。语义一致性需要 TP 修改的数据都被 AP 访问，实时查询包含实时查询和批查询，要能够模拟用户的行为和客户决策的需求。论文指出 CH-benCHmark 和 HTAPBench 两种基准采用的对原有基准简单缝合的方式以及 TPC-H 查询未能真实展现 TP/AP 之间的干扰是要解决的问题。</p>
+
+<p><strong>表模式和负载：</strong>OLxPBench 设计了面向通用场景(Subenchmark)、金融场景(Finbenchmark)和电信场景(Tabenchmark)的三种负载，包含对于实时查询、语义一致性的查询逻辑设计。Subenchmark 作为通用的负载，参考了 TPC-C 基准表模式的生成，使用 5 个事务 +9 个分析查询 +5 个混合事务；Fibenchmark参考 SmallBank 基准表模式的生成，使用 6 个事务 +4 个分析查询 +6 个混合事务；Tabenchmark 参考 TATP 基准表模式的生成，使用 7 个事务 +5 个分析查询 +6 个混合事务。</p>
+
+<p><strong>测试方法：</strong>与 HTAPBench 相同。</p>
+
+<p><strong>测试指标：</strong>结合了 HTAPBench 和 CH-benCHmark，使用 
+<img src="/auto-image/picrepo/a59f8aec-fa23-4afb-b726-327e04983854.png" alt="图片"> 和
+<img src="/auto-image/picrepo/2e1a3fec-1b53-4829-8834-ed4d683cfa5f.png" alt="图片"> 进行结果的呈现。
+<img src="/auto-image/picrepo/21f75943-0a26-426c-bb96-1d7949a6508e.png" alt="图3 OLxPBench架构[3]" style="width: 100%;"></p>
+
+<p class="center">图3 OLxPBench架构[3]</p>
+<h3 id="四hattrick">四、HATtrick</h3>
+
+<p>HATtrick[4] 是威斯康辛大学在 2022 年提出的针对 HTAP 数据库的基准，它提出不同任务之间的隔离性和控制新鲜数据的访问是 HTAP 数据库实现中面临的主要挑战。</p>
+
+<p><strong>表模式和负载：</strong>HATtrick 是从 SSB 表模式中扩展而来，新增了历史记录表、新鲜度记录表以及部分字段；共有两类负载，事务型负载受 TPC-C 启发使用自建的下单事务、付款事务和订单计数事务，分析型负载使用 13 个调整后的 SSB 查询。</p>
+
+<p><strong>测试方式：</strong>给定 TP/AP 客户端数量，同时执行事务和 SSB 的 13 个查询，查询按批的形式连续不断执行，批内查询顺序随机。</p>
+
+<p><strong>测试指标：</strong>针对隔离性和新鲜度提出了两个新的评价指标。首先，提出使用吞吐边界(throughput frontier)的概念，通过二维可视化的方式进行隔离性评测如图4所示。在栅格图中，随着客户端数量变化，线越平行坐标轴隔离性越好；而在综合图中，随扩展系数变化的图像中，吞吐边界线位于比例线之上越接近边界线隔离性能越好，越接近比例线表明事务负载和分析负载之间的代价权衡越多，低于比例线越接近坐标轴表示事务负载和分析负载之间的干扰程度越高，资源竞争越激烈。其次，对新鲜度给出了度量函数（查询发起版本与第一个不可见的 TP 版本之间的时间差）<img src="/auto-image/picrepo/3d82fe33-e761-44c4-bd8c-eabb2849ef27.png" alt="图片">。
+<img src="/auto-image/picrepo/01d02d37-b166-43ab-94fb-8ccda474f6d4.png" alt="图4 各曲线示意图[4]" style="width: 100%;"></p>
+
+<p class="center">图4 各曲线示意图[4]</p>
+<p>根据调研，除了早期的 CH-benCHmark，最近的三款 Benchmark 在评测时明确要求保证 OLTP 的吞吐能力。HTAP 数据库系统上 OLTP 和 OLAP 访问“同一份数据”，而事务处理能力大概率受到同步的影响（新鲜度），如何做好资源共享与资源隔离的权衡[5]是一个难点问题。正如杨传辉在<a href="http://mp.weixin.qq.com/s?__biz=MzU0ODg0OTIyNw==&mid=2247494143&idx=1&sn=26158d95218b74e4b39050036e3e607d&chksm=fbba7adbcccdf3cdaa56a48f5e9a2ddc6ddb01de8d66525b7e30f9882d470856bfd76424f6ce&scene=21#wechat_redirect">《真正的HTAP对用户和开发者意味着什么？》</a>所说，真正的 HTAP 数据库系统要求先有高性能的 OLTP，然后在 OLTP 产生的新鲜数据上支持实时分析 [5]。</p>
+
+<p>通过对现有的典型 HTAP 数据库评测基准的分析，发现已有基准评测工具在表模式和负载生成、测试方法、分布控制方法、测试指标等方面均各有特色，旨在服务于 HTAP 特性的评测。具体来说，HTAPBench考虑了对计算代价的控制，OLxPBench 考虑了实时查询的使用，HATtrick 考虑了新鲜度指标，值得我们参考和学习。</p>
+
+<h2 id="参考文献">参考文献</h2>
+
+<p>[1] Cole R, Funke F, Giakoumakis L, et al. The mixed workload CH-benCHmark[C]//Proceedings of the Fourth International Workshop on Testing Database Systems. 2011: 1-6.</p>
+
+<p>[2] Coelho F, Paulo J, Vilaça R, et al. Htapbench: Hybrid transactional and analytical processing benchmark[C]//Proceedings of the 8th ACM/SPEC on International Conference on Performance Engineering. 2017: 293-304.</p>
+
+<p>[3] Kang G, Wang L, Gao W, et al. OLxPBench: Real-time, Semantically Consistent, and Domain-specific are Essential in Benchmarking, Designing, and Implementing HTAP Systems[J]. arXiv preprint arXiv:2203.16095, 2022.</p>
+
+<p>[4] Milkai E, Chronis Y, Gaffney K P, et al. How Good is My HTAP System?[C]//Proceedings of the 2022 International Conference on Management of Data. 2022: 1810-1824.</p>
+
+<p>[5]<a href="http://mp.weixin.qq.com/s?__biz=MzU0ODg0OTIyNw==&mid=2247494143&idx=1&sn=26158d95218b74e4b39050036e3e607d&chksm=fbba7adbcccdf3cdaa56a48f5e9a2ddc6ddb01de8d66525b7e30f9882d470856bfd76424f6ce&scene=21#wechat_redirect">杨传辉，“真正的HTAP对用户和开发者意味着什么？“</a></p>
+
+<p>[6]弱一致性读，https://open.oceanbase.com/docs/observer-cn/V3.1.4/10000000000449449</p>
+  </section>
+
+  
+  
+  
+
+  <section class="background" data-size="page">
+    <!--
+  background: ;
+  dark: ;
+  size: ;
+-->
+
+
+<div class="post-nav">
+  <span>
+    
+      <i class="icon fa-solid fa-angle-left"></i> Previous post<br>
+      <a href="/preview/pr-/2022/05/26/OceanBase%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98.html">
+        OceanBase性能调优
+      </a>
+    
+  </span>
+  <span>
+    
+      Next post <i class="icon fa-solid fa-angle-right"></i><br>
+      <a href="/preview/pr-/2022/09/01/Polardb-for-PostgreSQL-%E9%83%A8%E7%BD%B2-Ceph+PFS.html">
+        Polardb for PostgreSQL部署（Ceph+PFS）
+      </a>
+    
+  </span>
+</div>
+  </section>
+
+
+    </main>
+    
+
+
+<footer class="background" style="--image: url('')" data-dark="true" data-size="wide">
+  <!--
+    <div>
+      Extra details like contact info or address
+    </div>
+  -->
+
+  <div>
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="mailto:rzhang@dase.ecnu.edu.cn" data-tooltip="Email" data-style="bare" aria-label="Email">
+      <i class="icon fa-solid fa-envelope"></i>
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="tel:021-62235006" data-tooltip="Phone number" data-style="bare" aria-label="Phone number">
+      <i class="icon fa-solid fa-phone"></i>
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://orcid.org/0000-0002-5182-2093" data-tooltip="ORCID" data-style="bare" aria-label="ORCID">
+      <i class="icon fa-brands fa-orcid"></i>
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://scholar.google.com/citations?user=iJtZsaQAAAAJ" data-tooltip="Google Scholar" data-style="bare" aria-label="Google Scholar">
+      <i class="icon fa-brands fa-google"></i>
+      
+    </a>
+  </div>
+
+
+    
+      
+      
+      
+
+
+
+  <div class="button-wrapper">
+    <a class="button" href="https://github.com/dbhammer" data-tooltip="GitHub" data-style="bare" aria-label="GitHub">
+      <i class="icon fa-brands fa-github"></i>
+      
+    </a>
+  </div>
+
+
+    
+  </div>
+
+  <div>
+    © 2025
+    DBHammer
+      |   Built with
+    <a href="https://github.com/greenelab/lab-website-template">
+      Lab Website Template
+    </a>
+  </div>
+
+  <input type="checkbox" class="dark-toggle" data-tooltip="Dark mode" aria-label="toggle dark mode" oninput="onDarkToggleChange(event)">
+</footer>
+
+  </body>
+</html>
