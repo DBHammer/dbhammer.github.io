@@ -1,3 +1,20 @@
+- id: 'Vodka: Rethink Benchmarking Philosophy in HTAP Systems'
+  manual: true
+  title: 'Vodka: Rethink Benchmarking Philosophy in HTAP Systems'
+  link: 
+  authors:
+  - Zirui Hu
+  - Siyang Weng
+  - Zhicheng Pan
+  - Rong Zhang
+  - Chengcheng Yang
+  - Peng Cai
+  - Xuan Zhou
+  - Quanqing Xu
+  - Chanhui Yang
+  publisher: Proceedings of the VLDB Endowment (VLDB)
+  date: '2025-10-16'
+  image: ''
 - id: "面向关系型数据库锁机制实现的模糊测试框架"
   link: 
   manual: true
