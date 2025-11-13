@@ -1,3 +1,17 @@
+- id: 'Memory-Aware Query Optimization'
+  manual: true
+  title: 'Memory-Aware Query Optimization'
+  link: 
+  authors:
+  - Haopu Dong
+  - Zirui Hu
+  - Chenhao Lu
+  - Siyang Weng
+  - Qingsong Ruan
+  - Rong Zhang
+  publisher: IEEE International Conference on Big Data (BigData)
+  date: '2025-11-12'
+  image: ''
 - id: 'Vodka: Rethink Benchmarking Philosophy in HTAP Systems'
   manual: true
   title: 'Vodka: Rethink Benchmarking Philosophy in HTAP Systems'
