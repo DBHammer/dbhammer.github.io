@@ -1,3 +1,21 @@
+- id: 'Pisco: An Isolation Bug Case  Reduction and Deduplication Framework'
+  manual: true
+  title: 'Pisco: An Isolation Bug Case  Reduction and Deduplication Framework'
+  link: 
+  authors:
+  - Siyang Weng
+  - Hongyu Yang
+  - Zirui Hu
+  - Rong Zhang
+  - Zhicheng Pan
+  - Chengcheng Yang
+  - Xuan Zhou
+  - Yuxing Chen
+  - Xiaolong He
+  - Anqun Pan
+  publisher: Proceedings of the VLDB Endowment (VLDB)
+  date: '2026-1-15'
+  image: ''
 - id: 'Memory-Aware Query Optimization'
   manual: true
   title: 'Memory-Aware Query Optimization'
