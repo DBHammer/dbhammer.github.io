@@ -1,3 +1,50 @@
+- id: 'OBELISK: Efficient Offline Query Planning with Bayesian Optimization-Informed Language Model Reasoning'
+  manual: true
+  title: 'OBELISK: Efficient Offline Query Planning with Bayesian Optimization-Informed Language Model Reasoning'
+  link: 
+  authors:
+  - Zhicheng Pan
+  - Wenwen Sun
+  - Y. Zhang
+  - T. Purcell
+  - Y. Dong
+  - Chengcheng Yang
+  - Rong Zhang
+  - Xuan Zhou
+  - Jianliang Xu
+  publisher: Proceedings of the VLDB Endowment (PVLDB)
+  date: '2026-3-1'
+  image: ''
+
+- id: 'BOND: A Co-Designed Framework for LLM-Powered Analytics Over Relational Data'
+  manual: true
+  title: 'BOND: A Co-Designed Framework for LLM-Powered Analytics Over Relational Data'
+  link: 
+  authors:
+  - Lixiang Chen
+  - Q. Zheng
+  - Zhicheng Pan
+  - Chengcheng Yang
+  - Rong Zhang
+  - Xuan Zhou
+  publisher: Proceedings of the IEEE International Conference on Data Engineering (ICDE)
+  date: '2026-3-1'
+  image: ''
+
+- id: 'Q-Doctor: Retrieval-Augmented Diagnosis and Multi-Agent Correction for Query Performance Anomalies'
+  manual: true
+  title: 'Q-Doctor: Retrieval-Augmented Diagnosis and Multi-Agent Correction for Query Performance Anomalies'
+  link: 
+  authors:
+  - Y. Han
+  - Zhicheng Pan
+  - Lixiang Chen
+  - Chengcheng Yang
+  - Rong Zhang
+  - Xuan Zhou
+  publisher: International Conference on Database Systems for Advanced Applications (DASFAA)
+  date: '2026-1-20'
+  image: ''
 - id: 'Pisco: An Isolation Bug Case  Reduction and Deduplication Framework'
   manual: true
   title: 'Pisco: An Isolation Bug Case  Reduction and Deduplication Framework'
