@@ -14,7 +14,7 @@
   - Jianliang Xu
   publisher: Proceedings of the VLDB Endowment (PVLDB)
   date: '2026-3-1'
-  image: ''
+  image: '../illustration/paper/mirage.png'
 
 - id: 'BOND: A Co-Designed Framework for LLM-Powered Analytics Over Relational Data'
   manual: true
@@ -29,7 +29,7 @@
   - Xuan Zhou
   publisher: Proceedings of the IEEE International Conference on Data Engineering (ICDE)
   date: '2026-3-1'
-  image: ''
+  image: '../illustration/paper/mirage.png'
 
 - id: 'Q-Doctor: Retrieval-Augmented Diagnosis and Multi-Agent Correction for Query Performance Anomalies'
   manual: true
@@ -44,7 +44,8 @@
   - Xuan Zhou
   publisher: International Conference on Database Systems for Advanced Applications (DASFAA)
   date: '2026-1-20'
-  image: ''
+  image: '../illustration/paper/mirage.png'
+
 - id: 'Pisco: An Isolation Bug Case  Reduction and Deduplication Framework'
   manual: true
   title: 'Pisco: An Isolation Bug Case  Reduction and Deduplication Framework'
@@ -62,7 +63,8 @@
   - Anqun Pan
   publisher: Proceedings of the VLDB Endowment (VLDB)
   date: '2026-1-15'
-  image: ''
+  image: '../illustration/paper/mirage.png'
+
 - id: 'Memory-Aware Query Optimization'
   manual: true
   title: 'Memory-Aware Query Optimization'
@@ -76,7 +78,8 @@
   - Rong Zhang
   publisher: IEEE International Conference on Big Data (BigData)
   date: '2025-11-12'
-  image: ''
+  image: '../illustration/paper/mirage.png'
+
 - id: 'Vodka: Rethink Benchmarking Philosophy in HTAP Systems'
   manual: true
   title: 'Vodka: Rethink Benchmarking Philosophy in HTAP Systems'
@@ -93,7 +96,8 @@
   - Chanhui Yang
   publisher: Proceedings of the VLDB Endowment (VLDB)
   date: '2025-10-15'
-  image: ''
+  image: '../illustration/paper/mirage.png'
+
 - id: "面向关系型数据库锁机制实现的模糊测试框架"
   link: 
   manual: true
@@ -104,7 +108,7 @@
   - Chenhao Lu
   - Rong Zhang
   - Xuan Zhou
-  image: '../illustration/paper/Facon.jpg'
+  image: '../illustration/paper/mirage.png'
   publisher: National Database Conference of CCF (NDBC)
   date: '2025-06-30'
   image: ""
