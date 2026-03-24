@@ -473,6 +473,7 @@
   date: '2023-01-01'
   image: '../illustration/paper/leopard-li.png'
 - id: 'A Scalable Query-Aware Enormous Database Generator for Database Evaluation'
+  manual: true
   title: A Scalable Query-Aware Enormous Database Generator for Database Evaluation
   link: https://ieeexplore.ieee.org/document/9720100
   authors:
@@ -495,6 +496,7 @@
   - Query Generator
   image: '../illustration/paper/a-scalable-query-aware.png'
 - id: 'Touchstone: Generating Enormous Query-Aware Test Databases'
+  manual: true
   title: 'Touchstone: Generating Enormous Query-Aware Test Databases'
   link: https://www.usenix.org/conference/atc18/presentation/li-yuming
   authors:
