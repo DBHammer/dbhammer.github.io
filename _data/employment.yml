@@ -28,6 +28,12 @@ masters:                            # ―――― 硕士生 ――――
       - {name: 罗瑶,   dest: 华为技术有限公司（华为）}
       - {name: 简炜,   dest: 中国船舶集团有限公司（中船）}
       - {name: 徐金凯, dest: 创业}
+  
+  - year: 2026
+    people:
+      - {name: 杨洪宇, dest: 腾讯控股有限公司（腾讯）}
+      - {name: 董昊朴,   dest: 字节跳动有限公司（字节）}
+      - {name: 陆辰昊,   dest: 国企}
 
 phd:                                # ―――― 博士生 ――――
   - year: 2017
@@ -46,4 +52,4 @@ phd:                                # ―――― 博士生 ――――
   - year: 2024
     people:
       - {name: 王清帅, dest: 腾讯控股有限公司（腾讯）, note: "直博"}
-      - {name: 李可强, dest: 福州大学, note: "直博"}
+      - {name: 李可强, dest: 福州大学讲师, note: "直博"}
