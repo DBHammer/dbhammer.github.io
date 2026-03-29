@@ -108,10 +108,10 @@
   - Chenhao Lu
   - Rong Zhang
   - Xuan Zhou
-  image: '../illustration/paper/mirage.png'
+  image: '../illustration/paper/Facon.png'
   publisher: National Database Conference of CCF (NDBC)
   date: '2025-06-30'
-  image: ""
+
 - id: "A Query-Aware Enormous Database Generator For System Performance Evaluation "
   manual: true
   title: "A Query-Aware Enormous Database Generator For System Performance Evaluation "
@@ -143,6 +143,7 @@
   - Worklod Generation
   - Query Performance Tuning
   repo: dbhammer/dbhammer.github.io
+  
 - id: 'Rabbit: Retrieval-Augmented Generation Enables Better Automatic Database Knob Tuning'
   manual: true
   title: 'Rabbit: Retrieval-Augmented Generation Enables Better Automatic Database Knob Tuning'
