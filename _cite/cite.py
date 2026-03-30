@@ -27,8 +27,8 @@ log("Compiling sources")
 # compiled list of sources
 sources = []
 
-# in-order list of plugins to run
-plugins = ["google-scholar", "pubmed", "orcid", "sources"]
+# in-order list of plugins to run (sources first to preserve order)
+plugins = ["sources", "google-scholar", "pubmed", "orcid"]
 
 # loop through plugins
 for plugin in plugins:
@@ -135,7 +135,8 @@ for index, source in enumerate(sources):
     _id = get_safe(source, "id", "").strip()
 
     # Manubot doesn't work without an id
-    if _id:
+    # Skip Manubot if source is marked as manual
+    if _id and not get_safe(source, "manual", False):
         log("Using Manubot to generate citation", 1)
 
         try:
