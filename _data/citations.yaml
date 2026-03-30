@@ -16,7 +16,7 @@
   - Weining Qian
   - Jianquan Leng
   publisher: IEEE Transactions on Knowledge and Data Engineering (TKDE)
-  date: '2026-01-01'
+  date: '2026-03-30'
   image: ../illustration/paper/leopard-tkde.png
   plugin: sources.py
   file: sources.yaml
