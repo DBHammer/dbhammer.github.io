@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["banner.scss"],"names":[],"mappings":"AAIA;EACE;EACA","sourcesContent":["@import \"palettes\";\n@import \"theme\";\n@import \"mixins\";\n\n.banner {\n  display: block;\n  width: 100%;\n}\n"],"file":"banner.css"}
