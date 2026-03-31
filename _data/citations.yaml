@@ -1,5 +1,3 @@
-# DO NOT EDIT, GENERATED AUTOMATICALLY
-
 - id: A High-Performance Black-Box Bug-Finding Tool for Database Isolation Levels
   manual: true
   title: A High-Performance Black-Box Bug-Finding Tool for Database Isolation Levels
@@ -133,12 +131,10 @@
   image: ../illustration/paper/mirage.png
   plugin: sources.py
   file: sources.yaml
-- id: "\u9762\u5411\u5173\u7CFB\u578B\u6570\u636E\u5E93\u9501\u673A\u5236\u5B9E\u73B0\
-    \u7684\u6A21\u7CCA\u6D4B\u8BD5\u6846\u67B6"
+- id: 面向关系型数据库锁机制实现的模糊测试框架
   link: null
   manual: true
-  title: "\u9762\u5411\u5173\u7CFB\u578B\u6570\u636E\u5E93\u9501\u673A\u5236\u5B9E\
-    \u73B0\u7684\u6A21\u7CCA\u6D4B\u8BD5\u6846\u67B6"
+  title: 面向关系型数据库锁机制实现的模糊测试框架
   authors:
   - Hongyu Yang
   - Siyang Weng
@@ -456,7 +452,7 @@
   - Wei Liu
   - Panfei Yang
   date: '2024-05-20'
-  image: "../illustration/paper/HTAP\u8BC4\u6D4B\u57FA\u51C6.png"
+  image: ../illustration/paper/HTAP评测基准.png
   plugin: sources.py
   file: sources.yaml
 - id: Data Sharing Model and Optimization Strategies in HTAP Database Systems
@@ -473,8 +469,7 @@
   - Rong Zhang
   - Xuan Zhou
   date: '2023-07-12'
-  image: "../illustration/paper/HTAP\u6570\u636E\u5E93\u7CFB\u7EDF\u6570\u636E\u5171\
-    \u4EAB\u6A21\u578B\u4E0E\u4F18\u5316\u7B56\u7565.png"
+  image: ../illustration/paper/HTAP数据库系统数据共享模型与优化策略.png
   plugin: sources.py
   file: sources.yaml
 - id: Workload-Aware Log-Structured Merge Key-Value Store for NVM-SSD Hybrid Storage
@@ -936,7 +931,7 @@
   - Xiaofeng He
   - Guomin Zhou
   - Aoying Zhou
-  publisher: "Web Information Systems Engineering \u2013 WISE 2016"
+  publisher: Web Information Systems Engineering – WISE 2016
   date: '2016-01-01'
   link: https://doi.org/gqpnng
   plugin: sources.py
@@ -1247,7 +1242,7 @@
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.1007/978-3-642-41230-1_46
-  title: "Predicting Users\u2019 Age Range in Micro-blog Network"
+  title: Predicting Users’ Age Range in Micro-blog Network
   authors:
   - Chengyu Wang
   - Bing Xiao
@@ -1494,349 +1489,114 @@
   link: https://doi.org/dg6354
   plugin: sources.py
   file: sources.yaml
-- id: "\u9762\u5411\u5206\u5E03\u5F0F\u4E8B\u52A1\u578B\u6570\u636E\u5E93\u7CFB\u7EDF\
-    \u7684\u8BC4\u6D4B\u57FA\u51C6\u8BBE\u8BA1\u4E0E\u5B9E\u73B0 "
+- id: '面向分布式事务型数据库系统的评测基准设计与实现 '
   manual: true
-  title: "\u9762\u5411\u5206\u5E03\u5F0F\u4E8B\u52A1\u578B\u6570\u636E\u5E93\u7CFB\
-    \u7EDF\u7684\u8BC4\u6D4B\u57FA\u51C6\u8BBE\u8BA1\u4E0E\u5B9E\u73B0 "
-  publisher: "CCF\u4E2D\u56FD\u6570\u636E\u5E93\u5B66\u672F\u4F1A\u8BAE (NDBC)"
+  title: '面向分布式事务型数据库系统的评测基准设计与实现 '
+  publisher: CCF中国数据库学术会议 (NDBC)
   authors:
-  - "\u4F55\u6D77\u6797 "
-  - "\u5F20\u60E0\u4E1C"
-  - "\u7FC1\u601D\u626C"
-  - "\u5F20\u84C9"
+  - '何海林 '
+  - 张惠东
+  - 翁思扬
+  - 张蓉
   date: '2024-07-01'
   image: ../illustration/paper/sherry.png
   plugin: sources.py
   file: sources.yaml
-- id: "\u9762\u5411\u590D\u6742\u67E5\u8BE2\u7684\u53EF\u6269\u5C55\u5E94\u7528\u573A\
-    \u666F\u751F\u6210"
-  title: "\u9762\u5411\u590D\u6742\u67E5\u8BE2\u7684\u53EF\u6269\u5C55\u5E94\u7528\
-    \u573A\u666F\u751F\u6210"
-  publisher: "CCF\u4E2D\u56FD\u6570\u636E\u5E93\u5B66\u672F\u4F1A\u8BAE (NDBC)"
+- id: 面向复杂查询的可扩展应用场景生成
+  title: 面向复杂查询的可扩展应用场景生成
+  publisher: CCF中国数据库学术会议 (NDBC)
   manual: true
   authors:
-  - "\u674E\u597D"
-  - "\u738B\u6E05\u5E05"
-  - "\u5F20\u84C9"
-  - "\u94B1\u536B\u5B81"
+  - 李好
+  - 王清帅
+  - 张蓉
+  - 钱卫宁
   date: '2022-08-20'
   image: ../illustration/paper/touchstone+.png
   plugin: sources.py
   file: sources.yaml
-- id: "\u5206\u5E03\u5F0F\u6570\u636E\u6D41\u4E0A\u7684\u9AD8\u6027\u80FD\u5206\u53D1\
-    \u7B56\u7565"
+- id: 分布式数据流上的高性能分发策略
   manual: true
-  title: "\u5206\u5E03\u5F0F\u6570\u636E\u6D41\u4E0A\u7684\u9AD8\u6027\u80FD\u5206\
-    \u53D1\u7B56\u7565"
-  publisher: "\u8F6F\u4EF6\u5B66\u62A5"
+  title: 分布式数据流上的高性能分发策略
+  publisher: 软件学报
   authors:
-  - "\u623F\u4FCA\u534E"
-  - "\u738B\u6653\u6850"
-  - "\u5F20\u84C9"
-  - "\u5468\u50B2\u82F1"
+  - 房俊华
+  - 王晓桐
+  - 张蓉
+  - 周傲英
   date: '2016-01-01'
   plugin: sources.py
   file: sources.yaml
-- id: "\u8003\u8651\u89C2\u70B9\u591A\u6837\u6027\u7684\u8BC4\u8BBA\u9009\u62E9\u95EE\
-    \u9898"
+- id: 考虑观点多样性的评论选择问题
   manual: true
-  title: "\u8003\u8651\u89C2\u70B9\u591A\u6837\u6027\u7684\u8BC4\u8BBA\u9009\u62E9\
-    \u95EE\u9898"
-  publisher: "\u8BA1\u7B97\u673A\u7814\u7A76\u4E0E\u53D1\u5C55"
+  title: 考虑观点多样性的评论选择问题
+  publisher: 计算机研究与发展
   authors:
-  - "\u4F59\u6587\u5586"
-  - "\u6C99\u671D\u950B"
-  - "\u4F55\u6653\u4E30"
-  - "\u5F20\u84C9"
+  - 余文喆
+  - 沙朝锋
+  - 何晓丰
+  - 张蓉
   date: '2015-05-15'
   plugin: sources.py
   file: sources.yaml
-- id: "\u7535\u5B50\u5546\u52A1\u5546\u54C1\u5F52\u4E00\u5316\u65B9\u6CD5\u7814\u7A76"
+- id: 电子商务商品归一化方法研究
   manual: true
-  title: "\u7535\u5B50\u5546\u52A1\u5546\u54C1\u5F52\u4E00\u5316\u65B9\u6CD5\u7814\
-    \u7A76"
-  publisher: "\u8BA1\u7B97\u673A\u5B66\u62A5"
+  title: 电子商务商品归一化方法研究
+  publisher: 计算机学报
   authors:
-  - "\u738B\u7ACB"
-  - "\u5F20\u84C9"
-  - "\u6C99\u671D\u950B"
-  - "\u738B\u6653\u73B2"
-  - "\u5468\u50B2\u82F1"
+  - 王立
+  - 张蓉
+  - 沙朝锋
+  - 王晓玲
+  - 周傲英
   date: '2014-01-01'
   plugin: sources.py
   file: sources.yaml
-- id: "\u7535\u5B50\u5546\u52A1\u7CFB\u7EDF\u4E2D\u7684\u5546\u54C1\u63A8\u8350\u7CFB\
-    \u7EDF"
+- id: 电子商务系统中的商品推荐系统
   manual: true
-  title: "\u7535\u5B50\u5546\u52A1\u7CFB\u7EDF\u4E2D\u7684\u5546\u54C1\u63A8\u8350\
-    \u7CFB\u7EDF"
-  publisher: "\u534E\u4E1C\u5E08\u8303\u5927\u5B66\u5B66\u62A5"
+  title: 电子商务系统中的商品推荐系统
+  publisher: 华东师范大学学报
   authors:
-  - "\u4F59\u6587\u5586"
-  - "\u5F20\u84C9"
-  - "\u738B\u7ACB"
+  - 余文喆
+  - 张蓉
+  - 王立
   date: '2013-01-01'
   plugin: sources.py
   file: sources.yaml
-- id: "\u4E00\u79CD\u652F\u6301\u591A\u7EF4\u6570\u636E\u8303\u56F4\u67E5\u8BE2\u7684\
-    \u5BF9\u7B49\u8BA1\u7B97\u7D22\u5F15\u6846\u67B6"
+- id: 一种支持多维数据范围查询的对等计算索引框架
   manual: true
-  title: "\u4E00\u79CD\u652F\u6301\u591A\u7EF4\u6570\u636E\u8303\u56F4\u67E5\u8BE2\
-    \u7684\u5BF9\u7B49\u8BA1\u7B97\u7D22\u5F15\u6846\u67B6"
-  publisher: "\u8BA1\u7B97\u673A\u7814\u7A76\u4E0E\u53D1\u5C55"
+  title: 一种支持多维数据范围查询的对等计算索引框架
+  publisher: 计算机研究与发展
   authors:
-  - "\u5F20\u84C9"
-  - "\u94B1\u536B\u5B81"
-  - "\u5468\u50B2\u82F1"
+  - 张蓉
+  - 钱卫宁
+  - 周傲英
   date: '2009-01-01'
   plugin: sources.py
   file: sources.yaml
-- id: "\u5927\u89C4\u6A21\u5206\u5E03\u5F0F\u7CFB\u7EDF\u4E2D\u7684\u591A\u5C5E\u6027\
-    \u67E5\u8BE2\u5904\u7406"
+- id: 大规模分布式系统中的多属性查询处理
   manual: true
-  title: "\u5927\u89C4\u6A21\u5206\u5E03\u5F0F\u7CFB\u7EDF\u4E2D\u7684\u591A\u5C5E\
-    \u6027\u67E5\u8BE2\u5904\u7406"
-  publisher: "\u8BA1\u7B97\u673A\u5B66\u62A5"
+  title: 大规模分布式系统中的多属性查询处理
+  publisher: 计算机学报
   authors:
-  - "\u5468\u50B2\u82F1"
-  - "\u5468\u654F\u5947"
-  - "\u94B1\u536B\u5B81"
-  - "\u5F20\u84C9"
+  - 周傲英
+  - 周敏奇
+  - 钱卫宁
+  - 张蓉
   date: '2008-01-01'
   plugin: sources.py
   file: sources.yaml
-- id: "\u4E00\u7AD9\u5F0F\u670D\u52A1\u63A8\u8350\u7CFB\u7EDF"
+- id: 一站式服务推荐系统
   manual: true
-  title: "\u4E00\u7AD9\u5F0F\u670D\u52A1\u63A8\u8350\u7CFB\u7EDF"
+  title: 一站式服务推荐系统
   publisher: \u0043\u0043\u0046\u4e2d\u56fd\u6570\u636e\u5e93\u5b66\u672f\u4f1a\u8bae
     (NDBC)
   authors:
-  - "\u9AD8\u794E\u74A0"
-  - "\u90D1\u82B7\u51CC"
-  - "\u4F59\u6587\u5586"
-  - "\u7A0B\u6587\u4EAE"
-  - "\u5F20\u84C9"
+  - 高祎璠
+  - 郑芷凌
+  - 余文喆
+  - 程文亮
+  - 张蓉
   date: '2014-01-01'
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1101/2025.06.19.660613
-  title: Scalable data harmonization for single-cell image-based profiling with CytoTable
-  authors:
-  - Dave Bunten
-  - Jenna Tomkinson
-  - Erik Serrano
-  - Michael J. Lippincott
-  - Kenneth I. Brewer
-  - Vince Rubinetti
-  - Faisal Alquaddoomi
-  - Gregory P. Way
-  publisher: openRxiv
-  date: '2025-06-25'
-  link: https://doi.org/g9rfr3
-  orcid: 0000-0002-4655-3773
-  plugin: orcid.py
-  file: orcid.yaml
-- id: doi:10.1093/nar/gkad1082
-  title: "The Monarch Initiative in 2024: an analytic platform integrating phenotypes,\
-    \ genes\_and diseases across species"
-  authors:
-  - Tim E Putman
-  - Kevin Schaper
-  - Nicolas Matentzoglu
-  - "Vincent\_P Rubinetti"
-  - "Faisal\_S Alquaddoomi"
-  - Corey Cox
-  - J Harry Caufield
-  - Glass Elsarboukh
-  - Sarah Gehrke
-  - Harshad Hegde
-  - "Justin\_T Reese"
-  - Ian Braun
-  - "Richard\_M Bruskiewich"
-  - Luca Cappelletti
-  - Seth Carbon
-  - "Anita\_R Caron"
-  - "Lauren\_E Chan"
-  - "Christopher\_G Chute"
-  - "Katherina\_G Cortes"
-  - "Vin\xEDcius De\_Souza"
-  - Tommaso Fontana
-  - "Nomi\_L Harris"
-  - "Emily\_L Hartley"
-  - Eric Hurwitz
-  - "Julius\_O B Jacobsen"
-  - Madan Krishnamurthy
-  - "Bryan\_J Laraway"
-  - "James\_A McLaughlin"
-  - "Julie\_A McMurry"
-  - "Sierra\_A T Moxon"
-  - "Kathleen\_R Mullen"
-  - "Shawn\_T O\u2019Neil"
-  - "Kent\_A Shefchek"
-  - Ray Stefancsik
-  - Sabrina Toro
-  - "Nicole\_A Vasilevsky"
-  - "Ramona\_L Walls"
-  - "Patricia\_L Whetzel"
-  - David Osumi-Sutherland
-  - Damian Smedley
-  - "Peter\_N Robinson"
-  - "Christopher\_J Mungall"
-  - "Melissa\_A Haendel"
-  - "Monica\_C Munoz-Torres"
-  publisher: Nucleic Acids Research
-  date: '2023-11-24'
-  link: https://doi.org/gs6kmr
-  orcid: 0000-0002-4655-3773
-  plugin: orcid.py
-  file: orcid.yaml
-- id: doi:10.1101/2023.10.11.560955
-  title: Integration of 168,000 samples reveals global patterns of the human gut microbiome
-  authors:
-  - Richard J. Abdill
-  - Samantha P. Graham
-  - Vincent Rubinetti
-  - Frank W. Albert
-  - Casey S. Greene
-  - Sean Davis
-  - Ran Blekhman
-  publisher: openRxiv
-  date: '2023-10-11'
-  link: https://doi.org/gsvf5z
-  orcid: 0000-0002-4655-3773
-  plugin: orcid.py
-  file: orcid.yaml
-- id: doi:10.1093/nar/gkad289
-  title: 'MyGeneset.info: an interactive and programmatic platform for community-curated
-    and user-created collections of genes'
-  authors:
-  - Ricardo Avila
-  - Vincent Rubinetti
-  - Xinghua Zhou
-  - Dongbo Hu
-  - Zhongchao Qian
-  - Marco Alvarado Cano
-  - Everaldo Rodolpho
-  - Ginger Tsueng
-  - Casey Greene
-  - Chunlei Wu
-  publisher: Nucleic Acids Research
-  date: '2023-04-18'
-  link: https://doi.org/gr5hb5
-  orcid: 0000-0002-4655-3773
-  plugin: orcid.py
-  file: orcid.yaml
-- id: doi:10.1101/2023.01.05.522941
-  title: Hetnet connectivity search provides rapid insights into how two biomedical
-    entities are related
-  authors:
-  - Daniel S. Himmelstein
-  - Michael Zietz
-  - Vincent Rubinetti
-  - Kyle Kloster
-  - Benjamin J. Heil
-  - Faisal Alquaddoomi
-  - Dongbo Hu
-  - David N. Nicholson
-  - Yun Hao
-  - Blair D. Sullivan
-  - Michael W. Nagle
-  - Casey S. Greene
-  publisher: openRxiv
-  date: '2023-01-07'
-  link: https://doi.org/grmcb9
-  orcid: 0000-0002-4655-3773
-  plugin: orcid.py
-  file: orcid.yaml
-- id: doi:10.1093/gigascience/giad047
-  title: Hetnet connectivity search provides rapid insights into how biomedical entities
-    are related
-  authors:
-  - Daniel S Himmelstein
-  - Michael Zietz
-  - Vincent Rubinetti
-  - Kyle Kloster
-  - Benjamin J Heil
-  - Faisal Alquaddoomi
-  - Dongbo Hu
-  - David N Nicholson
-  - Yun Hao
-  - Blair D Sullivan
-  - Michael W Nagle
-  - Casey S Greene
-  publisher: GigaScience
-  date: '2022-12-28'
-  link: https://doi.org/gsd85n
-  orcid: 0000-0002-4655-3773
-  plugin: orcid.py
-  file: orcid.yaml
-- id: doi:10.1101/2022.02.18.461833
-  title: 'MolEvolvR: A web-app for characterizing proteins using molecular evolution
-    and phylogeny'
-  authors:
-  - Faisal S Alquaddoomi
-  - Joseph T Burke
-  - Lo Sosinski
-  - David A Mayer
-  - Evan P Brenner
-  - Samuel Z Chen
-  - Jacob D Krol
-  - Ethan P Wolfe
-  - Vincent P Rubinetti
-  - Shaddai Amolitos
-  - Kellen M Reason
-  - John B Johnston
-  - Janani Ravi
-  publisher: openRxiv
-  date: '2022-02-22'
-  link: https://doi.org/gstx7j
-  orcid: 0000-0002-4655-3773
-  plugin: orcid.py
-  file: orcid.yaml
-- id: doi:10.1186/s13059-020-02021-3
-  title: Compressing gene expression data using multiple latent space dimensionalities
-    learns complementary biological representations
-  authors:
-  - Gregory P. Way
-  - Michael Zietz
-  - Vincent Rubinetti
-  - Daniel S. Himmelstein
-  - Casey S. Greene
-  publisher: Genome Biology
-  date: '2020-05-11'
-  link: https://doi.org/gg2mjh
-  orcid: 0000-0002-4655-3773
-  plugin: orcid.py
-  file: orcid.yaml
-- id: doi:10.1371/journal.pcbi.1007128
-  title: Open collaborative writing with Manubot
-  authors:
-  - Daniel S. Himmelstein
-  - Vincent Rubinetti
-  - David R. Slochower
-  - Dongbo Hu
-  - Venkat S. Malladi
-  - Casey S. Greene
-  - Anthony Gitter
-  publisher: PLOS Computational Biology
-  date: '2019-06-24'
-  link: https://doi.org/c7np
-  orcid: 0000-0002-4655-3773
-  plugin: orcid.py
-  file: orcid.yaml
-- id: doi:10.1101/573782
-  title: Sequential compression of gene expression across dimensionalities and methods
-    reveals no single best method or dimensionality
-  authors:
-  - Gregory P. Way
-  - Michael Zietz
-  - Vincent Rubinetti
-  - Daniel S. Himmelstein
-  - Casey S. Greene
-  publisher: openRxiv
-  date: '2019-03-11'
-  link: https://doi.org/gfxjxf
-  orcid: 0000-0002-4655-3773
-  plugin: orcid.py
-  file: orcid.yaml
