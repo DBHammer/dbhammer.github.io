@@ -1,5 +1,23 @@
 # DO NOT EDIT, GENERATED AUTOMATICALLY
-
+- id: Metis: Workload-Aware Multi-Dimensional Histograms for Cardinality Estimation
+  manual: true
+  title: Metis: Workload-Aware Multi-Dimensional Histograms for Cardinality Estimation
+  authors:
+  - Xuhua Huang
+  - Xinyu Xiang
+  - Zirui Hu
+  - Zhicheng Pan
+  - Siyang Weng
+  - Rong Zhang
+  - Chengcheng Yang
+  - Xuan Zhou
+  - Quanqing Xu
+  - Chuanhui Yang
+  publisher: Proceedings of the VLDB Endowment (PVLDB)
+  date: '2027'
+  image: ../illustration/paper/metis.png
+  plugin: sources.py
+  file: sources.yaml
 - id: A High-Performance Black-Box Bug-Finding Tool for Database Isolation Levels
   manual: true
   title: A High-Performance Black-Box Bug-Finding Tool for Database Isolation Levels
