@@ -14,7 +14,7 @@
   - Quanqing Xu
   - Chuanhui Yang
   publisher: Proceedings of the VLDB Endowment (PVLDB)
-  date: '2027'
+  date: '2026-09-18'
   image: ../illustration/paper/metis.png
   plugin: sources.py
   file: sources.yaml
