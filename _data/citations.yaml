@@ -1,5 +1,32 @@
 # DO NOT EDIT, GENERATED AUTOMATICALLY
 
+- id: 'Metis: Workload-Aware Multi-Dimensional Histograms for Cardinality Estimation'
+  manual: true
+  title: 'Metis: Workload-Aware Multi-Dimensional Histograms for Cardinality Estimation'
+  authors:
+  - Xuhua Huang
+  - Xinyu Xiang
+  - Zirui Hu
+  - Zhicheng Pan
+  - Siyang Weng
+  - Rong Zhang
+  - Chengcheng Yang
+  - Xuan Zhou
+  - Quanqing Xu
+  - Chuanhui Yang
+  publisher: Proceedings of the VLDB Endowment (PVLDB)
+  date: '2026-09-18'
+  image: ../illustration/paper/metis_overview.png
+  buttons:
+  - type: source
+    text: Source Code
+    link: https://github.com/DBHammer/Metis
+  tags:
+  - Cardinality Estimation
+  - Query Optimization
+  repo: dbhammer/dbhammer.github.io
+  plugin: sources.py
+  file: sources.yaml
 - id: A High-Performance Black-Box Bug-Finding Tool for Database Isolation Levels
   manual: true
   title: A High-Performance Black-Box Bug-Finding Tool for Database Isolation Levels
@@ -17,7 +44,7 @@
   - Jianquan Leng
   publisher: IEEE Transactions on Knowledge and Data Engineering (TKDE)
   date: '2026-03-30'
-  image: ../illustration/paper/metis_overview.png
+  image: ../illustration/paper/leopard-tkde.png
   plugin: sources.py
   file: sources.yaml
 - id: 'OBELISK: Efficient Offline Query Planning with Bayesian Optimization-Informed
