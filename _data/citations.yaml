@@ -17,7 +17,7 @@
   - Jianquan Leng
   publisher: IEEE Transactions on Knowledge and Data Engineering (TKDE)
   date: '2026-03-30'
-  image: ../illustration/paper/leopard-tkde.png
+  image: ../illustration/paper/metis_overview.png
   plugin: sources.py
   file: sources.yaml
 - id: 'OBELISK: Efficient Offline Query Planning with Bayesian Optimization-Informed
@@ -174,9 +174,9 @@
   buttons:
   - type: source
     text: Source Code
-    link: https://github.com/dbhammer
+    link: https://github.com/DBHammer/Mirage
   - type: website
-    link: http://github.com/dbhammer
+    link: https://dl.acm.org/doi/10.1145/3722212.3725076
   tags:
   - Worklod Generation
   - Query Performance Tuning
