@@ -15,6 +15,16 @@
   publisher: Proceedings of the VLDB Endowment (PVLDB)
   date: '2026-09-18'
   image: '../illustration/paper/metis_overview.png'
+  buttons:
+  - type: source
+    text: Source Code
+    link: https://github.com/DBHammer/Metis
+  # - type: website
+  #   link: http://github.com/dbhammer
+  tags:
+  - Cardinality Estimation
+  - Query Optimization
+  repo: dbhammer/dbhammer.github.io
 
 - id: 'A High-Performance Black-Box Bug-Finding Tool for Database Isolation Levels'
   manual: true
@@ -172,9 +182,9 @@
   buttons:
   - type: source
     text: Source Code
-    link: https://github.com/dbhammer
+    link: https://github.com/DBHammer/Mirage
   - type: website
-    link: http://github.com/dbhammer
+    link: https://dl.acm.org/doi/10.1145/3722212.3725076
   tags:
   - Worklod Generation
   - Query Performance Tuning
