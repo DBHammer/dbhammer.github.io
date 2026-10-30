@@ -660,6 +660,39 @@ nav > a[data-active]:after {
   margin: 24px 0 10px;
 }
 
+/* 年份标题独占一行, 保证年份始终紧贴它对应的成员 */
+.member-grid > h3 {
+  flex: 0 0 100%;
+  width: 100%;
+  margin: 20px 0 0;
+  padding: 0;
+  border: none;
+  text-align: center;
+  font-family: var(--display);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  background: var(--lab-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.member-grid > h3:first-child {
+  margin-top: 0;
+}
+
+.member-grid > h3:after {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 2px;
+  margin: 7px auto 0;
+  border-radius: 2px;
+  background: var(--lab-grad);
+  opacity: 0.65;
+}
+
 .member-grid .portrait {
   margin: 0;
   width: 152px;
