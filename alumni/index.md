@@ -28,8 +28,15 @@ nav:
         {% for person in batch.people %}
         <div class="dest-item">
           <span class="dest-name">{{ person.name }}</span>
-          <span class="dest-arrow"><i class="fas fa-arrow-right-long"></i></span>
-          <span class="dest-dest">{{ person.dest }}</span>
+          {% if person.dest.first %}
+            {% for stop in person.dest %}
+            <span class="dest-arrow"><i class="fas fa-arrow-right-long"></i></span>
+            <span class="dest-dest">{{ stop }}</span>
+            {% endfor %}
+          {% else %}
+            <span class="dest-arrow"><i class="fas fa-arrow-right-long"></i></span>
+            <span class="dest-dest">{{ person.dest }}</span>
+          {% endif %}
           {% if person.note %}<span class="dest-note">{{ person.note }}</span>{% endif %}
         </div>
         {% endfor %}
@@ -50,8 +57,15 @@ nav:
         {% for person in batch.people %}
         <div class="dest-item">
           <span class="dest-name">{{ person.name }}</span>
-          <span class="dest-arrow"><i class="fas fa-arrow-right-long"></i></span>
-          <span class="dest-dest">{{ person.dest }}</span>
+          {% if person.dest.first %}
+            {% for stop in person.dest %}
+            <span class="dest-arrow"><i class="fas fa-arrow-right-long"></i></span>
+            <span class="dest-dest">{{ stop }}</span>
+            {% endfor %}
+          {% else %}
+            <span class="dest-arrow"><i class="fas fa-arrow-right-long"></i></span>
+            <span class="dest-dest">{{ person.dest }}</span>
+          {% endif %}
           {% if person.note %}<span class="dest-note">{{ person.note }}</span>{% endif %}
         </div>
         {% endfor %}
