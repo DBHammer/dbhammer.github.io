@@ -15,8 +15,13 @@
   {% assign data = year.items %}
 
   {% if years.size > 1 %}
-    {{--}}<h3 id="{{ year.name }}">{{ year.name }}</h3>
     {% assign data = data | sort: "date" | reverse %}
+  {% endif %}
+
+  {% comment %}同一年份的标题与条目打包成一组, 换行时整组一起换行{% endcomment %}
+  <div class="list-group">
+  {% if years.size > 1 %}
+    {{--}}<h3 id="{{ year.name }}">{{ year.name }}</h3>
   {% endif %}
 
   {% for d in data %}
@@ -56,4 +61,5 @@
       width=d.width
     %}
   {% endfor %}
+  </div>
 {% endfor %}

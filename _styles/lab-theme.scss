@@ -684,43 +684,35 @@ nav > a[data-active]:after {
 
 .member-grid {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 34px 26px;
+  flex-direction: column;
+  gap: 30px;
   margin: 24px 0 10px;
 }
 
-/* 年份标题独占一行, 保证年份始终紧贴它对应的成员 */
-.member-grid > h3 {
-  flex: 0 0 100%;
+/* 同一年份的标题 + 成员为一个整体, 溢出时整组一起换行 */
+.member-grid .list-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px 26px;
   width: 100%;
-  margin: 20px 0 0;
-  padding: 0;
+}
+
+.member-grid .list-group > h3 {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 7px 16px;
   border: none;
-  text-align: center;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--lab-grad);
+  box-shadow: 0 12px 26px -16px rgba(99, 102, 241, 1);
   font-family: var(--display);
-  font-size: 0.95rem;
+  font-size: 0.82rem;
   font-weight: 800;
-  letter-spacing: 0.16em;
-  background: var(--lab-grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.member-grid > h3:first-child {
-  margin-top: 0;
-}
-
-.member-grid > h3:after {
-  content: "";
-  display: block;
-  width: 44px;
-  height: 2px;
-  margin: 7px auto 0;
-  border-radius: 2px;
-  background: var(--lab-grad);
-  opacity: 0.65;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
 }
 
 .member-grid .portrait {
@@ -1377,6 +1369,11 @@ nav > a[data-active]:after {
   justify-content: center;
   gap: 24px;
   margin: 24px 0 6px;
+}
+
+/* 项目卡不使用年份分组, 让分组容器透明以免破坏卡片布局 */
+.project-grid .list-group {
+  display: contents;
 }
 
 .project-grid .card {
