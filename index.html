@@ -90,7 +90,7 @@
 <!-- automatically get url from fonts used in theme file -->
 
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?display=swap&&family=Barlow:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600&amp;family=Roboto+Mono:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?display=swap&&family=Barlow:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600&amp;family=Roboto+Mono:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600&amp;family=Sora:ital,wght@0,200;0,400;0,500;0,600;1,200;1,400;1,500;1,600" rel="stylesheet">
 
 <!-- Font Awesome icons (load asynchronously due to size) -->
 
@@ -228,6 +228,10 @@
 
   
     <link href="/_styles/input.css" rel="stylesheet">
+  
+
+  
+    <link href="/_styles/lab-theme.css" rel="stylesheet">
   
 
   
@@ -393,6 +397,8 @@
 
   <script src="/_scripts/fetch-tags.js"></script>
 
+  <script src="/_scripts/lab-effects.js"></script>
+
   <script src="/_scripts/search.js"></script>
 
   <script src="/_scripts/site-search.js"></script>
@@ -535,14 +541,20 @@
       
     
       
-        <a href="/contact/" data-tooltip="Email, address, and location">
+        <a href="/team/" data-tooltip="About our team">
+          成员
+        </a>
+      
+    
+      
+        <a href="/alumni/" data-tooltip="Where our graduates go">
           就业去向
         </a>
       
     
       
-        <a href="/team/" data-tooltip="About our team">
-          成员
+        <a href="/contact/" data-tooltip="Email, address, and location">
+          联系我们
         </a>
       
     
@@ -566,20 +578,60 @@
   
   
 
-  <section class="background" data-size="page">
-    <h1 id="dbhammer">DBHammer</h1>
+  <section class="background" data-size="full" data-dark="true">
+    <!--
+  background: ;
+  dark: true;
+  size: full;
+-->
 
-<p>DBHammer实验室（导师：张蓉教授），华东师范大学数据科学与工程学院，数据库系统组。目前组内在读博士同学 5 位和硕士同学 8 位。DBHammer实验室致力于研发推动数据库发展的创新型技术，主要研究方向包括数据库系统内核技术，如高冲突事务处理框架，自适应数据分区等；数据库系统质量保证的关键技术，如面向应用的大规模负载仿真，数据库评测基准，事务型数据库隔离级别验证，分析型数据库性能Bug检测，面向 AI 的预训练数据集生成等。实验室成果发表在 SIGMOD, VLDB, ICDE, CIDR, ATC, TKDE, TPDS等会议和杂志上。参加数据库厂商组织的数据库系统实现比赛中成果优异，如第一届OceanBase 数据库大赛荣获全国亚军，第一届中国大数据技术创新与创业大赛全国三等奖，第四届阿里云PolarDB 数据库性能挑战大赛全国第 8 等。实验室主要合作企业包括：华为，PolarDB，交通银行，恒生电子，OceanBase，TiDB, TDSQL等。</p>
+<div class="hero">
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+  <div class="hero-grid"></div>
+  <span class="hero-blob" data-b="1"></span>
+  <span class="hero-blob" data-b="2"></span>
+  <span class="hero-blob" data-b="3"></span>
 
-<figure class="figure center">
-  <a href="/team" class="figure-image" aria-label="figure link">
-    <img src="/images/description.png" style="
-        width: 400px;
-        max-height: unset;
-      " alt="figure image" loading="lazy" onerror="this.src = '/images/placeholder.svg'; this.onerror = null;">
-  </a>
-  
-</figure>
+  <div class="hero-inner">
+    <span class="hero-kicker">
+      <i class="fas fa-database"></i> ECNU · DaSE · Database Systems Group
+    </span>
+    <h1 class="hero-title">DBHammer</h1>
+    <p class="hero-sub">为数据库系统提供可信的评测基准、负载仿真与智能优化技术</p>
+    <p class="hero-desc">
+      DBHammer 实验室（导师：张蓉 教授）隶属于华东师范大学数据科学与工程学院。实验室致力于研发推动数据库发展的创新型技术，涵盖数据库系统内核、数据库系统质量保证（大规模负载仿真、评测基准、隔离级别验证、性能缺陷检测）以及 AI4DB 等方向，成果发表于 SIGMOD、VLDB、ICDE、CIDR、ATC、TKDE、TPDS 等国际顶级会议与期刊。
+    </p>
+    <div class="hero-actions">
+      <a class="btn-lab" href="/research/">
+        浏览论文 <i class="fas fa-arrow-right"></i>
+      </a>
+      <a class="btn-lab btn-lab-ghost" href="/team/">
+        <i class="fas fa-users"></i> 认识团队
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="hero-foot">
+  <div class="stat-band">
+    <div class="stat-card">
+      <span class="stat-num" data-count="31">0</span>
+      <span class="stat-label">Members</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num" data-count="108">0</span>
+      <span class="stat-label">Publications</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num" data-count="17">0</span>
+      <span class="stat-label">SIGMOD / VLDB / ICDE</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num" data-count="6">0</span>
+      <span class="stat-label">Open Tools</span>
+    </div>
+  </div>
+</div>
   </section>
 
   
@@ -593,48 +645,423 @@
   size: ;
 -->
 
-<div class="feature">
-  <a href="/resources" class="feature-image" aria-label="项目">
-    <img src="/images/tools.png" loading="lazy" alt="项目" onerror="this.src = '/images/placeholder.svg'; this.onerror = null;">
+<div class="lab-heading">
+  <span class="lab-kicker"><i class="fas fa-bullseye"></i> Research</span>
+  <h2 class="lab-title">研究方向</h2>
+  <p class="lab-desc">
+    从数据库内核到系统质量保证，再到面向 AI 的数据管理，DBHammer 围绕真实产业问题构建全栈技术能力。
+  </p>
+</div>
+
+<div class="lab-cards">
+  <a class="lab-card" href="/project/">
+    <span class="lab-card-icon"><i class="fas fa-cogs"></i></span>
+    <h3>数据库系统内核</h3>
+    <p>高冲突事务处理框架、自适应数据分区与复制、HTAP 存储布局与数据共享模型，面向真实负载持续优化系统内核。</p>
+    <span class="lab-card-more">查看项目 <i class="fas fa-arrow-right"></i></span>
   </a>
-  <div class="feature-text">
+  <a class="lab-card" href="/project/">
+    <span class="lab-card-icon"><i class="fas fa-shield-halved"></i></span>
+    <h3>系统质量保证</h3>
+    <p>面向应用的大规模负载仿真、数据库评测基准、事务隔离级别验证、分析型数据库性能缺陷检测与定位。</p>
+    <span class="lab-card-more">查看工具 <i class="fas fa-arrow-right"></i></span>
+  </a>
+  <a class="lab-card" href="/research/">
+    <span class="lab-card-icon"><i class="fas fa-brain"></i></span>
+    <h3>AI4DB 与智能优化</h3>
+    <p>基数估计、索引与旋钮推荐、查询计划修正、面向大模型的数据库分析与离线查询优化。</p>
+    <span class="lab-card-more">浏览论文 <i class="fas fa-arrow-right"></i></span>
+  </a>
+</div>
+  </section>
+
+  
+  
+  
+
+  <section class="background" data-size="page">
+    <!--
+  background: ;
+  dark: ;
+  size: ;
+-->
+
+<div class="lab-heading">
+  <span class="lab-kicker"><i class="fas fa-newspaper"></i> News</span>
+  <h2 class="lab-title">最新动态</h2>
+  <p class="lab-desc">实验室的获奖、参会与成果发布记录。</p>
+</div>
+
+<ul class="news-timeline">
+  
+  
+  <li class="news-item" data-type="奖项">
+    <div class="news-date">
+      <span class="news-day">09</span>
+      <span class="news-month">Oct 2026</span>
+    </div>
+    <div class="news-body">
+      <span class="news-type">奖项</span>
+      <div class="news-content">祝贺向鑫宇、陈广泽荣获硕士研究生特等奖学金, 杜祥云荣获硕士研究生一等奖学金, 胡梓锐荣获国家奖学金! 
+</div>
+    </div>
+  </li>
+  
+  <li class="news-item" data-type="奖项">
+    <div class="news-date">
+      <span class="news-day">01</span>
+      <span class="news-month">Oct 2026</span>
+    </div>
+    <div class="news-body">
+      <span class="news-type">奖项</span>
+      <div class="news-content">祝贺杜祥云、陈广泽、虞锴宸荣获第三届中国研究生操作系统开源创新大赛三等奖!
+</div>
+    </div>
+  </li>
+  
+  <li class="news-item" data-type="奖项">
+    <div class="news-date">
+      <span class="news-day">30</span>
+      <span class="news-month">Sep 2026</span>
+    </div>
+    <div class="news-body">
+      <span class="news-type">奖项</span>
+      <div class="news-content">祝贺胡梓锐荣获腾讯犀牛鸟精英人才计划优秀学生荣誉! 
+</div>
+    </div>
+  </li>
+  
+  <li class="news-item" data-type="奖项">
+    <div class="news-date">
+      <span class="news-day">12</span>
+      <span class="news-month">Jan 2026</span>
+    </div>
+    <div class="news-body">
+      <span class="news-type">奖项</span>
+      <div class="news-content">祝贺王思腾荣获POLARDB数据库性能大赛全国三等奖! 
+</div>
+    </div>
+  </li>
+  
+  <li class="news-item" data-type="奖项">
+    <div class="news-date">
+      <span class="news-day">24</span>
+      <span class="news-month">Dec 2025</span>
+    </div>
+    <div class="news-body">
+      <span class="news-type">奖项</span>
+      <div class="news-content">祝贺董昊朴前往澳门参与Big Data2025分享科研成果! 
+</div>
+    </div>
+  </li>
+  
+</ul>
+
+<p style="text-align: center; margin-top: 26px;">
+  <a class="btn-lab" href="/news/">
+    全部新闻 <i class="fas fa-arrow-right"></i>
+  </a>
+</p>
+  </section>
+
+  
+  
+  
+
+  <section class="background" data-size="page">
+    <!--
+  background: ;
+  dark: ;
+  size: ;
+-->
+
+<div class="lab-heading">
+  <span class="lab-kicker"><i class="fas fa-scroll"></i> Publications</span>
+  <h2 class="lab-title">近期论文</h2>
+</div>
+
+<div class="paper-list">
+  
+  
     
-      <p class="feature-title">项目</p>
-    
-    
-<p class="center">DBHammer实验室开发了适合于AP测试、TP测试以及综合性测试的多款工具。</p>
 
 
+
+
+
+
+
+
+
+
+
+<div class="citation-container">
+  <div class="citation" data-group="2026 vldb">
+    
+      <a class="citation-image" aria-label="Metis:Workload-Aware Multi-Dimensional Histograms for Cardinality Estimation">
+        <img src="/illustration/paper/metis.png" alt="Metis:Workload-Aware Multi-Dimensional Histograms for Cardinality Estimation" loading="lazy" onerror="this.src = '/images/placeholder.svg'; this.onerror = null;">
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        Metis:Workload-Aware Multi-Dimensional Histograms for Cardinality Estimation
+      </a>
+
+      <div class="citation-authors" tabindex="0">
+        Xuhua Huang, Xinyu Xiang, Zirui Hu, Zhicheng Pan, Siyang Weng, Rong Zhang, Chengcheng Yang, Xuan Zhou, Quanqing Xu, Chuanhui Yang
+
+      </div>
+
+      <div class="citation-details">
+        <span class="citation-publisher">Proceedings of the VLDB Endowment (PVLDB)</span>
+         · 
+        <span class="citation-date">18 Sep 2026</span>
+         · 
+        <span class="citation-id">[no id info]</span>
+      </div>
+
+      
+        
+
+        
+
+        
+      
+    </div>
   </div>
 </div>
 
-<div class="feature" data-flip="">
-  <a href="/research" class="feature-image" aria-label="论文">
-    <img src="/images/research.jfif" loading="lazy" alt="论文" onerror="this.src = '/images/placeholder.svg'; this.onerror = null;">
-  </a>
-  <div class="feature-text">
+  
     
-      <p class="feature-title">论文</p>
-    
-    
-<p class="center">DBHammer实验室在高水平期刊/会议上发表多篇论文。</p>
 
 
+
+
+
+
+
+
+
+
+
+<div class="citation-container">
+  <div class="citation" data-group="2026 journal">
+    
+      <a href="https://doi.org/10.1109/TKDE.2026.3676641" class="citation-image" aria-label="A High-Performance Black-Box Bug-Finding Tool for Database Isolation Levels">
+        <img src="/illustration/paper/leopard-tkde.png" alt="A High-Performance Black-Box Bug-Finding Tool for Database Isolation Levels" loading="lazy" onerror="this.src = '/images/placeholder.svg'; this.onerror = null;">
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://doi.org/10.1109/TKDE.2026.3676641" class="citation-title">
+        A High-Performance Black-Box Bug-Finding Tool for Database Isolation Levels
+      </a>
+
+      <div class="citation-authors" tabindex="0">
+        Siyang Weng, Keqiang Li, Zirui Hu, Lyu Ni, Chengcheng Yang, Rong Zhang, Peng Cai, Xuan Zhou, Weining Qian, Jianquan Leng
+
+      </div>
+
+      <div class="citation-details">
+        <span class="citation-publisher">IEEE Transactions on Knowledge and Data Engineering (TKDE)</span>
+         · 
+        <span class="citation-date">30 Mar 2026</span>
+         · 
+        <span class="citation-id">[no id info]</span>
+      </div>
+
+      
+        
+
+        
+
+        
+      
+    </div>
   </div>
 </div>
 
-<div class="feature">
-  <a href="/team" class="feature-image" aria-label="团队">
-    <img src="/images/team.jfif" loading="lazy" alt="团队" onerror="this.src = '/images/placeholder.svg'; this.onerror = null;">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+<div class="citation-container">
+  <div class="citation" data-group="2026 icde">
+    
+      <a class="citation-image" aria-label="BOND: A Co-Designed Framework for LLM-Powered Analytics Over Relational Data">
+        <img src="/illustration/paper/mirage.png" alt="BOND: A Co-Designed Framework for LLM-Powered Analytics Over Relational Data" loading="lazy" onerror="this.src = '/images/placeholder.svg'; this.onerror = null;">
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a class="citation-title">
+        BOND: A Co-Designed Framework for LLM-Powered Analytics Over Relational Data
+      </a>
+
+      <div class="citation-authors" tabindex="0">
+        Lixiang Chen, Qin Zheng, Zhicheng Pan, Chengcheng Yang, Rong Zhang, Xuan Zhou
+
+      </div>
+
+      <div class="citation-details">
+        <span class="citation-publisher">Proceedings of the IEEE International Conference on Data Engineering (ICDE)</span>
+         · 
+        <span class="citation-date">01 Mar 2026</span>
+         · 
+        <span class="citation-id">[no id info]</span>
+      </div>
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+<div class="citation-container">
+  <div class="citation" data-group="2026 vldb">
+    
+      <a href="https://www.vldb.org/pvldb/vol19/p1674-pan.pdf" class="citation-image" aria-label="OBELISK: Efficient Offline Query Planning with Bayesian Optimization-Informed Language Model Reasoning">
+        <img src="/illustration/paper/mirage.png" alt="OBELISK: Efficient Offline Query Planning with Bayesian Optimization-Informed Language Model Reasoning" loading="lazy" onerror="this.src = '/images/placeholder.svg'; this.onerror = null;">
+      </a>
+    
+
+    <div class="citation-text">
+      
+      
+
+      <a href="https://www.vldb.org/pvldb/vol19/p1674-pan.pdf" class="citation-title">
+        OBELISK: Efficient Offline Query Planning with Bayesian Optimization-Informed Language Model Reasoning
+      </a>
+
+      <div class="citation-authors" tabindex="0">
+        Zhicheng Pan, Wenwen Sun, Yuanjia Zhang, Terence Purcell, Yu Dong, Chengcheng Yang, Rong Zhang, Xuan Zhou, Jianliang Xu
+
+      </div>
+
+      <div class="citation-details">
+        <span class="citation-publisher">Proceedings of the VLDB Endowment (PVLDB)</span>
+         · 
+        <span class="citation-date">01 Mar 2026</span>
+         · 
+        <span class="citation-id">[no id info]</span>
+      </div>
+
+      
+        
+
+        
+
+        
+      
+    </div>
+  </div>
+</div>
+
+  
+</div>
+
+<p style="text-align: center; margin-top: 26px;">
+  <a class="btn-lab" href="/research/">
+    全部论文 <i class="fas fa-arrow-right"></i>
   </a>
-  <div class="feature-text">
-    
-      <p class="feature-title">团队</p>
-    
-    
-<p class="center">DBHammer团队有AP、TP等多个研究方向。</p>
+</p>
+  </section>
 
+  
+  
+  
 
+  <section class="background" data-size="page">
+    <!--
+  background: ;
+  dark: ;
+  size: ;
+-->
+
+<div class="lab-heading">
+  <span class="lab-kicker"><i class="fas fa-handshake"></i> Collaborations</span>
+  <h2 class="lab-title">合作企业</h2>
+  <p class="lab-desc">实验室与国内外领先的数据库厂商和金融机构保持深入合作。</p>
+</div>
+
+<div class="marquee">
+  <div class="marquee-track">
+    
+    
+    <span class="marquee-item"><i class="fas fa-building-columns"></i> 华为</span>
+    
+    <span class="marquee-item"><i class="fas fa-building-columns"></i> PolarDB</span>
+    
+    <span class="marquee-item"><i class="fas fa-building-columns"></i> 交通银行</span>
+    
+    <span class="marquee-item"><i class="fas fa-building-columns"></i> 恒生电子</span>
+    
+    <span class="marquee-item"><i class="fas fa-building-columns"></i> OceanBase</span>
+    
+    <span class="marquee-item"><i class="fas fa-building-columns"></i> TiDB</span>
+    
+    <span class="marquee-item"><i class="fas fa-building-columns"></i> TDSQL</span>
+    
+    <span class="marquee-item"><i class="fas fa-building-columns"></i> 腾讯</span>
+    
+    <span class="marquee-item"><i class="fas fa-building-columns"></i> 蚂蚁集团</span>
+    
+    
+    <span class="marquee-item"><i class="fas fa-building-columns"></i> 华为</span>
+    
+    <span class="marquee-item"><i class="fas fa-building-columns"></i> PolarDB</span>
+    
+    <span class="marquee-item"><i class="fas fa-building-columns"></i> 交通银行</span>
+    
+    <span class="marquee-item"><i class="fas fa-building-columns"></i> 恒生电子</span>
+    
+    <span class="marquee-item"><i class="fas fa-building-columns"></i> OceanBase</span>
+    
+    <span class="marquee-item"><i class="fas fa-building-columns"></i> TiDB</span>
+    
+    <span class="marquee-item"><i class="fas fa-building-columns"></i> TDSQL</span>
+    
+    <span class="marquee-item"><i class="fas fa-building-columns"></i> 腾讯</span>
+    
+    <span class="marquee-item"><i class="fas fa-building-columns"></i> 蚂蚁集团</span>
+    
   </div>
 </div>
   </section>
