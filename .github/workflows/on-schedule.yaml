@@ -15,8 +15,8 @@ permissions:
 
 jobs:
   update-citations:
-    # only run on user instance of template, not template itself
-    if: github.repository != 'greenelab/lab-website-template'
+    # 已停用: 论文列表由 _data/citations.yaml 手工维护, 不再自动生成
+    if: false
     uses: ./.github/workflows/update-citations.yaml
     with:
       open-pr: true

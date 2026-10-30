@@ -14,9 +14,6 @@ permissions:
   pull-requests: write
 
 jobs:
-  update-citations:
-    uses: ./.github/workflows/update-citations.yaml
-
+  # 论文列表由 _data/citations.yaml 手工维护, 已停用自动生成 (update-citations)
   build-preview:
-    needs: update-citations
     uses: ./.github/workflows/build-preview.yaml

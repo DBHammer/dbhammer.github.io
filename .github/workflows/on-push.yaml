@@ -14,11 +14,6 @@ permissions:
   pull-requests: write
 
 jobs:
-  update-citations:
-    # skip first run because nothing enabled or setup yet
-    if: github.run_number != 1
-    uses: ./.github/workflows/update-citations.yaml
-
+  # 论文列表由 _data/citations.yaml 手工维护, 已停用自动生成 (update-citations)
   build-site:
-    needs: update-citations
     uses: ./.github/workflows/build-site.yaml
