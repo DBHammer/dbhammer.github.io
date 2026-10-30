@@ -43,7 +43,7 @@
   manual: true
   title: 'OBELISK: Efficient Offline Query Planning with Bayesian Optimization-Informed
     Language Model Reasoning'
-  link: null
+  link: https://www.vldb.org/pvldb/vol19/p1674-pan.pdf
   authors:
   - Zhicheng Pan
   - Wenwen Sun
@@ -99,7 +99,7 @@
 - id: 'Pisco: An Isolation Bug Case  Reduction and Deduplication Framework'
   manual: true
   title: 'Pisco: An Isolation Bug Case  Reduction and Deduplication Framework'
-  link: null
+  link: https://www.vldb.org/pvldb/vol19/p1413-weng.pdf
   authors:
   - Siyang Weng
   - Hongyu Yang
@@ -171,7 +171,7 @@
 - id: 'A Query-Aware Enormous Database Generator For System Performance Evaluation '
   manual: true
   title: 'A Query-Aware Enormous Database Generator For System Performance Evaluation '
-  link: none
+  link: null
   authors:
   - Xuhua Huang
   - Zirui Hu
@@ -301,7 +301,7 @@
 - id: Benchmarking Distributed Transactional Database Systems
   manual: true
   title: Benchmarking Distributed Transactional Database Systems
-  link: none
+  link: null
   authors:
   - Hailin He
   - Siyang Weng

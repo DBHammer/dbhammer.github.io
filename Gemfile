@@ -6,6 +6,8 @@ gem "webrick", "~> 1.7"
 gem "ostruct"
 
 gem "html-proofer", "~> 5.0"
+# required by html-proofer at runtime
+gem "debug"
 
 # plugins
 group :jekyll_plugins do

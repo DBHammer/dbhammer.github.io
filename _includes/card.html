@@ -40,8 +40,21 @@
       </p>
     {% endif %}
 
-    {% if include.tags or include.repo %}
-      {% include tags.html tags=include.tags repo=include.repo %}
-    {% endif %}
+    <div class="card-footer">
+      {% if include.tags or include.repo %}
+        {% include tags.html tags=include.tags repo=include.repo %}
+      {% endif %}
+
+      {% if include.link %}
+        <a
+          class="card-action"
+          href="{{ include.link | relative_url | uri_escape }}"
+          target="_blank"
+          rel="noopener"
+        >
+          Source <i class="fas fa-arrow-up-right-from-square"></i>
+        </a>
+      {% endif %}
+    </div>
   </div>
 </div>

@@ -8,8 +8,20 @@
   {% assign citation = include %}
 {% endif %}
 
+{% assign pub = citation.publisher | downcase %}
+{% assign groups = citation.date | date: "%Y" %}
+{% if pub contains "sigmod" %}{% assign groups = groups | append: " sigmod" %}{% endif %}
+{% if pub contains "vldb" %}{% assign groups = groups | append: " vldb" %}{% endif %}
+{% if pub contains "icde" %}{% assign groups = groups | append: " icde" %}{% endif %}
+{% if pub contains "cidr" %}{% assign groups = groups | append: " cidr" %}{% endif %}
+{% if pub contains "dasfaa" %}{% assign groups = groups | append: " dasfaa" %}{% endif %}
+{% if pub contains "ndbc" or pub contains "中国数据库" %}{% assign groups = groups | append: " ndbc" %}{% endif %}
+{% if pub contains "transactions" or pub contains "journal" or pub contains "frontiers"
+  or pub contains "knowledge and information" or pub contains "软件学报" or pub contains "计算机"
+%}{% assign groups = groups | append: " journal" %}{% endif %}
+
 <div class="citation-container">
-  <div class="citation">
+  <div class="citation" data-group="{{ groups }}">
     {% if include.style == "rich" %}
       <a
         {% if citation.link %}
