@@ -1,4 +1,15 @@
 # DO NOT EDIT, GENERATED AUTOMATICALLY
+- id: Align and Adjudicate: Structured Semantic Validation for NL2SQL
+  manual: true
+  title: Align and Adjudicate: Structured Semantic Validation for NL2SQL
+  authors:
+  - Junyan He
+  - Xuhua Huang
+  - Xinyu Xiang
+  - Rong Zhang
+  image: ../illustration/paper/nl2sql.png
+  publisher: Web and Big Data (APWeb-WAIM)
+  date: '2026-09-26'
 - id: Metis:Workload-Aware Multi-Dimensional Histograms for Cardinality Estimation
   manual: true
   title: Metis:Workload-Aware Multi-Dimensional Histograms for Cardinality Estimation
