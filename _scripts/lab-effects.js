@@ -263,6 +263,31 @@
     update();
   };
 
+  /* ---------- 图片兜底占位 ---------- */
+  const setupImageFallback = () => {
+    const placeholder = "/images/placeholder.svg";
+
+    const swap = (img) => {
+      if (!img || img.dataset.placeholderApplied) return;
+      img.dataset.placeholderApplied = "1";
+      img.src = placeholder;
+    };
+
+    // error 事件不冒泡, 必须用捕获阶段
+    document.addEventListener(
+      "error",
+      (event) => {
+        if (event.target && event.target.tagName === "IMG") swap(event.target);
+      },
+      true
+    );
+
+    // 处理在脚本执行前就已经加载失败的图片
+    Array.from(document.images).forEach((img) => {
+      if (img.complete && img.naturalWidth === 0) swap(img);
+    });
+  };
+
   /* ---------- 当前导航高亮 ---------- */
   const setupNav = () => {
     const here = window.location.pathname.replace(/index\.html$/, "");
@@ -274,6 +299,7 @@
 
   const init = () => {
     setupNav();
+    setupImageFallback();
     setupReveal();
     setupCounters();
     setupParticles();

@@ -15,7 +15,7 @@
   - Chuanhui Yang
   publisher: Proceedings of the VLDB Endowment (PVLDB)
   date: '2026-09-18'
-  image: '../illustration/paper/metis.png'
+  image: '../illustration/paper/metis_overview.png'
 
 - id: 'A High-Performance Black-Box Bug-Finding Tool for Database Isolation Levels'
   manual: true
