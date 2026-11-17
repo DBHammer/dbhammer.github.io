@@ -13,6 +13,7 @@
 - id: Metis:Workload-Aware Multi-Dimensional Histograms for Cardinality Estimation
   manual: true
   title: Metis:Workload-Aware Multi-Dimensional Histograms for Cardinality Estimation
+  link: https://www.vldb.org/pvldb/vol20/p122-huang.pdf
   authors:
   - Xuhua Huang
   - Xinyu Xiang
